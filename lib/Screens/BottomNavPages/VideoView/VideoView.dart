@@ -1,16 +1,17 @@
-
-
 import 'dart:io';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:hive/hive.dart';
 import 'package:status_saver/Utils/Constants/AllColors.dart';
+import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/images/app_images.dart';
 import 'package:video_player/video_player.dart';
-import '../../../Local Database/LocalDatabase.dart';
+
+import '../../../Local Database/LocalDatabase.dart' hide shareStatus;
 import '../../../Utils/Constants/AllText.dart';
-import '../../../Utils/Constants/file_service.dart';
-import '../../../Utils/Constants/userFeedback.dart';
+import '../../../Utils/Constants/file_service.dart' hide saveMedia;
+import '../../../Utils/Constants/userFeedback.dart' hide bottomButton;
 
 class VideoPlayerScreen extends StatefulWidget {
   final String videoPath;
@@ -33,6 +34,7 @@ class VideoPlayerScreen extends StatefulWidget {
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   VideoPlayerController? _videoPlayerController;
   ChewieController? _chewieController;
+
   late int _currentIndex;
   bool _isInitializing = false;
 
@@ -43,30 +45,18 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     _initializePlayer(widget.allVideos[_currentIndex]);
   }
 
-  Future<void> _deleteVideo() async {
-    try {
-      final box = Hive.box<SavedItem>('saved_items');
-      final String currentPath = widget.allVideos[_currentIndex];
-
-      await deleteItem(context, currentPath, deleteFromDisk: true);
-
-      if (mounted) Navigator.pop(context);
-    } catch (e) {
-      debugPrint("Delete error: $e");
-    }
-  }
-
+  // ================= INIT PLAYER =================
   Future<void> _initializePlayer(String path) async {
     setState(() => _isInitializing = true);
 
+    if (_currentIndex < 0 || _currentIndex >= widget.allVideos.length) return;
+
     final file = File(path);
     if (!await file.exists()) {
-      debugPrint("File not found ❌");
       setState(() => _isInitializing = false);
       return;
     }
 
-    // Dispose old controllers before creating new ones
     _chewieController?.dispose();
     _videoPlayerController?.dispose();
 
@@ -82,17 +72,39 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     setState(() => _isInitializing = false);
   }
 
+  // ================= NEXT =================
   void _playNext() {
-    if (_currentIndex < widget.allVideos.length - 1) {
-      setState(() => _currentIndex++);
-      _initializePlayer(widget.allVideos[_currentIndex]);
-    }
+    if (_currentIndex >= widget.allVideos.length - 1) return;
+
+    setState(() {
+      _currentIndex++;
+    });
+
+    _initializePlayer(widget.allVideos[_currentIndex]);
   }
 
+  // ================= PREVIOUS =================
   void _playPrevious() {
-    if (_currentIndex > 0) {
-      setState(() => _currentIndex--);
-      _initializePlayer(widget.allVideos[_currentIndex]);
+    if (_currentIndex <= 0) return;
+
+    setState(() {
+      _currentIndex--;
+    });
+
+    _initializePlayer(widget.allVideos[_currentIndex]);
+  }
+
+  // ================= DELETE =================
+  Future<void> _deleteVideo() async {
+    try {
+      final box = Hive.box<SavedItem>('saved_items');
+      final String currentPath = widget.allVideos[_currentIndex];
+
+      await deleteItem(context, currentPath, deleteFromDisk: true);
+
+      if (mounted) Navigator.pop(context);
+    } catch (e) {
+      debugPrint("Delete error: $e");
     }
   }
 
@@ -107,48 +119,119 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor1.screenbackgroundColor,
-      appBar: AppBar(
-        backgroundColor: AppColor1.screenbackgroundColor,
-        title: Text("Videos", style: AppColor1().customTextStyleBold16()),
 
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFE3EAF2),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: SvgPicture.asset(
+            AllIcons.backArrow,
+            width: 24,
+            height: 24,
+          ),
+        ),
+        title: Text(
+          "Status Saver",
+          style: AppColor1().customTextStyleBold16(),
+        ),
+        centerTitle: true,
       ),
+
       body: Column(
         children: [
-          // Video Player Area
+
+          // ================= VIDEO AREA =================
           Expanded(
-            child: Center(
-              child: _isInitializing
-                  ? const CircularProgressIndicator(color: Colors.black)
-                  : _chewieController != null
-                  ? Chewie(controller: _chewieController!)
-                  : const Icon(Icons.error, color: Colors.red, size: 60),
+            child: Stack(
+              children: [
+
+                Center(
+                  child: _isInitializing
+                      ? const CircularProgressIndicator(color: Colors.black)
+                      : _chewieController != null
+                          ? Chewie(controller: _chewieController!)
+                          : const Icon(Icons.error, color: Colors.red, size: 60),
+                ),
+
+                // ================= LEFT BUTTON =================
+                Align(
+      alignment: Alignment.centerRight,
+      child: GestureDetector(
+        onTap: _playNext,
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.asset(
+                "assets/images/audio_forward_white_con.png",
+                width: getWidth(30),
+                height: getHeight(30),
+              ),
+              SvgPicture.asset(
+                "assets/icons/move_forward_icon.svg",
+                width: getWidth(9),
+                height: getHeight(16),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+
+                // ================= RIGHT BUTTON =================
+                Align(
+      alignment: Alignment.centerLeft,
+      child: GestureDetector(
+        onTap: _playPrevious,
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.asset(
+                "assets/images/audio_forward_white_con.png",
+                width: getWidth(30),
+                height: getHeight(30),
+              ),
+              SvgPicture.asset(
+                "assets/icons/white_back_icon.svg",
+                width: getWidth(9),
+                height: getHeight(16),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+              ],
             ),
           ),
 
-          // Bottom Action Buttons
+          // ================= BOTTOM BAR =================
           Container(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
             decoration: const BoxDecoration(color: Colors.white),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Repost
+
                 bottomButton(
-                      () {}, // repost logic here
+                  () {
+                    shareStatus(widget.allVideos[_currentIndex]);
+                  },
                   AllIcons.repost,
                   AllText.Repost,
                 ),
 
-                // Share
                 bottomButton(
-                      () => shareStatus(widget.allVideos[_currentIndex]),
+                  () => shareStatus(widget.allVideos[_currentIndex]),
                   AllIcons.share,
                   AllText.Share,
                 ),
 
-                // Save OR Delete
                 bottomButton(
-                      () {
+                  () {
                     if (widget.isFromSavedScreen) {
                       _deleteVideo();
                     } else {
@@ -159,8 +242,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                       );
                     }
                   },
-                  widget.isFromSavedScreen ? AllIcons.delete : AllIcons.save,
-                  widget.isFromSavedScreen ? AllText.delete : AllText.Save,
+                  widget.isFromSavedScreen
+                      ? AllIcons.delete
+                      : AllIcons.save,
+                  widget.isFromSavedScreen
+                      ? AllText.delete
+                      : AllText.Save,
                 ),
               ],
             ),

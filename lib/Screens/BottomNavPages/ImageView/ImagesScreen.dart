@@ -69,12 +69,15 @@ class _ImageScreenState extends State<ImageScreen> {
 
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                        builder: (_) => ImageView(imagePath: data.path),
-                      ),
-                    );
+                   Navigator.push(
+  context,
+  CupertinoPageRoute(
+    builder: (_) => ImageView(
+      images: state.images.map((e) => e.path).toList(),
+      initialIndex: index,
+    ),
+  ),
+);
                   },
                   child: Container(
                     height: getHeight(175),

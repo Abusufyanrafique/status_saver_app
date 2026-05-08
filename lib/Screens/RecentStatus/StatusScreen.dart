@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:status_saver/Local%20Database/LocalDatabase.dart';
 import 'package:status_saver/Screens/BottomNavPages/AudioScreen.dart';
 import 'package:status_saver/Screens/BottomNavPages/VideoView/VideoScreens.dart';
+import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/images/app_images.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../Utils/Constants/AllColors.dart';
@@ -69,12 +70,12 @@ actions: [
         );
       },
       child: Container(
-        width: 36,
-        height: 36,
+        width: getWidth(24),
+        height: getHeight(24),
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              "assets/icons/whitecontainer.png",
+              "assets/images/whitecontainer.png",
             ),
             fit: BoxFit.cover,
           ),
@@ -82,8 +83,8 @@ actions: [
         child: Center(
           child: SvgPicture.asset(
             AllIcons.chat,
-            width: 16,
-            height: 16,
+            width: getWidth(16),
+            height: getHeight(15),
           ),
         ),
       ),
@@ -98,12 +99,12 @@ actions: [
         shareToWhatsAppDirect();
       },
       child: Container(
-        width: 36,
-        height: 36,
+        width: getWidth(24),
+        height: getHeight(24),
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              "assets/icons/whitecontainer.png",
+              "assets/images/whitecontainer.png",
             ),
             fit: BoxFit.cover,
           ),
@@ -111,8 +112,8 @@ actions: [
         child: Center(
           child: SvgPicture.asset(
             AllIcons.share,
-            width: 16,
-            height: 16,
+            width: getWidth(14),
+            height: getHeight(14),
           ),
         ),
       ),
@@ -127,12 +128,12 @@ actions: [
         shareToWhatsAppDirect();
       },
       child: Container(
-        width: 36,
-        height: 36,
+        width: getWidth(24),
+        height: getHeight(24),
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              "assets/icons/whitecontainer.png",
+              "assets/images/whitecontainer.png",
             ),
             fit: BoxFit.cover,
           ),
@@ -140,8 +141,8 @@ actions: [
         child: Center(
           child: SvgPicture.asset(
             AllIcons.notification,
-            width: 16,
-            height: 16,
+            width: getWidth(13),
+            height: getHeight(16),
           ),
         ),
       ),

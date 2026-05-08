@@ -26,6 +26,7 @@ class _AudioScreenState extends State<AudioScreen> {
   int _playedBars = 0;
   bool _isPlaying = false;
   Duration _totalDuration = Duration.zero;
+ final bool isFromSavedScreen = true;
 
   @override
   void initState() {
@@ -119,12 +120,15 @@ class _AudioScreenState extends State<AudioScreen> {
                   MaterialPageRoute(
                     builder: (_) => AudioPlayerScreen(
                       audioPath: path,
+                      isFromSavedScreen: false,
+                       audioList: audioFiles.map((e) => e.path).toList(),
+                       initialIndex: index,
                     ),
                   ),
                 );
               },
               child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 8),
+                margin: const EdgeInsets.symmetric(vertical: 8,horizontal: 40),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -177,8 +181,8 @@ class _AudioScreenState extends State<AudioScreen> {
                               height: _waveHeights[i],
                               decoration: BoxDecoration(
                                 color: isGreen
-                                    ? Colors.green
-                                    : Colors.black.withOpacity(0.75),
+                                    ? Colors.black
+                                    : Color(0xFFE3EAF2),
                                 borderRadius: BorderRadius.circular(2),
                               ),
                             );

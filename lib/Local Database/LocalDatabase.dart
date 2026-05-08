@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
@@ -23,19 +24,13 @@ import '../Utils/Constants/userFeedback.dart';
 import 'package:path/path.dart';
 part 'LocalDatabase.g.dart';
 
-
-
-
 Future<String> getAppFolderPath() async {
   final dir = await getExternalStorageDirectory();
   final path = "${dir!.path}/MySavedStatus";
-
   final folder = Directory(path);
-
   if (!await folder.exists()) {
     await folder.create(recursive: true);
   }
-
   return path;
 }
 
@@ -44,40 +39,38 @@ Future<String?> saveFilePermanently(String originalPath) async {
     final folderPath = await getAppFolderPath();
     final fileName = basename(originalPath);
     final newPath = "$folderPath/$fileName";
-
     final newFile = File(newPath);
-
     if (await newFile.exists()) {
-      return newPath; // already saved
+      return newPath;
     }
-
     await newFile.writeAsBytes(
       await File(originalPath).readAsBytes(),
     );
-
     return newPath;
   } catch (e) {
     print("Error: $e");
     return null;
   }
 }
+
 @HiveType(typeId: 0)
 class SavedItem extends HiveObject {
   @HiveField(0)
   final String path;
 
   @HiveField(1)
-  final String type; // 'image' ya 'video'
+  final String type;
 
   @HiveField(2)
   final DateTime dateTime;
 
   SavedItem({
-    required this.path, 
-    required this.type, 
-    required this.dateTime
-    });
+    required this.path,
+    required this.type,
+    required this.dateTime,
+  });
 }
+
 class LocalDatabase extends StatelessWidget {
   const LocalDatabase({super.key});
 
@@ -86,6 +79,7 @@ class LocalDatabase extends StatelessWidget {
     return Scaffold();
   }
 }
+
 class SavedItemsScreen extends StatelessWidget {
   const SavedItemsScreen({super.key});
 
@@ -115,29 +109,34 @@ class SavedItemsScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            MediaGridScreen(mediaType: 'image', context: context,),
-             MediaGridScreen(mediaType: 'video', context: context,),
-             MediaGridScreen(mediaType: 'audio', context: context,),
+            MediaGridScreen(mediaType: 'image', context: context),
+            MediaGridScreen(mediaType: 'video', context: context),
+            MediaGridScreen(mediaType: 'audio', context: context),
           ],
         ),
       ),
     );
   }
 }
+
 class MediaGridScreen extends StatefulWidget {
   final String mediaType;
   final BuildContext context;
 
-  const MediaGridScreen({super.key, required this.mediaType, required this.context});
+  const MediaGridScreen({
+    super.key,
+    required this.mediaType,
+    required this.context,
+  });
 
   @override
   State<MediaGridScreen> createState() => _MediaGridScreenState();
 }
+
 class _MediaGridScreenState extends State<MediaGridScreen> {
-  // Tracks selected item paths
   final Set<String> _selectedPaths = {};
   bool get _isSelectionMode => _selectedPaths.isNotEmpty;
-  // Long press → enter selection mode and select item
+
   void _onLongPress(String path) {
     setState(() {
       if (_selectedPaths.contains(path)) {
@@ -148,13 +147,12 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
     });
   }
 
-  // Tap → toggle if in selection mode, else navigate
   void _onTap(
-    String path, 
-    SavedItem item, 
-    int index, 
-    List<SavedItem> allItems
-    ) {
+    String path,
+    SavedItem item,
+    int index,
+    List<SavedItem> allItems,
+  ) {
     if (_isSelectionMode) {
       setState(() {
         if (_selectedPaths.contains(path)) {
@@ -168,7 +166,6 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
     }
   }
 
-  // Select all / deselect all
   void _selectAll(List<SavedItem> items) {
     setState(() {
       if (_selectedPaths.length == items.length) {
@@ -182,8 +179,6 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
   void _clearSelection() {
     setState(() => _selectedPaths.clear());
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -202,9 +197,7 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
           return Center(
             child: Text(
               "No ${widget.mediaType} saved yet!",
-              style: const TextStyle(
-                color: Colors.grey
-                ),
+              style: const TextStyle(color: Colors.grey),
             ),
           );
         }
@@ -216,10 +209,12 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
               Container(
                 color: Colors.white10,
                 padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    const EdgeInsets.symmetric(
+                      horizontal: 16, 
+                      vertical: 8
+                      ),
                 child: Row(
                   children: [
-                    // Select All circle
                     GestureDetector(
                       onTap: () => _selectAll(filteredItems),
                       child: AnimatedContainer(
@@ -231,32 +226,27 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
                           color: _selectedPaths.length == filteredItems.length
                               ? Colors.white
                               : Colors.transparent,
-                          border: Border.all(
-                            color: Colors.white, width: 2
-                            ),
+                          border: Border.all(color: Colors.white, width: 2),
                         ),
                         child: _selectedPaths.length == filteredItems.length
                             ? const Icon(Icons.check,
-                            size: 16, color: Colors.black)
+                                size: 16, color: Colors.black)
                             : null,
                       ),
                     ),
                     const SizedBox(width: 10),
-                     Text(
+                    Text(
                       "All",
-                      style: AppColor1().customTextStyle12(
-                        color: AppColor1.textColor
-                        )
+                      style: AppColor1()
+                          .customTextStyle12(color: AppColor1.textColor),
                     ),
                     const Spacer(),
                     Text(
                       "${_selectedPaths.length} selected",
-                      style:  AppColor1().customTextStyle12(
-                        color: AppColor1.textColor
-                        )
+                      style: AppColor1()
+                          .customTextStyle12(color: AppColor1.textColor),
                     ),
                     const SizedBox(width: 4),
-                    // Delete button
                     IconButton(
                       icon: const Icon(
                         Icons.delete, 
@@ -264,100 +254,157 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
                         ),
                       onPressed: _deleteSelected,
                     ),
-                    // Cancel selection
                     IconButton(
-                      icon: const Icon(
-                        Icons.close, 
-                        color: Colors.black
-                        ),
+                      icon: const Icon(Icons.close, color: Colors.black),
                       onPressed: _clearSelection,
                     ),
                   ],
                 ),
               ),
 
-            // ── Grid ──
+            // ── Grid / List ──
             Expanded(
-              child: GridView.builder(
-                padding: const EdgeInsets.all(10),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 8,
-                  mainAxisExtent: getHeight(175),
-                  mainAxisSpacing: 8,
-                ),
-                itemCount: filteredItems.length,
-                itemBuilder: (context, index) {
-                  final item = filteredItems[index];
-                  final isSelected = _selectedPaths.contains(item.path);
+              child: widget.mediaType == 'audio'
 
-                  return GestureDetector(
-                    onLongPress: () => _onLongPress(item.path),
-                    onTap: () =>
-                        _onTap(item.path, item, index, filteredItems),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: [
-                          // Thumbnail
-                          _buildThumbnail(item),
+                  // ── AUDIO → ListView ──
+                  ? ListView.builder(
+                      padding: const EdgeInsets.all(10),
+                      itemCount: filteredItems.length,
+                      itemBuilder: (context, index) {
+                        final item = filteredItems[index];
+                        final isSelected = _selectedPaths.contains(item.path);
 
-                          // Dark overlay when selected
-                          if (isSelected)
-                            Container(color: Colors.black45),
-
-                          // Play/audio icon in normal mode
-                          if (item.type != 'image' && !isSelected)
-                            const Center(
-                              child: Icon(
-                                Icons.play_circle_fill,
-                                color: Colors.white,
-                                size: 40,
-                              ),
+                        return GestureDetector(
+                          onLongPress: () => _onLongPress(item.path),
+                          onTap: () =>
+                              _onTap(item.path, item, index, filteredItems),
+                          child: Container(
+                            margin: const EdgeInsets.only(bottom: 8),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: isSelected
+                                  ? Border.all(color: Colors.blue, width: 2)
+                                  : null,
                             ),
+                            child: Stack(
+                              children: [
+                                _buildThumbnail(item),
 
-                          // Audio icon
-                          if (item.type == 'audio' && !isSelected)
-                            const Center(
-                              child: Icon(
-                                Icons.audiotrack,
-                                color: Colors.white,
-                                size: 40,
-                              ),
-                            ),
-
-                          // Selection circle — top right corner
-                          if (_isSelectionMode)
-                            Positioned(
-                              top: 8,
-                              right: 8,
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 200),
-                                width: 24,
-                                height: 24,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: isSelected
-                                      ? Colors.white
-                                      : Colors.transparent,
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2,
+                                // Dark overlay when selected
+                                if (isSelected)
+                                  Positioned.fill(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.black26,
+                                        borderRadius:
+                                            BorderRadius.circular(12),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                                child: isSelected
-                                    ? const Icon(Icons.check,
-                                    size: 14, color: Colors.black)
-                                    : null,
-                              ),
+
+                                // Selection circle
+                                if (_isSelectionMode)
+                                  Positioned(
+                                    top: 8,
+                                    right: 8,
+                                    child: AnimatedContainer(
+                                      duration:
+                                          const Duration(milliseconds: 200),
+                                      width: 24,
+                                      height: 24,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: isSelected
+                                            ? Colors.white
+                                            : Colors.transparent,
+                                        border: Border.all(
+                                          color: Colors.white,
+                                          width: 2,
+                                        ),
+                                      ),
+                                      child: isSelected
+                                          ? const Icon(Icons.check,
+                                              size: 14, color: Colors.black)
+                                          : null,
+                                    ),
+                                  ),
+                              ],
                             ),
-                        ],
+                          ),
+                        );
+                      },
+                    )
+
+                  // ── IMAGE / VIDEO → GridView ──
+                  : GridView.builder(
+                      padding: const EdgeInsets.all(10),
+                      gridDelegate:
+                          SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 8,
+                        mainAxisExtent: getHeight(175),
+                        mainAxisSpacing: 8,
                       ),
+                      itemCount: filteredItems.length,
+                      itemBuilder: (context, index) {
+                        final item = filteredItems[index];
+                        final isSelected = _selectedPaths.contains(item.path);
+
+                        return GestureDetector(
+                          onLongPress: () => _onLongPress(item.path),
+                          onTap: () =>
+                              _onTap(item.path, item, index, filteredItems),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                _buildThumbnail(item),
+
+                                if (isSelected)
+                                  Container(color: Colors.black45),
+
+                                if (item.type != 'image' && !isSelected)
+                                  const Center(
+                                    child: Icon(
+                                      Icons.play_circle_fill,
+                                      color: Colors.white,
+                                      size: 40,
+                                    ),
+                                  ),
+
+                                if (_isSelectionMode)
+                                  Positioned(
+                                    top: 8,
+                                    right: 8,
+                                    child: AnimatedContainer(
+                                      duration:
+                                          const Duration(milliseconds: 200),
+                                      width: 24,
+                                      height: 24,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: isSelected
+                                            ? Colors.white
+                                            : Colors.transparent,
+                                        border: Border.all(
+                                          color: Colors.white,
+                                          width: 2,
+                                        ),
+                                      ),
+                                      child: isSelected
+                                          ? const Icon(Icons.check,
+                                              size: 14, color: Colors.black)
+                                          : null,
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
             ),
           ],
         );
@@ -365,23 +412,128 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
     );
   }
 
+  // ── Thumbnail Builder ──
   Widget _buildThumbnail(SavedItem item) {
     final file = File(item.path);
-    if (item.type == 'image' && file.existsSync()) {
-      return Image.file(file, fit: BoxFit.cover);
-    }
-    return Container(
-      color: Colors.black87,
-      child: Center(
-        child: Icon(
-          item.type == 'video' ? Icons.videocam : Icons.audiotrack,
-          color: Colors.white38,
-          size: 40,
-        ),
-      ),
+
+    /// IMAGE
+   /// IMAGE
+if (item.type == 'image') {
+
+  /// CHECK FILE EXISTS + NOT EMPTY
+  if (file.existsSync() && file.lengthSync() > 0) {
+
+    return Image.file(
+      file,
+      fit: BoxFit.cover,
+
+      /// HANDLE CORRUPT IMAGE
+      errorBuilder: (context, error, stackTrace) {
+        return Container(
+          color: Colors.grey.shade300,
+          child: const Center(
+            child: Icon(
+              Icons.broken_image,
+              size: 40,
+              color: Colors.grey,
+            ),
+          ),
+        );
+      },
     );
   }
 
+  /// EMPTY IMAGE FILE
+  return Container(
+    color: Colors.grey.shade300,
+    child: const Center(
+      child: Icon(
+        Icons.broken_image,
+        size: 40,
+        color: Colors.grey,
+      ),
+    ),
+  );
+}
+
+    /// VIDEO
+    if (item.type == 'video') {
+      return Container(
+        decoration: BoxDecoration(
+          color: Colors.black87,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        child: const Center(
+          child: Icon(
+            Icons.play_circle_fill,
+            color: Colors.white,
+            size: 45,
+          ),
+        ),
+      );
+    }
+
+    /// AUDIO
+    if (item.type == 'audio') {
+      return Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 12, 
+          vertical: 10
+          ),
+        child: Row(
+          children: [
+            /// PLAY BUTTON
+          GestureDetector(
+  onTap: () {
+    
+  },
+  child: Container(
+    width: 34,
+    height: 34,
+    decoration: BoxDecoration(
+      color: Colors.grey.shade100,
+      shape: BoxShape.circle,
+    ),
+    child: Icon(
+       Icons.play_arrow ,
+      size: 20,
+      color: Colors.black87,
+    ),
+  ),
+),
+
+            const SizedBox(width: 12),
+
+            /// AUDIO WAVE
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(
+                  40,
+                  (index) {
+                    final heights = [
+                      6.0, 10.0, 14.0, 8.0, 18.0,
+                      12.0, 7.0, 15.0, 9.0, 13.0,
+                    ];
+                    return Container(
+                      width: 1.6,
+                      height: heights[index % heights.length],
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return const SizedBox();
+  }
 
   Future<void> _deleteSelected() async {
     final bool? confirmed = await showDialog<bool>(
@@ -398,10 +550,8 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text(
-              "Cancel", 
-              style: TextStyle(color: Colors.grey
-              )),
+            child: const Text("Cancel",
+                style: TextStyle(color: Colors.grey)),
           ),
           ElevatedButton(
             onPressed: () => Navigator.pop(ctx, true),
@@ -420,13 +570,11 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
 
     if (confirmed != true) return;
 
-    // Delete each selected item from disk + Hive
     final box = Hive.box<SavedItem>('saved_items');
     for (final path in _selectedPaths.toList()) {
       try {
         final file = File(path);
         if (await file.exists()) await file.delete();
-
         final item = box.values.firstWhere((e) => e.path == path);
         await item.delete();
       } catch (e) {
@@ -438,7 +586,7 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
       showAppSnackBar(
         context: widget.context,
         title: "Deleted",
-        message: "Successfully deleted ✅",
+        message: "Successfully deleted ",
         contentType: ContentType.success,
       );
       setState(() => _selectedPaths.clear());
@@ -446,17 +594,17 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
   }
 
   void _navigateToPlayer(
-    SavedItem item, 
-    int index, 
+    SavedItem item,
+    int index,
     List<SavedItem> allItems,
-    ) {
+  ) {
     if (item.type == 'image') {
       Navigator.push(
         widget.context,
-        MaterialPageRoute(
+        CupertinoPageRoute(
           builder: (_) => ImageView(
-            imagePath: item.path,
-            isFromSavedScreen: true,
+            images: allItems.map((e) => e.path).toList(),
+            initialIndex: index,
           ),
         ),
       );
@@ -478,18 +626,24 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
         MaterialPageRoute(
           builder: (_) => AudioPlayerScreen(
             audioPath: item.path,
-            //isFromSavedScreen: true,
+            isFromSavedScreen: true,
+            audioList: allItems.map((e) => e.path).toList(),
+            initialIndex: index,
           ),
         ),
       );
     }
   }
-
 }
-//=================================AudioView====================
+
+
+// =================================AudioView====================
 
 class AudioPlayerScreen extends StatefulWidget {
   final String audioPath;
+  final bool isFromSavedScreen;
+  final List<String> audioList;
+  final int initialIndex;
 
   static const List<double> _waveHeights = [
     6, 8, 12, 18, 24, 20, 14, 10, 16, 22,
@@ -499,7 +653,13 @@ class AudioPlayerScreen extends StatefulWidget {
     12, 18, 24, 28, 22, 16, 10, 8, 12, 18,
   ];
 
-  const AudioPlayerScreen({required this.audioPath, super.key});
+  const AudioPlayerScreen({
+    super.key,
+    required this.audioPath,
+    this.isFromSavedScreen = false,
+    required this.audioList,
+    required this.initialIndex,
+  });
 
   @override
   State<AudioPlayerScreen> createState() => _AudioPlayerScreenState();
@@ -507,54 +667,57 @@ class AudioPlayerScreen extends StatefulWidget {
 
 class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   final AudioPlayer _player = AudioPlayer();
+
   bool _isPlaying = false;
   int _playedBars = 0;
   Duration _totalDuration = Duration.zero;
+
+  late PageController _pageController;
+  int currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
 
-    _player.onDurationChanged.listen((duration) {
-      setState(() => _totalDuration = duration);
+    currentIndex = widget.initialIndex;
+    _pageController = PageController(initialPage: currentIndex);
+
+    _initAudio(currentIndex);
+
+    _player.onDurationChanged.listen((d) {
+      if (!mounted) return;
+      setState(() => _totalDuration = d);
     });
 
-    _player.onPositionChanged.listen((position) {
-      if (_totalDuration.inMilliseconds == 0) return;
-
-      final progress =
-          position.inMilliseconds / _totalDuration.inMilliseconds;
-
+    _player.onPositionChanged.listen((p) {
+      if (_totalDuration.inMilliseconds == 0 || !mounted) return;
+      final progress = p.inMilliseconds / _totalDuration.inMilliseconds;
       final bars = (progress * AudioPlayerScreen._waveHeights.length)
           .clamp(0, AudioPlayerScreen._waveHeights.length)
           .toInt();
-
-      if (mounted) setState(() => _playedBars = bars);
+      setState(() => _playedBars = bars);
     });
 
     _player.onPlayerComplete.listen((_) {
-      if (mounted) {
-        setState(() {
-          _isPlaying = false;
-          _playedBars = 0;
-        });
-      }
+      if (!mounted) return;
+      setState(() {
+        _isPlaying = false;
+        _playedBars = 0;
+      });
     });
 
     _player.onPlayerStateChanged.listen((s) {
-      if (mounted) {
-        setState(() => _isPlaying = s == PlayerState.playing);
-      }
+      if (!mounted) return;
+      setState(() => _isPlaying = s == PlayerState.playing);
     });
-
-    _playAudio();
   }
 
-  void _playAudio() async {
-    await _player.play(DeviceFileSource(widget.audioPath));
+  Future<void> _initAudio(int index) async {
+    await _player.stop();
+    await _player.play(DeviceFileSource(widget.audioList[index]));
   }
 
-  Future<void> _togglePlay() async {
+  void _togglePlay() async {
     if (_isPlaying) {
       await _player.pause();
     } else {
@@ -562,9 +725,28 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
+  void _next() {
+    if (currentIndex < widget.audioList.length - 1) {
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  void _previous() {
+    if (currentIndex > 0) {
+      _pageController.previousPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
   @override
   void dispose() {
     _player.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -572,142 +754,172 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE3EAF2),
-     appBar: AppBar(
-  backgroundColor: const Color(0xFFE3EAF2),
-
-  leading: IconButton(
-    onPressed: () {
-      Navigator.pop(context);
-    },
-    icon: SvgPicture.asset(
-      AllIcons.backArrow,
-      width: 24,
-      height: 24,
-    ),
-  ),
-
-  title: Text(
-    "Status Saver",
-    style: AppColor1().customTextStyleBold16(),
-  ),
-  centerTitle: true,
-),
-
-      ///  FIXED BODY
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFE3EAF2),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: SvgPicture.asset(
+            AllIcons.backArrow,
+            width: 24,
+            height: 24,
+          ),
+        ),
+        title: Text(
+          "Status Saver",
+          style: AppColor1().customTextStyleBold16(),
+        ),
+        centerTitle: true,
+      ),
       body: Column(
         children: [
-
-          ///  AUDIO PLAYER CENTER
           Expanded(
-            child: Center(
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: Row(
-                  children: [
-
-                    ///  PLAY / PAUSE
-                    GestureDetector(
-                      onTap: _togglePlay,
-                      child: Container(
-                        height: 34,
-                        width: 34,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              offset: const Offset(0, 1),
-                              blurRadius: 1,
-                            ),
-                          ],
+            child: Row(
+              children: [
+                /// LEFT BUTTON
+                GestureDetector(
+                  onTap: _previous,
+                  child: SizedBox(
+                    width: 60,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/images/audio_forward_white_con.png",
+                          width: getWidth(30),
+                          height: getHeight(30),
                         ),
-                        child: Icon(
-                          _isPlaying ? Icons.pause : Icons.play_arrow,
-                          color: Colors.black,
-                          size: 27,
+                        SvgPicture.asset(
+                          "assets/icons/white_back_icon.svg",
+                          width: getWidth(9),
+                          height: getHeight(16),
                         ),
-                      ),
+                      ],
                     ),
+                  ),
+                ),
 
-                    const SizedBox(width: 12),
-
-                    ///  WAVE BARS
-                    Expanded(
-                      child: Row(
-                        children: List.generate(
-                          AudioPlayerScreen._waveHeights.length,
-                          (i) {
-                            final isPlayed = i < _playedBars;
-
-                            return Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 1),
-                              width: 1.6,
-                              height: AudioPlayerScreen._waveHeights[i],
-                              decoration: BoxDecoration(
-                                color: isPlayed
-                                    ? Colors.black
-                                    : const Color(0xFFE3EAF2),
-                                borderRadius: BorderRadius.circular(2),
+                /// PAGE VIEW
+                Expanded(
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: widget.audioList.length,
+                    onPageChanged: (index) async {
+                      setState(() {
+                        currentIndex = index;
+                        _playedBars = 0;
+                      });
+                      await _initAudio(index);
+                    },
+                    itemBuilder: (context, index) {
+                      return Center(
+                        child: Container(
+                          height: 67,
+                          margin:
+                              const EdgeInsets.symmetric(horizontal: 10),
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Row(
+                            children: [
+                              GestureDetector(
+                                onTap: _togglePlay,
+                                child: Icon(
+                                  _isPlaying
+                                      ? Icons.pause
+                                      : Icons.play_arrow,
+                                  size: 30,
+                                ),
                               ),
-                            );
-                          },
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: List.generate(
+                                    AudioPlayerScreen._waveHeights.length,
+                                    (i) {
+                                      final isPlayed = i < _playedBars;
+                                      return Container(
+                                        width: 1.2,
+                                        height: AudioPlayerScreen
+                                            ._waveHeights[i],
+                                        color: isPlayed
+                                            ? Colors.black
+                                            : const Color(0xFFE3EAF2),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ),
-                  ],
+                      );
+                    },
+                  ),
                 ),
-              ),
+
+                /// RIGHT BUTTON
+                GestureDetector(
+                  onTap: _next,
+                  child: SizedBox(
+                    width: 60,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/images/audio_forward_white_con.png",
+                          width: getWidth(30),
+                          height: getHeight(30),
+                        ),
+                        SvgPicture.asset(
+                          "assets/icons/move_forward_icon.svg",
+                          width: getWidth(9),
+                          height: getHeight(16),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
 
-          ///  BOTTOM BUTTONS (SAME AS VIDEO)
+          /// FIXED BOTTOM BAR
           Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 16, 
-              horizontal: 20
-              ),
-            decoration: const BoxDecoration(
-              color: Colors.white
-              ),
-              child: Row(
+            padding:
+                const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+            decoration: const BoxDecoration(color: Colors.white),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
-                /// REPOST
                 bottomButton(
                   () => shareStatus(widget.audioPath),
-                  "assets/icons/repost.svg",
-                  "Repost",
+                  AllIcons.repost,
+                  AllText.Repost,
                 ),
-
-                /// SHARE
                 bottomButton(
-               () => shareStatus(widget.audioPath),
-               "assets/icons/share.svg",
-                "Share",
-                 ),
-
-                /// SAVE
+                  () => shareStatus(widget.audioPath),
+                  AllIcons.share,
+                  AllText.Share,
+                ),
                 bottomButton(
-            () {
-    saveMedia(
-      context,
-      widget.audioPath,
-      isVideo: false,
-    );
-    if (context.mounted) {
-  context.read<StatusBloc>().add(LoadStatusEvent());
-}
-  },
-  "assets/icons/save.svg",
-  "Save",
-),
+                  () {
+                    if (widget.isFromSavedScreen == true) {
+                      deleteAudio(context, widget.audioList[currentIndex]);
+                    } else {
+                      saveMedia(
+                        context,
+                        widget.audioList[currentIndex],
+                        isVideo: false,
+                      );
+                    }
+                  },
+                  widget.isFromSavedScreen ? AllIcons.delete : AllIcons.save,
+                  widget.isFromSavedScreen ? AllText.delete : AllText.Save,
+                ),
               ],
             ),
           ),
@@ -715,17 +927,51 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       ),
     );
   }
-         //++++++++++++==== audio saver function================++++++++++++
+}
 
-///================ SAVE MEDIA =================
+// =================== audio delete function ================
+Future<void> deleteAudio(BuildContext context, String path) async {
+  try {
+    final box = Hive.box<SavedItem>('saved_items');
+    final item = box.values.firstWhere(
+      (e) => e.path == path,
+      orElse: () => throw Exception("Item not found"),
+    );
+    final file = File(path);
+    if (await file.exists()) await file.delete();
+    await item.delete();
+    if (context.mounted) {
+      context.read<StatusBloc>().add(LoadStatusEvent());
+    }
+    if (context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Audio deleted successfully"),
+          backgroundColor: Colors.green,
+        ),
+      );
+    }
+  } catch (e) {
+    debugPrint("Delete Audio Error: $e");
+    if (context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Delete failed: $e"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+}
+
+// ++++++++++++==== audio saver function ================++++++++++++
+
 Future<void> saveMedia(
   BuildContext context,
   String sourcePath, {
   required bool isVideo,
 }) async {
-
   bool hasPermission = await requestPermission();
-
   if (!hasPermission) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text("Storage permission denied")),
@@ -734,7 +980,6 @@ Future<void> saveMedia(
   }
 
   final file = File(sourcePath);
-
   if (!file.existsSync()) {
     print("File not found");
     return;
@@ -742,15 +987,12 @@ Future<void> saveMedia(
 
   try {
     final dir = Directory("/storage/emulated/0/Download/StatusSaver");
-
     if (!await dir.exists()) {
       await dir.create(recursive: true);
     }
 
     final fileName = sourcePath.split('/').last;
-
     final newFile = await file.copy("${dir.path}/$fileName");
-
     print("SAVED AT: ${newFile.path}");
 
     try {
@@ -759,17 +1001,14 @@ Future<void> saveMedia(
       print("Media scan skipped: $scanError");
     }
 
-    /// ================= HIVE FIX ADDED =================
     final box = Hive.box<SavedItem>('saved_items');
-
     await box.add(
       SavedItem(
         path: newFile.path,
-        type: _getMediaType(newFile.path), //  FIXED HERE
+        type: _getMediaType(newFile.path),
         dateTime: DateTime.now(),
       ),
     );
-    /// ==================================================
 
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -783,10 +1022,7 @@ Future<void> saveMedia(
             borderRadius: BorderRadius.circular(12),
           ),
           content: Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 12,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 colors: [
@@ -807,10 +1043,8 @@ Future<void> saveMedia(
         ),
       );
     }
-
   } catch (e) {
     print("SAVE ERROR: $e");
-
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Save failed: $e")),
@@ -819,44 +1053,30 @@ Future<void> saveMedia(
   }
 }
 
-///================ PERMISSION =================
 Future<bool> requestPermission() async {
-
   if (Platform.isAndroid) {
-
-    /// Android 13+
     if (await Permission.photos.isGranted ||
         await Permission.videos.isGranted ||
         await Permission.audio.isGranted) {
-
       return true;
     }
-
     final photos = await Permission.photos.request();
     final videos = await Permission.videos.request();
     final audio = await Permission.audio.request();
-
-    return photos.isGranted ||
-        videos.isGranted ||
-        audio.isGranted;
+    return photos.isGranted || videos.isGranted || audio.isGranted;
   }
-
   return true;
 }
-  //===========================audio share function======================
 
-                          void shareStatus(String path) async {
-                          try {
-                          await Share.shareXFiles([XFile(path)], text: "Check this audio");
-                           } catch (e) {
-                             print("Share error: $e");
-                           }
-                           }
+void shareStatus(String path) async {
+  try {
+    await Share.shareXFiles([XFile(path)], text: "Check this audio");
+  } catch (e) {
+    print("Share error: $e");
+  }
+}
 
-
-
-  ///  Bottom Button Widget (Reusable)
- Widget bottomButton(
+Widget bottomButton(
   VoidCallback onTap,
   String imagePath,
   String text,
@@ -866,16 +1086,12 @@ Future<bool> requestPermission() async {
     child: Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-
-        
         SvgPicture.asset(
           imagePath,
           width: 18,
           height: 18,
         ),
-
         const SizedBox(width: 6),
-
         Flexible(
           child: Text(
             text,
@@ -887,9 +1103,6 @@ Future<bool> requestPermission() async {
     ),
   );
 }
-}
-
-
 
 class DirectChatScreen extends StatefulWidget {
   const DirectChatScreen({super.key});
@@ -897,21 +1110,18 @@ class DirectChatScreen extends StatefulWidget {
   @override
   State<DirectChatScreen> createState() => _DirectChatScreenState();
 }
+
 class _DirectChatScreenState extends State<DirectChatScreen> {
   final TextEditingController _messageController = TextEditingController();
   String fullPhoneNumber = "";
 
   Future<void> _launchWhatsApp() async {
-    if (fullPhoneNumber.isEmpty) {
-      // SnackBar ya error message dikhayen
-      return;
-    }
+    if (fullPhoneNumber.isEmpty) return;
 
     final String message = _messageController.text.trim();
-
     final String cleanNumber = fullPhoneNumber.replaceAll('+', '');
-
-    final String url = "https://wa.me/$cleanNumber?text=${Uri.encodeComponent(message)}";
+    final String url =
+        "https://wa.me/$cleanNumber?text=${Uri.encodeComponent(message)}";
     final Uri uri = Uri.parse(url);
 
     try {
@@ -930,17 +1140,17 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
       backgroundColor: AppColor1.screenbackgroundColor,
       appBar: AppBar(
         backgroundColor: AppColor1.screenbackgroundColor,
-        title:  Text("Direct Chat",
-        style: AppColor1().customTextStyleBold16(
-          fontWeight: FontWeight(500)
-          ),),
+        title: Text(
+          "Direct Chat",
+          style: AppColor1().customTextStyleBold16(
+            fontWeight: FontWeight(500),
+          ),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 150
-          ),
+        padding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 150),
         child: Center(
           child: Container(
             padding: const EdgeInsets.all(25),
@@ -952,124 +1162,112 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "Whatsapp Web", 
-                  style:AppColor1().customTextStyleBold16(
-                    fontWeight: FontWeight(500)
-                    )),
+                  "Whatsapp Web",
+                  style: AppColor1().customTextStyleBold16(
+                    fontWeight: FontWeight(500),
+                  ),
+                ),
                 SizedBox(height: getHeight(29)),
-               Text(
-               AllText.direclyMessage,
-              style: AppColor1()
-            .customTextStyleBold16(fontWeight: FontWeight.w400)
-            .copyWith(
-            color: Color(0xFF7C7777),
-            fontSize: 16,
-            height: 1.3,       
-             ),
-             textAlign: TextAlign.center,
-             ),
+                Text(
+                  AllText.direclyMessage,
+                  style: AppColor1()
+                      .customTextStyleBold16(fontWeight: FontWeight.w400)
+                      .copyWith(
+                        color: const Color(0xFF7C7777),
+                        fontSize: 16,
+                        height: 1.3,
+                      ),
+                  textAlign: TextAlign.center,
+                ),
                 const SizedBox(height: 49),
                 IntlPhoneField(
                   decoration: InputDecoration(
                     hintText: '3194160084',
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                       fontSize: 16,
-                      color: Color(0xFF000000)
+                      color: Color(0xFF000000),
                     ),
                     filled: true,
-                    fillColor: Color(0xFFF5F5F5),
+                    fillColor: const Color(0xFFF5F5F5),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide.none,
                     ),
-
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide.none,
                     ),
-
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide.none,
                     ),
-
                     contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 16, 
-                      vertical: 15
-                      ),
+                      horizontal: 16,
+                      vertical: 15,
+                    ),
                   ),
                   initialCountryCode: 'PK',
                   onChanged: (phone) {
                     fullPhoneNumber = phone.completeNumber;
                   },
-
                   dropdownIconPosition: IconPosition.trailing,
                   flagsButtonPadding: const EdgeInsets.only(left: 8),
-
-                   dropdownDecoration: BoxDecoration(
-                   color: Colors.white,
-                   borderRadius: BorderRadius.only(
-                   topLeft: Radius.circular(8),
-                   bottomLeft: Radius.circular(8),
-                   topRight: Radius.circular(8),
-                   bottomRight: Radius.circular(8),
-                   ),
-                   
+                  dropdownDecoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  
-                  flagsButtonMargin: EdgeInsets.symmetric(
+                  flagsButtonMargin: const EdgeInsets.symmetric(
                     horizontal: 12,
-                    vertical: 3
-                    ),
+                    vertical: 3,
+                  ),
                 ),
-
                 SizedBox(height: getHeight(15)),
-
-  Container(
-  height: 138,
-  width: double.infinity,
-  decoration: BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.circular(8),
-    border: Border.all(
-      color: Color(0xFFE0E0E0),
-      width: 1,
-    ),
-  ),
-  child: TextField(
-    controller: _messageController,
-    maxLines: null,
-    expands: true,  //  Container ki full height le ga
-    textAlign: TextAlign.center,
-    textAlignVertical: TextAlignVertical.center,
-    decoration: InputDecoration(
-      hintText: "Input Message Here",
-      hintStyle:AppColor1().customTextStyle14(
-        color: Color(0xFF7C7777),
-        
-        ),
-      border: InputBorder.none,  //  default border hatao
-      contentPadding: EdgeInsets.symmetric(horizontal: 16),
-    ),
-  ),
-),
-
+                Container(
+                  height: 138,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: const Color(0xFFE0E0E0),
+                      width: 1,
+                    ),
+                  ),
+                  child: TextField(
+                    controller: _messageController,
+                    maxLines: null,
+                    expands: true,
+                    textAlign: TextAlign.center,
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: InputDecoration(
+                      hintText: "Input Message Here",
+                      hintStyle: AppColor1().customTextStyle14(
+                        color: const Color(0xFF7C7777),
+                      ),
+                      border: InputBorder.none,
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 16),
+                    ),
+                  ),
+                ),
                 SizedBox(height: getHeight(49)),
-
                 SizedBox(
                   width: double.infinity,
                   height: getHeight(55),
                   child: ElevatedButton(
                     onPressed: _launchWhatsApp,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:Color(0xFFF5F5F5),
+                      backgroundColor: const Color(0xFFF5F5F5),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                               child:  Text("Send Message",
-                               style:AppColor1().customTextStyleBold16(
-                                fontWeight: FontWeight(400)),
-                                textAlign: TextAlign.center
+                    child: Text(
+                      "Send Message",
+                      style: AppColor1().customTextStyleBold16(
+                        fontWeight: FontWeight(400),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
@@ -1084,27 +1282,23 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
 
 String _getMediaType(String path) {
   final p = path.toLowerCase();
-
   if (p.endsWith(".jpg") ||
       p.endsWith(".jpeg") ||
       p.endsWith(".png") ||
       p.endsWith(".webp")) {
     return "image";
   }
-
   if (p.endsWith(".mp4") ||
       p.endsWith(".mkv") ||
       p.endsWith(".3gp") ||
       p.endsWith(".mov")) {
     return "video";
   }
-
   if (p.endsWith(".mp3") ||
       p.endsWith(".aac") ||
       p.endsWith(".opus") ||
       p.endsWith(".ogg")) {
     return "audio";
   }
-
   return "unknown";
 }
