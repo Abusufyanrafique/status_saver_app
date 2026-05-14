@@ -53,6 +53,7 @@ dependencies:
   intl_phone_field: ^3.2.0
   # bloc package
   flutter_bloc: ^9.1.1
+  flutter_localization: ^0.4.0
   equatable: ^2.0.8
   bloc: ^9.2.0
   saver_gallery: ^4.1.1
@@ -60,9 +61,11 @@ dependencies:
   just_audio: ^0.9.36
   # audioplayers: ^6.0.0
   media_scanner: ^2.1.0 
-  # flutter_local_notifications: ^17.2.2
-  # workmanager: ^0.5.2
+  flutter_local_notifications: ^17.2.2
   shared_preferences: ^2.5.5
+  intl: ^0.20.2
+  workmanager: ^0.6.0
+  
  
 
 

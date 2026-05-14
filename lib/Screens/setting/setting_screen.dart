@@ -63,8 +63,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           onPressed: () => Navigator.pop(context),
           icon: SvgPicture.asset(
             AllIcons.backArrow,
-            width: 22,
-            height: 22,
+            width: getWidth(22),
+            height: getHeight(22),
             colorFilter: const ColorFilter.mode(
               Colors.black87,
               BlendMode.srcIn,
@@ -73,14 +73,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         title: Text(
           AppText.setting,
-          style: AppColor1().customTextStyle12().copyWith(fontSize: 16),
+          style: AppColor1().
+          customTextStyle12().
+          copyWith(fontSize: 16),
         ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16, 
+          vertical: 12,
+          ),
         child: Column(
           children: [
+            SizedBox(height:getHeight(16)),
             // ── Container 1 ──
             _SettingsTile(
               title: AppText.notification,
@@ -154,7 +160,10 @@ class _SettingsTile extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16, 
+          vertical: 14
+          ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -169,7 +178,7 @@ class _SettingsTile extends StatelessWidget {
                     subtitle,
                     style: AppColor1()
                         .customTextStyleRegular10()
-                        .copyWith(fontSize: 12),
+                        .copyWith(fontSize: getFont(12)),
                   ),
                 ],
               ),
