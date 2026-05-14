@@ -13,7 +13,11 @@ import 'SizeConfig.dart';
 
 // --- UI Components ---
 
-Widget bottomButton(VoidCallback ontap, String icon, String title) {
+Widget bottomButton(
+  VoidCallback ontap, 
+  String icon, 
+  String title
+  ) {
   return GestureDetector(
     onTap: ontap,
     behavior: HitTestBehavior.opaque,

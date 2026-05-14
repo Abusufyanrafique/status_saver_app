@@ -94,7 +94,7 @@ class AppColor1{
       height: 1,
     );
   }
-  TextStyle customTextStyle12({
+   TextStyle customTextStyle12({
     Color color = textColor,
     FontWeight fontWeight = FontWeight.w500,
   }) {
@@ -270,6 +270,8 @@ class AppColor1{
       height: 1,
     );
   }
+
+  TextStyle? customTextStyleBold12() {}
 
 
 }

@@ -5,6 +5,7 @@ import 'package:status_saver/Local%20Database/LocalDatabase.dart';
 import 'package:status_saver/Screens/BottomNavPages/AudioScreen.dart';
 import 'package:status_saver/Screens/BottomNavPages/VideoView/VideoScreens.dart';
 import 'package:status_saver/Utils/Constants/SizeConfig.dart';
+import 'package:status_saver/config/components/app_drawer.dart';
 import 'package:status_saver/config/images/app_images.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../Utils/Constants/AllColors.dart';
@@ -15,7 +16,7 @@ import '../BottomNavPages/ImageView/ImagesScreen.dart';
 
 class StatusScreen extends StatefulWidget {
   final bool isBusiness;
-
+  
   const StatusScreen({
     super.key,
     this.isBusiness = false,
@@ -40,17 +41,24 @@ class _StatusScreenState extends State<StatusScreen> {
 
   @override
   Widget build(BuildContext context) {
+  
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+          drawer: const AppDrawer(),
         backgroundColor: AppColor1.screenbackgroundColor,
         appBar: AppBar(
   titleSpacing: 0,
   backgroundColor: AppColor1.screenbackgroundColor,
-  leading: IconButton(
-    icon: const Icon(Icons.menu),
-    onPressed: () {},
-  ),
+  // leading: IconButton(
+  //   icon: const Icon(Icons.menu),
+  //   onPressed: () {
+
+  //     //  Navigator.of(context).push(
+  //     //   MaterialPageRoute(builder: (context)=> const AppDrawer())
+  //     //  );
+  //   },
+  // ),
   title: Text(
     AllText.StatusSaverApp,
     style: AppColor1().customTextStyle20(),

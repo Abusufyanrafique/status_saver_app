@@ -3,6 +3,7 @@ class AppImages {
   static const String statussaverlogo = "assets/images/status_saver_logo.png";
   static const String statussavertext= "assets/images/statussavertext.png";
   static const String whitecontainer = "assets/images/whitecontainer.png";
+  static const String logo = "assets/images/logo.png";
 }
 
 class AllIcons{
@@ -18,5 +19,6 @@ class AllIcons{
   static const String repost = "assets/icons/repost.svg";
   static const String delete = "assets/icons/delete.svg";
   static const String backArrow ="assets/icons/back_arrow.svg";
+  
 
 }
