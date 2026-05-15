@@ -1,0 +1,50 @@
+﻿{
+  "appName": "APLIKASI PENYIMPAN STATUS",
+  "statusSaverApp": "Penyimpan Status",
+  "downloadKeepFavorite": "Unduh dan simpan status favorit selamanya",
+
+  "statusSaver": "Penyimpan Status",
+  "recentStatus": "Status terbaru",
+  "downloadedStatus": "Status diunduh",
+
+  "whatsappStatus": "Status WhatsApp",
+  "waBusinessStatus": "Status WA Business",
+
+  "whatsappCleaner": "Pembersih WhatsApp",
+  "waBusinessCleaner": "Pembersih WA Business",
+
+  "language": "Bahasa",
+  "removeAds": "Hapus iklan",
+  "settings": "Pengaturan",
+
+  "shareWithOther": "Bagikan",
+  "rateUs": "Nilai kami",
+  "about": "Tentang",
+
+  "images": "Gambar",
+  "videos": "Video",
+  "audio": "Audio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Kirim pesan tanpa simpan kontak",
+
+  "inputMessageHere": "Masukkan pesan",
+  "sendMessage": "Kirim",
+
+  "repost": "Repost",
+  "share": "Bagikan",
+  "save": "Simpan",
+
+  "notification": "Notifikasi",
+  "notificationSubtitle": "Notifikasi setiap status",
+
+  "autoSave": "Simpan otomatis",
+  "autoSaveSubtitle": "Status akan tersimpan otomatis",
+
+  "makeANewStatus": "Buat status baru",
+  "makeNewStatusSubtitle": "Buat status dengan titik merah",
+
+  "setting": "Pengaturan",
+  "delete": "Hapus"
+}

@@ -1,0 +1,52 @@
+{
+  "@@locale": "ar",
+
+  "appName": "تطبيق حفظ الحالة",
+  "statusSaverApp": "تطبيق حفظ الحالة",
+  "downloadKeepFavorite": "حفظ الحالات المفضلة إلى الأبد",
+
+  "statusSaver": "حافظ الحالة",
+  "recentStatus": "الحالات الأخيرة",
+  "downloadedStatus": "الحالات المحملة",
+
+  "whatsappStatus": "حالة واتساب",
+  "waBusinessStatus": "حالة واتساب للأعمال",
+
+  "whatsappCleaner": "منظف واتساب",
+  "waBusinessCleaner": "منظف واتساب بيزنس",
+
+  "language": "اللغة",
+  "removeAds": "إزالة الإعلانات",
+  "settings": "الإعدادات",
+
+  "shareWithOther": "مشاركة مع الآخرين",
+  "rateUs": "قيمنا",
+  "about": "حول",
+
+  "images": "صور",
+  "videos": "فيديوهات",
+  "audio": "صوت",
+
+  "whatsappWeb": "واتساب ويب",
+
+  "directlyMessage": "إرسال رسالة بدون حفظ الرقم",
+
+  "inputMessageHere": "اكتب الرسالة هنا",
+  "sendMessage": "إرسال",
+
+  "repost": "إعادة نشر",
+  "share": "مشاركة",
+  "save": "حفظ",
+
+  "notification": "إشعار",
+  "notificationSubtitle": "إشعار عند كل حالة",
+
+  "autoSave": "حفظ تلقائي",
+  "autoSaveSubtitle": "سيتم حفظ الحالة تلقائياً",
+
+  "makeANewStatus": "إنشاء حالة جديدة",
+  "makeNewStatusSubtitle": "إنشاء حالة بنقطة حمراء",
+
+  "setting": "الإعدادات",
+  "delete": "حذف"
+}

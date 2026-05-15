@@ -1,0 +1,50 @@
+﻿{
+  "appName": "Ứng dụng Lưu Trạng Thái",
+  "statusSaverApp": "Ứng dụng Lưu Trạng Thái",
+  "downloadKeepFavorite": "Tải xuống và lưu trạng thái yêu thích",
+
+  "statusSaver": "Trình lưu trạng thái",
+  "recentStatus": "Trạng thái gần đây",
+  "downloadedStatus": "Trạng thái đã tải",
+
+  "whatsappStatus": "Trạng thái WhatsApp",
+  "waBusinessStatus": "Trạng thái WA Business",
+
+  "whatsappCleaner": "Dọn WhatsApp",
+  "waBusinessCleaner": "Dọn WA Business",
+
+  "language": "Ngôn ngữ",
+  "removeAds": "Xóa quảng cáo",
+  "settings": "Cài đặt",
+
+  "shareWithOther": "Chia sẻ",
+  "rateUs": "Đánh giá",
+  "about": "Giới thiệu",
+
+  "images": "Hình ảnh",
+  "videos": "Video",
+  "audio": "Âm thanh",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Gửi tin nhắn không cần lưu liên hệ",
+
+  "inputMessageHere": "Nhập tin nhắn",
+  "sendMessage": "Gửi",
+
+  "repost": "Đăng lại",
+  "share": "Chia sẻ",
+  "save": "Lưu",
+
+  "notification": "Thông báo",
+  "notificationSubtitle": "Thông báo mỗi khi có trạng thái mới",
+
+  "autoSave": "Tự động lưu",
+  "autoSaveSubtitle": "Trạng thái sẽ được lưu tự động",
+
+  "makeANewStatus": "Tạo trạng thái mới",
+  "makeNewStatusSubtitle": "Tạo trạng thái với chấm đỏ",
+
+  "setting": "Cài đặt",
+  "delete": "Xóa"
+}

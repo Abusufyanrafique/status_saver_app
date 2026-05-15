@@ -6,8 +6,8 @@ import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/bloc/language/language_bloc.dart';
 import 'package:status_saver/bloc/language/language_event.dart';
 import 'package:status_saver/bloc/language/language_state.dart';
-import 'package:status_saver/config/apptext/app_text.dart';
 import 'package:status_saver/config/images/app_images.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:status_saver/models/language_model.dart';
 
 class LanguageScreen extends StatelessWidget {
@@ -15,6 +15,9 @@ class LanguageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //  FIX: Use null-safe access instead of force unwrap
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       backgroundColor: const Color(0xFFE8EEF5),
       appBar: AppBar(
@@ -35,7 +38,8 @@ class LanguageScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          AppText.language,
+          // ✅ FIX: Fallback to 'Language' if l10n is null
+          l10n?.language ?? 'Language',
           style: AppColor1().customTextStyle12().copyWith(fontSize: 16),
         ),
         centerTitle: true,
@@ -48,10 +52,8 @@ class LanguageScreen extends StatelessWidget {
         ),
       ),
 
-      // ── BlocBuilder wraps the list ──────────────────────────────────────
       body: BlocBuilder<LanguageBloc, LanguageState>(
         builder: (context, state) {
-          // Selected language determine karo
           final selected = state is LanguageLoaded
               ? state.selectedLanguage
               : LanguageModel.all.first;
@@ -66,7 +68,6 @@ class LanguageScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final lang = LanguageModel.all[index];
 
-              // Selected check — code + countryCode dono match hone chahiye
               final isSelected = lang.code == selected.code &&
                   lang.countryCode == selected.countryCode;
 
@@ -74,10 +75,6 @@ class LanguageScreen extends StatelessWidget {
                 language: lang,
                 isSelected: isSelected,
                 onTap: () {
-                  // Bloc ko ChangeLanguage event bhejna
-                   print("Tapped: $lang");
-                   print(lang.name);
-                   print(lang.code);
                   context.read<LanguageBloc>().add(ChangeLanguage(lang));
                 },
               );
@@ -109,7 +106,6 @@ class _LanguageTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        // ── Selected hone par blue border ──
         border: isSelected
             ? Border.all(color: Colors.blue, width: 1.5)
             : null,
@@ -126,12 +122,11 @@ class _LanguageTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
           borderRadius: BorderRadius.circular(12),
-          onTap: onTap, // ← Bloc event yahan fire hoga
+          onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                // ── Circular flag container ──
                 Container(
                   width: getWidth(38),
                   height: getHeight(38),
@@ -148,7 +143,6 @@ class _LanguageTile extends StatelessWidget {
                 ),
                 const SizedBox(width: 12),
 
-                // ── Language name + native name ──
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -173,7 +167,6 @@ class _LanguageTile extends StatelessWidget {
                   ),
                 ),
 
-                // ── Radio icon ──
                 Icon(
                   isSelected
                       ? Icons.radio_button_checked

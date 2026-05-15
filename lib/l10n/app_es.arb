@@ -1,0 +1,50 @@
+﻿{
+  "appName": "APP GUARDADOR DE ESTADO",
+  "statusSaverApp": "Guardador de Estado",
+  "downloadKeepFavorite": "Descarga y guarda tus estados favoritos para siempre",
+
+  "statusSaver": "Guardador de Estado",
+  "recentStatus": "Estados recientes",
+  "downloadedStatus": "Estados descargados",
+
+  "whatsappStatus": "Estado de WhatsApp",
+  "waBusinessStatus": "Estado de WA Business",
+
+  "whatsappCleaner": "Limpiador WhatsApp",
+  "waBusinessCleaner": "Limpiador WA Business",
+
+  "language": "Idioma",
+  "removeAds": "Quitar anuncios",
+  "settings": "Configuración",
+
+  "shareWithOther": "Compartir con otros",
+  "rateUs": "Califícanos",
+  "about": "Acerca de",
+
+  "images": "Imágenes",
+  "videos": "Videos",
+  "audio": "Audio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Enviar mensaje sin guardar contacto",
+
+  "inputMessageHere": "Escribe mensaje aquí",
+  "sendMessage": "Enviar",
+
+  "repost": "Republicar",
+  "share": "Compartir",
+  "save": "Guardar",
+
+  "notification": "Notificación",
+  "notificationSubtitle": "Notificación en cada estado",
+
+  "autoSave": "Guardado automático",
+  "autoSaveSubtitle": "Los estados se guardarán automáticamente",
+
+  "makeANewStatus": "Crear estado",
+  "makeNewStatusSubtitle": "Crear estado con punto rojo",
+
+  "setting": "Configuración",
+  "delete": "Eliminar"
+}

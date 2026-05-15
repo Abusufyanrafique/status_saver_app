@@ -1,0 +1,52 @@
+{
+  "@@locale": "en",
+
+  "appName": "STATUS SAVER APP",
+  "statusSaverApp": "Status Saver App",
+  "downloadKeepFavorite": "Download & Keep Your Favorite Status Forever",
+
+  "statusSaver": "Status Saver",
+  "recentStatus": "Recent Status",
+  "downloadedStatus": "Downloaded Status",
+
+  "whatsappStatus": "WhatsApp Status",
+  "waBusinessStatus": "WA Business Status",
+
+  "whatsappCleaner": "WhatsApp Cleaner",
+  "waBusinessCleaner": "WA Business Cleaner",
+
+  "language": "Language",
+  "removeAds": "Remove Ads",
+  "settings": "Settings",
+
+  "shareWithOther": "Share with others",
+  "rateUs": "Rate Us",
+  "about": "About",
+
+  "images": "Images",
+  "videos": "Videos",
+  "audio": "Audio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Send messages directly without saving phone number as contact.",
+
+  "inputMessageHere": "Enter message here",
+  "sendMessage": "Send message",
+
+  "repost": "Repost",
+  "share": "Share",
+  "save": "Save",
+
+  "notification": "Notification",
+  "notificationSubtitle": "Receive notifications every time there is a status.",
+
+  "autoSave": "Auto Save",
+  "autoSaveSubtitle": "New status will be saved automatically",
+
+  "makeANewStatus": "Create New Status",
+  "makeNewStatusSubtitle": "Create a status with red dot.",
+
+  "setting": "Settings",
+  "delete": "Delete"
+}

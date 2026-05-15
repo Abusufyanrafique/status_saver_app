@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:status_saver/Screens/HomeScreen/HomeScreen.dart';
 import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/colors/app_colors.dart';
 import 'package:status_saver/config/images/app_images.dart';
 import 'package:status_saver/config/style/text_style.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:status_saver/services/splash/splash_services.dart';
 
 class SplashyScreen extends StatefulWidget {
@@ -15,7 +17,6 @@ class SplashyScreen extends StatefulWidget {
 }
 
 class _SplashyScreenState extends State<SplashyScreen> {
-
   final SplashServices services = SplashServices();
 
   @override
@@ -38,28 +39,32 @@ class _SplashyScreenState extends State<SplashyScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     SizeConfig().init(context);
+
     return Scaffold(
-      backgroundColor:AppColors.backgroundcolor,
+      backgroundColor: AppColors.backgroundcolor,
       body: Center(
         child: Column(
-             mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           Center(
-            child: Image(
-            image: AssetImage(AppImages.statussaverlogo),
-            width:getWidth(343) ,
-            height: getHeight(229),
-                   
-                    ),
-          ),
+            Center(
+              child: Image(
+                image: AssetImage(AppImages.statussaverlogo),
+                width: getWidth(343),
+                height: getHeight(229),
+              ),
+            ),
 
-         SizedBox(height: getHeight(12)),
-       Text(
-       "STATUS SAVER APP",
-       style: kSize20TextColorNosiferRegular,
-)
-        ],),
+            SizedBox(height: getHeight(12)),
+
+            Text(
+              t.appName,
+              style: kSize20TextColorNosiferRegular,
+            ),
+          ],
+        ),
       ),
     );
   }

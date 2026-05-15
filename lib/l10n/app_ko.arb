@@ -1,0 +1,50 @@
+﻿{
+  "appName": "상태 저장 앱",
+  "statusSaverApp": "상태 저장기",
+  "downloadKeepFavorite": "좋아하는 상태를 영구 저장",
+
+  "statusSaver": "상태 저장",
+  "recentStatus": "최근 상태",
+  "downloadedStatus": "다운로드된 상태",
+
+  "whatsappStatus": "WhatsApp 상태",
+  "waBusinessStatus": "WA 비즈니스 상태",
+
+  "whatsappCleaner": "WhatsApp 클리너",
+  "waBusinessCleaner": "WA 비즈니스 클리너",
+
+  "language": "언어",
+  "removeAds": "광고 제거",
+  "settings": "설정",
+
+  "shareWithOther": "공유",
+  "rateUs": "평가하기",
+  "about": "정보",
+
+  "images": "이미지",
+  "videos": "비디오",
+  "audio": "오디오",
+
+  "whatsappWeb": "WhatsApp 웹",
+
+  "directlyMessage": "연락처 저장 없이 메시지 보내기",
+
+  "inputMessageHere": "메시지 입력",
+  "sendMessage": "전송",
+
+  "repost": "재게시",
+  "share": "공유",
+  "save": "저장",
+
+  "notification": "알림",
+  "notificationSubtitle": "모든 상태 알림",
+
+  "autoSave": "자동 저장",
+  "autoSaveSubtitle": "상태가 자동으로 저장됩니다",
+
+  "makeANewStatus": "새 상태 만들기",
+  "makeNewStatusSubtitle": "빨간 점 상태 만들기",
+
+  "setting": "설정",
+  "delete": "삭제"
+}

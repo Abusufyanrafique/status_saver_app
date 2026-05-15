@@ -1,0 +1,50 @@
+﻿{
+  "appName": "APPLICATION SAUVEGARDE STATUT",
+  "statusSaverApp": "Sauvegarde de Statut",
+  "downloadKeepFavorite": "Téléchargez et gardez vos statuts favoris pour toujours",
+
+  "statusSaver": "Sauvegarde Statut",
+  "recentStatus": "Statuts récents",
+  "downloadedStatus": "Statuts téléchargés",
+
+  "whatsappStatus": "Statut WhatsApp",
+  "waBusinessStatus": "Statut WA Business",
+
+  "whatsappCleaner": "Nettoyeur WhatsApp",
+  "waBusinessCleaner": "Nettoyeur WA Business",
+
+  "language": "Langue",
+  "removeAds": "Supprimer les pubs",
+  "settings": "Paramètres",
+
+  "shareWithOther": "Partager avec d'autres",
+  "rateUs": "Évaluez-nous",
+  "about": "À propos",
+
+  "images": "Images",
+  "videos": "Vidéos",
+  "audio": "Audio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Envoyer un message sans enregistrer le contact",
+
+  "inputMessageHere": "Entrez le message ici",
+  "sendMessage": "Envoyer",
+
+  "repost": "Reposter",
+  "share": "Partager",
+  "save": "Enregistrer",
+
+  "notification": "Notification",
+  "notificationSubtitle": "Notification à chaque statut",
+
+  "autoSave": "Sauvegarde auto",
+  "autoSaveSubtitle": "Les statuts seront sauvegardés automatiquement",
+
+  "makeANewStatus": "Créer un statut",
+  "makeNewStatusSubtitle": "Créer un statut avec point rouge",
+
+  "setting": "Paramètre",
+  "delete": "Supprimer"
+}

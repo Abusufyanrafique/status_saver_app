@@ -1,0 +1,50 @@
+﻿{
+  "appName": "اسٹیٹس سیور ایپ",
+  "statusSaverApp": "اسٹیٹس محفوظ کرنے والی ایپ",
+  "downloadKeepFavorite": "اپنے پسندیدہ اسٹیٹس ہمیشہ محفوظ کریں",
+
+  "statusSaver": "اسٹیٹس سیور",
+  "recentStatus": "حالیہ اسٹیٹس",
+  "downloadedStatus": "ڈاؤن لوڈ شدہ اسٹیٹس",
+
+  "whatsappStatus": "واٹس ایپ اسٹیٹس",
+  "waBusinessStatus": "واٹس ایپ بزنس اسٹیٹس",
+
+  "whatsappCleaner": "واٹس ایپ کلینر",
+  "waBusinessCleaner": "واٹس ایپ بزنس کلینر",
+
+  "language": "زبان",
+  "removeAds": "اشتہارات ہٹائیں",
+  "settings": "سیٹنگز",
+
+  "shareWithOther": "دوسروں کے ساتھ شیئر کریں",
+  "rateUs": "ہمیں ریٹ کریں",
+  "about": "ہمارے بارے میں",
+
+  "images": "تصاویر",
+  "videos": "ویڈیوز",
+  "audio": "آڈیو",
+
+  "whatsappWeb": "واٹس ایپ ویب",
+
+  "directlyMessage": "بغیر نمبر محفوظ کیے پیغام بھیجیں",
+
+  "inputMessageHere": "یہاں پیغام لکھیں",
+  "sendMessage": "بھیجیں",
+
+  "repost": "ری پوسٹ",
+  "share": "شیئر",
+  "save": "محفوظ کریں",
+
+  "notification": "نوٹیفکیشن",
+  "notificationSubtitle": "ہر اسٹیٹس کی اطلاع ملے گی",
+
+  "autoSave": "آٹو سیو",
+  "autoSaveSubtitle": "نیا اسٹیٹس خود بخود محفوظ ہوگا",
+
+  "makeANewStatus": "نیا اسٹیٹس بنائیں",
+  "makeNewStatusSubtitle": "ریڈ ڈاٹ کے ساتھ اسٹیٹس بنائیں",
+
+  "setting": "سیٹنگ",
+  "delete": "ڈیلیٹ"
+}

@@ -1,0 +1,50 @@
+﻿{
+  "appName": "状态保存应用",
+  "statusSaverApp": "状态保存",
+  "downloadKeepFavorite": "下载并永久保存喜欢的状态",
+
+  "statusSaver": "状态保存器",
+  "recentStatus": "最近状态",
+  "downloadedStatus": "已下载状态",
+
+  "whatsappStatus": "WhatsApp状态",
+  "waBusinessStatus": "WA商业状态",
+
+  "whatsappCleaner": "WhatsApp清理器",
+  "waBusinessCleaner": "WA商业清理器",
+
+  "language": "语言",
+  "removeAds": "移除广告",
+  "settings": "设置",
+
+  "shareWithOther": "分享给他人",
+  "rateUs": "给我们评分",
+  "about": "关于",
+
+  "images": "图片",
+  "videos": "视频",
+  "audio": "音频",
+
+  "whatsappWeb": "WhatsApp网页版",
+
+  "directlyMessage": "无需保存联系人即可发送消息",
+
+  "inputMessageHere": "在此输入消息",
+  "sendMessage": "发送",
+
+  "repost": "转发",
+  "share": "分享",
+  "save": "保存",
+
+  "notification": "通知",
+  "notificationSubtitle": "每个状态都会通知",
+
+  "autoSave": "自动保存",
+  "autoSaveSubtitle": "状态将自动保存",
+
+  "makeANewStatus": "创建新状态",
+  "makeNewStatusSubtitle": "创建带红点的状态",
+
+  "setting": "设置",
+  "delete": "删除"
+}

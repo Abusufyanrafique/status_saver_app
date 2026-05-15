@@ -1,0 +1,50 @@
+﻿{
+  "appName": "APP SALVADOR DE STATUS",
+  "statusSaverApp": "Salvador de Status",
+  "downloadKeepFavorite": "Baixe e salve seus status favoritos para sempre",
+
+  "statusSaver": "Salvador de Status",
+  "recentStatus": "Status recentes",
+  "downloadedStatus": "Status baixados",
+
+  "whatsappStatus": "Status do WhatsApp",
+  "waBusinessStatus": "Status do WA Business",
+
+  "whatsappCleaner": "Limpeza WhatsApp",
+  "waBusinessCleaner": "Limpeza WA Business",
+
+  "language": "Idioma",
+  "removeAds": "Remover anúncios",
+  "settings": "Configurações",
+
+  "shareWithOther": "Compartilhar",
+  "rateUs": "Avalie-nos",
+  "about": "Sobre",
+
+  "images": "Imagens",
+  "videos": "Vídeos",
+  "audio": "Áudio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Enviar mensagem sem salvar contato",
+
+  "inputMessageHere": "Digite a mensagem aqui",
+  "sendMessage": "Enviar",
+
+  "repost": "Repostar",
+  "share": "Compartilhar",
+  "save": "Salvar",
+
+  "notification": "Notificação",
+  "notificationSubtitle": "Notificação para cada status",
+
+  "autoSave": "Salvar automaticamente",
+  "autoSaveSubtitle": "Os status serão salvos automaticamente",
+
+  "makeANewStatus": "Criar novo status",
+  "makeNewStatusSubtitle": "Criar status com ponto vermelho",
+
+  "setting": "Configuração",
+  "delete": "Excluir"
+}

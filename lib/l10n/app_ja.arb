@@ -1,0 +1,50 @@
+﻿{
+  "appName": "ステータス保存アプリ",
+  "statusSaverApp": "ステータスセーバー",
+  "downloadKeepFavorite": "お気に入りのステータスを永久に保存",
+
+  "statusSaver": "ステータス保存",
+  "recentStatus": "最近のステータス",
+  "downloadedStatus": "ダウンロード済みステータス",
+
+  "whatsappStatus": "WhatsAppステータス",
+  "waBusinessStatus": "WAビジネスステータス",
+
+  "whatsappCleaner": "WhatsAppクリーナー",
+  "waBusinessCleaner": "WAビジネスクリーナー",
+
+  "language": "言語",
+  "removeAds": "広告を削除",
+  "settings": "設定",
+
+  "shareWithOther": "共有",
+  "rateUs": "評価する",
+  "about": "について",
+
+  "images": "画像",
+  "videos": "動画",
+  "audio": "音声",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "連絡先を保存せずにメッセージ送信",
+
+  "inputMessageHere": "ここにメッセージを入力",
+  "sendMessage": "送信",
+
+  "repost": "再投稿",
+  "share": "共有",
+  "save": "保存",
+
+  "notification": "通知",
+  "notificationSubtitle": "すべてのステータスで通知",
+
+  "autoSave": "自動保存",
+  "autoSaveSubtitle": "ステータスは自動的に保存されます",
+
+  "makeANewStatus": "新しいステータス作成",
+  "makeNewStatusSubtitle": "赤いドット付きステータス作成",
+
+  "setting": "設定",
+  "delete": "削除"
+}

@@ -32,6 +32,8 @@ class AllText{
   static const String MakeNewStatusSubtitle = "Make a new status with red dot.";
   static const String Setting = "Setting";
   static const String delete = "Delete";
-
+  static const String whatsappStatus = "WhatsApp Status";
+  static const String waBusinessStatus = "WA Business Status";
+  static const String downloadedStatus = "Downloaded Status";
 }
 

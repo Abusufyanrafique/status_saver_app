@@ -1,0 +1,50 @@
+﻿{
+  "appName": "แอปบันทึกสถานะ",
+  "statusSaverApp": "แอปบันทึกสถานะ",
+  "downloadKeepFavorite": "ดาวน์โหลดและเก็บสถานะที่คุณชื่นชอบไว้ตลอดไป",
+
+  "statusSaver": "บันทึกสถานะ",
+  "recentStatus": "สถานะล่าสุด",
+  "downloadedStatus": "สถานะที่ดาวน์โหลดแล้ว",
+
+  "whatsappStatus": "สถานะ WhatsApp",
+  "waBusinessStatus": "สถานะ WA Business",
+
+  "whatsappCleaner": "ตัวล้าง WhatsApp",
+  "waBusinessCleaner": "ตัวล้าง WhatsApp Business",
+
+  "language": "ภาษา",
+  "removeAds": "ลบโฆษณา",
+  "settings": "การตั้งค่า",
+
+  "shareWithOther": "แชร์ให้คนอื่น",
+  "rateUs": "ให้คะแนนเรา",
+  "about": "เกี่ยวกับ",
+
+  "images": "รูปภาพ",
+  "videos": "วิดีโอ",
+  "audio": "เสียง",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "ส่งข้อความโดยไม่ต้องบันทึกเบอร์โทร",
+
+  "inputMessageHere": "พิมพ์ข้อความที่นี่",
+  "sendMessage": "ส่งข้อความ",
+
+  "repost": "โพสต์ใหม่",
+  "share": "แชร์",
+  "save": "บันทึก",
+
+  "notification": "การแจ้งเตือน",
+  "notificationSubtitle": "รับการแจ้งเตือนทุกสถานะ",
+
+  "autoSave": "บันทึกอัตโนมัติ",
+  "autoSaveSubtitle": "สถานะจะถูกบันทึกอัตโนมัติ",
+
+  "makeANewStatus": "สร้างสถานะใหม่",
+  "makeNewStatusSubtitle": "สร้างสถานะใหม่ด้วยจุดสีแดง",
+
+  "setting": "การตั้งค่า",
+  "delete": "ลบ"
+}

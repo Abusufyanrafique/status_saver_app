@@ -1,0 +1,50 @@
+﻿{
+  "appName": "STATUS SPEICHER APP",
+  "statusSaverApp": "Status Speicher",
+  "downloadKeepFavorite": "Lade deine Lieblings-Status herunter und speichere sie",
+
+  "statusSaver": "Status Speicher",
+  "recentStatus": "Letzte Status",
+  "downloadedStatus": "Heruntergeladene Status",
+
+  "whatsappStatus": "WhatsApp Status",
+  "waBusinessStatus": "WA Business Status",
+
+  "whatsappCleaner": "WhatsApp Reiniger",
+  "waBusinessCleaner": "WA Business Reiniger",
+
+  "language": "Sprache",
+  "removeAds": "Werbung entfernen",
+  "settings": "Einstellungen",
+
+  "shareWithOther": "Mit anderen teilen",
+  "rateUs": "Bewerte uns",
+  "about": "Über",
+
+  "images": "Bilder",
+  "videos": "Videos",
+  "audio": "Audio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Nachricht senden ohne Kontakt zu speichern",
+
+  "inputMessageHere": "Nachricht hier eingeben",
+  "sendMessage": "Senden",
+
+  "repost": "Repost",
+  "share": "Teilen",
+  "save": "Speichern",
+
+  "notification": "Benachrichtigung",
+  "notificationSubtitle": "Benachrichtigung bei jedem Status",
+
+  "autoSave": "Auto speichern",
+  "autoSaveSubtitle": "Status wird automatisch gespeichert",
+
+  "makeANewStatus": "Neuen Status erstellen",
+  "makeNewStatusSubtitle": "Status mit rotem Punkt erstellen",
+
+  "setting": "Einstellung",
+  "delete": "Löschen"
+}

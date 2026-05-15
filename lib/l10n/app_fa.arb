@@ -1,0 +1,50 @@
+﻿{
+  "appName": "اپ ذخیره وضعیت",
+  "statusSaverApp": "ذخیره وضعیت",
+  "downloadKeepFavorite": "دانلود و ذخیره وضعیت‌های مورد علاقه",
+
+  "statusSaver": "ذخیره وضعیت",
+  "recentStatus": "وضعیت‌های اخیر",
+  "downloadedStatus": "وضعیت‌های دانلود شده",
+
+  "whatsappStatus": "وضعیت واتساپ",
+  "waBusinessStatus": "وضعیت WA Business",
+
+  "whatsappCleaner": "پاک‌کن واتساپ",
+  "waBusinessCleaner": "پاک‌کن WA Business",
+
+  "language": "زبان",
+  "removeAds": "حذف تبلیغات",
+  "settings": "تنظیمات",
+
+  "shareWithOther": "اشتراک‌گذاری",
+  "rateUs": "امتیاز دهید",
+  "about": "درباره",
+
+  "images": "تصاویر",
+  "videos": "ویدیوها",
+  "audio": "صدا",
+
+  "whatsappWeb": "واتساپ وب",
+
+  "directlyMessage": "ارسال پیام بدون ذخیره مخاطب",
+
+  "inputMessageHere": "پیام را وارد کنید",
+  "sendMessage": "ارسال",
+
+  "repost": "بازنشر",
+  "share": "اشتراک",
+  "save": "ذخیره",
+
+  "notification": "اعلان",
+  "notificationSubtitle": "اعلان برای هر وضعیت",
+
+  "autoSave": "ذخیره خودکار",
+  "autoSaveSubtitle": "وضعیت‌ها به صورت خودکار ذخیره می‌شوند",
+
+  "makeANewStatus": "ایجاد وضعیت جدید",
+  "makeNewStatusSubtitle": "ایجاد وضعیت با نقطه قرمز",
+
+  "setting": "تنظیمات",
+  "delete": "حذف"
+}

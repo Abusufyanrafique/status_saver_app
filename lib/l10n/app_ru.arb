@@ -1,0 +1,50 @@
+﻿{
+  "appName": "Приложение для сохранения статусов",
+  "statusSaverApp": "Сохранение статусов",
+  "downloadKeepFavorite": "Скачивайте и сохраняйте любимые статусы",
+
+  "statusSaver": "Сохранение статусов",
+  "recentStatus": "Недавние статусы",
+  "downloadedStatus": "Скачанные статусы",
+
+  "whatsappStatus": "Статус WhatsApp",
+  "waBusinessStatus": "Статус WA Business",
+
+  "whatsappCleaner": "Очистка WhatsApp",
+  "waBusinessCleaner": "Очистка WA Business",
+
+  "language": "Язык",
+  "removeAds": "Удалить рекламу",
+  "settings": "Настройки",
+
+  "shareWithOther": "Поделиться",
+  "rateUs": "Оценить",
+  "about": "О приложении",
+
+  "images": "Изображения",
+  "videos": "Видео",
+  "audio": "Аудио",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Отправка сообщения без сохранения контакта",
+
+  "inputMessageHere": "Введите сообщение",
+  "sendMessage": "Отправить",
+
+  "repost": "Репост",
+  "share": "Поделиться",
+  "save": "Сохранить",
+
+  "notification": "Уведомление",
+  "notificationSubtitle": "Уведомления о статусах",
+
+  "autoSave": "Автосохранение",
+  "autoSaveSubtitle": "Статусы сохраняются автоматически",
+
+  "makeANewStatus": "Создать статус",
+  "makeNewStatusSubtitle": "Создать статус с красной точкой",
+
+  "setting": "Настройка",
+  "delete": "Удалить"
+}

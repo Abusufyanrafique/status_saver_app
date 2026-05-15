@@ -1,0 +1,50 @@
+﻿{
+  "appName": "स्टेटस सेवर ऐप",
+  "statusSaverApp": "स्टेटस सेवर ऐप",
+  "downloadKeepFavorite": "अपने पसंदीदा स्टेटस को हमेशा सेव करें",
+
+  "statusSaver": "स्टेटस सेवर",
+  "recentStatus": "हाल के स्टेटस",
+  "downloadedStatus": "डाउनलोड किए गए स्टेटस",
+
+  "whatsappStatus": "व्हाट्सएप स्टेटस",
+  "waBusinessStatus": "WA बिज़नेस स्टेटस",
+
+  "whatsappCleaner": "व्हाट्सएप क्लीनर",
+  "waBusinessCleaner": "WA बिज़नेस क्लीनर",
+
+  "language": "भाषा",
+  "removeAds": "विज्ञापन हटाएँ",
+  "settings": "सेटिंग्स",
+
+  "shareWithOther": "दूसरों के साथ शेयर करें",
+  "rateUs": "हमें रेट करें",
+  "about": "हमारे बारे में",
+
+  "images": "तस्वीरें",
+  "videos": "वीडियो",
+  "audio": "ऑडियो",
+
+  "whatsappWeb": "व्हाट्सएप वेब",
+
+  "directlyMessage": "बिना नंबर सेव किए संदेश भेजें",
+
+  "inputMessageHere": "यहाँ संदेश लिखें",
+  "sendMessage": "भेजें",
+
+  "repost": "रीपोस्ट",
+  "share": "शेयर",
+  "save": "सेव",
+
+  "notification": "सूचना",
+  "notificationSubtitle": "हर स्टेटस पर नोटिफिकेशन मिलेगा",
+
+  "autoSave": "ऑटो सेव",
+  "autoSaveSubtitle": "नया स्टेटस अपने आप सेव होगा",
+
+  "makeANewStatus": "नया स्टेटस बनाएँ",
+  "makeNewStatusSubtitle": "रेड डॉट के साथ स्टेटस बनाएँ",
+
+  "setting": "सेटिंग",
+  "delete": "डिलीट"
+}

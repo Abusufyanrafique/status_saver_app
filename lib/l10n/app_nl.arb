@@ -1,0 +1,50 @@
+﻿{
+  "appName": "Status Opslaan App",
+  "statusSaverApp": "Status Opslaan",
+  "downloadKeepFavorite": "Download en bewaar je favoriete status",
+
+  "statusSaver": "Status Opslaan",
+  "recentStatus": "Recente status",
+  "downloadedStatus": "Gedownloade status",
+
+  "whatsappStatus": "WhatsApp Status",
+  "waBusinessStatus": "WA Business Status",
+
+  "whatsappCleaner": "WhatsApp Reiniger",
+  "waBusinessCleaner": "WA Business Reiniger",
+
+  "language": "Taal",
+  "removeAds": "Verwijder advertenties",
+  "settings": "Instellingen",
+
+  "shareWithOther": "Delen",
+  "rateUs": "Beoordeel ons",
+  "about": "Over",
+
+  "images": "Afbeeldingen",
+  "videos": "Video's",
+  "audio": "Audio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Bericht sturen zonder contact op te slaan",
+
+  "inputMessageHere": "Typ bericht hier",
+  "sendMessage": "Verzenden",
+
+  "repost": "Herplaatsen",
+  "share": "Delen",
+  "save": "Opslaan",
+
+  "notification": "Melding",
+  "notificationSubtitle": "Melding bij elke status",
+
+  "autoSave": "Automatisch opslaan",
+  "autoSaveSubtitle": "Status wordt automatisch opgeslagen",
+
+  "makeANewStatus": "Nieuwe status maken",
+  "makeNewStatusSubtitle": "Status met rode stip maken",
+
+  "setting": "Instelling",
+  "delete": "Verwijderen"
+}

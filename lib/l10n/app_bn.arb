@@ -1,0 +1,50 @@
+﻿{
+  "appName": "স্ট্যাটাস সেভার অ্যাপ",
+  "statusSaverApp": "স্ট্যাটাস সেভার",
+  "downloadKeepFavorite": "আপনার পছন্দের স্ট্যাটাস ডাউনলোড ও সংরক্ষণ করুন",
+
+  "statusSaver": "স্ট্যাটাস সেভার",
+  "recentStatus": "সাম্প্রতিক স্ট্যাটাস",
+  "downloadedStatus": "ডাউনলোড করা স্ট্যাটাস",
+
+  "whatsappStatus": "হোয়াটসঅ্যাপ স্ট্যাটাস",
+  "waBusinessStatus": "WA বিজনেস স্ট্যাটাস",
+
+  "whatsappCleaner": "হোয়াটসঅ্যাপ ক্লিনার",
+  "waBusinessCleaner": "WA বিজনেস ক্লিনার",
+
+  "language": "ভাষা",
+  "removeAds": "বিজ্ঞাপন সরান",
+  "settings": "সেটিংস",
+
+  "shareWithOther": "শেয়ার করুন",
+  "rateUs": "আমাদের রেট করুন",
+  "about": "সম্পর্কে",
+
+  "images": "ছবি",
+  "videos": "ভিডিও",
+  "audio": "অডিও",
+
+  "whatsappWeb": "হোয়াটসঅ্যাপ ওয়েব",
+
+  "directlyMessage": "কন্টাক্ট সেভ না করেই মেসেজ পাঠান",
+
+  "inputMessageHere": "এখানে মেসেজ লিখুন",
+  "sendMessage": "পাঠান",
+
+  "repost": "পুনরায় পোস্ট",
+  "share": "শেয়ার",
+  "save": "সংরক্ষণ",
+
+  "notification": "নোটিফিকেশন",
+  "notificationSubtitle": "প্রতিটি স্ট্যাটাসে নোটিফিকেশন",
+
+  "autoSave": "অটো সেভ",
+  "autoSaveSubtitle": "স্ট্যাটাস স্বয়ংক্রিয়ভাবে সংরক্ষণ হবে",
+
+  "makeANewStatus": "নতুন স্ট্যাটাস তৈরি করুন",
+  "makeNewStatusSubtitle": "লাল ডট সহ স্ট্যাটাস তৈরি করুন",
+
+  "setting": "সেটিংস",
+  "delete": "মুছুন"
+}

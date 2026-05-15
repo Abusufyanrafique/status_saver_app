@@ -1,0 +1,23 @@
+﻿{
+  "appName": "Durum Kaydetme Uygulaması",
+  "statusSaverApp": "Durum Kaydedici",
+  "downloadKeepFavorite": "Favori durumlarınızı indirip saklayın",
+
+  "statusSaver": "Durum Kaydedici",
+  "recentStatus": "Son durumlar",
+  "downloadedStatus": "İndirilen durumlar",
+
+  "whatsappStatus": "WhatsApp Durumu",
+  "waBusinessStatus": "WA Business Durumu",
+
+  "whatsappCleaner": "WhatsApp Temizleyici",
+  "waBusinessCleaner": "WA Business Temizleyici",
+
+  "language": "Dil",
+  "removeAds": "Reklamları kaldır",
+  "settings": "Ayarlar",
+
+  "shareWithOther": "Başkalarıyla paylaş",
+  "rateUs": "Bizi değerlendir",
+  "about": "Hakkında"
+}

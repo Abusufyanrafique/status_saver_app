@@ -1,0 +1,50 @@
+﻿{
+  "appName": "APP SALVA STATO",
+  "statusSaverApp": "Salva Stato",
+  "downloadKeepFavorite": "Scarica e salva i tuoi stati preferiti",
+
+  "statusSaver": "Salva Stato",
+  "recentStatus": "Stati recenti",
+  "downloadedStatus": "Stati scaricati",
+
+  "whatsappStatus": "Stato WhatsApp",
+  "waBusinessStatus": "Stato WA Business",
+
+  "whatsappCleaner": "Pulitore WhatsApp",
+  "waBusinessCleaner": "Pulitore WA Business",
+
+  "language": "Lingua",
+  "removeAds": "Rimuovi pubblicità",
+  "settings": "Impostazioni",
+
+  "shareWithOther": "Condividi con altri",
+  "rateUs": "Valutaci",
+  "about": "Informazioni",
+
+  "images": "Immagini",
+  "videos": "Video",
+  "audio": "Audio",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Invia messaggi senza salvare contatto",
+
+  "inputMessageHere": "Scrivi messaggio qui",
+  "sendMessage": "Invia",
+
+  "repost": "Ripubblica",
+  "share": "Condividi",
+  "save": "Salva",
+
+  "notification": "Notifica",
+  "notificationSubtitle": "Notifica per ogni stato",
+
+  "autoSave": "Salvataggio automatico",
+  "autoSaveSubtitle": "Gli stati saranno salvati automaticamente",
+
+  "makeANewStatus": "Crea stato",
+  "makeNewStatusSubtitle": "Crea stato con punto rosso",
+
+  "setting": "Impostazione",
+  "delete": "Elimina"
+}

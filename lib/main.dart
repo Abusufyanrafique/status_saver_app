@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:status_saver/l10n/app_localizations.dart';
 // Screens
 import 'Screens/SplashScreen.dart';
 
@@ -99,7 +99,6 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
 
               debugShowCheckedModeBanner: false,
-
               // Current Locale
               locale: locale,
 
@@ -109,15 +108,12 @@ class MyApp extends StatelessWidget {
                   .toList(),
 
               // Localization Delegates
-              localizationsDelegates: const [
-
-                GlobalMaterialLocalizations.delegate,
-
-                GlobalWidgetsLocalizations.delegate,
-
-                GlobalCupertinoLocalizations.delegate,
-
-              ],
+             localizationsDelegates: const [
+   AppLocalizations.delegate, 
+   GlobalMaterialLocalizations.delegate,
+   GlobalWidgetsLocalizations.delegate,
+   GlobalCupertinoLocalizations.delegate,
+],
 
               home: const SplashyScreen(),
             );
