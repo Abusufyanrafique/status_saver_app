@@ -336,6 +336,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Delete'**
   String get delete;
+
+  /// No description provided for @directChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct Chat'**
+  String get directChat;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

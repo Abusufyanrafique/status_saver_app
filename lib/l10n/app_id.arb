@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "id",
   "appName": "APLIKASI PENYIMPAN STATUS",
   "statusSaverApp": "Penyimpan Status",
   "downloadKeepFavorite": "Unduh dan simpan status favorit selamanya",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "Buat status dengan titik merah",
 
   "setting": "Pengaturan",
-  "delete": "Hapus"
+  "delete": "Hapus",
+  "directChat": "Chat Langsung"
 }

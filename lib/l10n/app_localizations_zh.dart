@@ -109,4 +109,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get delete => '删除';
+
+  @override
+  String get directChat => '直接聊天';
 }

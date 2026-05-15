@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "de",
   "appName": "STATUS SPEICHER APP",
   "statusSaverApp": "Status Speicher",
   "downloadKeepFavorite": "Lade deine Lieblings-Status herunter und speichere sie",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "Status mit rotem Punkt erstellen",
 
   "setting": "Einstellung",
-  "delete": "Löschen"
+  "delete": "Löschen",
+  "directChat": "Direkt-Chat"
 }

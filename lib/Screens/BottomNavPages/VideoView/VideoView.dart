@@ -6,6 +6,7 @@ import 'package:hive/hive.dart';
 import 'package:status_saver/Utils/Constants/AllColors.dart';
 import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/images/app_images.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../../Local Database/LocalDatabase.dart' hide shareStatus;
@@ -117,6 +118,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppColor1.screenbackgroundColor,
 
@@ -131,7 +133,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           ),
         ),
         title: Text(
-          "Status Saver",
+          t.statusSaver,
           style: AppColor1().customTextStyleBold16(),
         ),
         centerTitle: true,
@@ -221,13 +223,13 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     shareStatus(widget.allVideos[_currentIndex]);
                   },
                   AllIcons.repost,
-                  AllText.Repost,
+                  t.repost,
                 ),
 
                 bottomButton(
                   () => shareStatus(widget.allVideos[_currentIndex]),
                   AllIcons.share,
-                  AllText.Share,
+                  t.share,
                 ),
 
                 bottomButton(
@@ -246,8 +248,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                       ? AllIcons.delete
                       : AllIcons.save,
                   widget.isFromSavedScreen
-                      ? AllText.delete
-                      : AllText.Save,
+                      ? t.delete
+                      : t.save,
                 ),
               ],
             ),

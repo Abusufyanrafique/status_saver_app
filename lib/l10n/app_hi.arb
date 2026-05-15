@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "hi",
   "appName": "स्टेटस सेवर ऐप",
   "statusSaverApp": "स्टेटस सेवर ऐप",
   "downloadKeepFavorite": "अपने पसंदीदा स्टेटस को हमेशा सेव करें",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "रेड डॉट के साथ स्टेटस बनाएँ",
 
   "setting": "सेटिंग",
-  "delete": "डिलीट"
+  "delete": "डिलीट",
+  "directChat": "डायरेक्ट चैट"
 }

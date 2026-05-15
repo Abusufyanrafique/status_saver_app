@@ -6,6 +6,7 @@ import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/apptext/app_text.dart';
 import 'package:status_saver/config/colors/app_colors.dart';
 import 'package:status_saver/config/images/app_images.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:status_saver/services/autosaverservice/auto_saver_service.dart';
 
 
@@ -54,6 +55,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+     final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFE3EAF2),
       appBar: AppBar(
@@ -72,7 +74,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
         title: Text(
-          AppText.setting,
+          t.setting,
           style: AppColor1().
           customTextStyle12().
           copyWith(fontSize: 16),
@@ -89,8 +91,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
             SizedBox(height:getHeight(16)),
             // ── Container 1 ──
             _SettingsTile(
-              title: AppText.notification,
-              subtitle: AppText.notificationsubtitle,
+              title: t.notification,
+              subtitle: t.notificationSubtitle,
               value: _notificationEnabled,
               onChanged: (val) => setState(() => _notificationEnabled = val),
               height: getHeight(70),
@@ -101,8 +103,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // ── Container 2 — Auto Save ──
             _SettingsTile(
-              title: AppText.autosave,
-              subtitle: AppText.autosavesubtitle,
+              title: t.autoSave,
+              subtitle: t.autoSaveSubtitle,
               value: _autoSaveEnabled,
               onChanged: _onAutoSaveToggle, 
               height: getHeight(54),
@@ -113,8 +115,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // ── Container 3 ──
             _SettingsTile(
-              title: AppText.makeANewstatus,
-              subtitle: AppText.makeNewStatusSubtitle,
+              title: t.makeANewStatus,
+              subtitle: t.makeNewStatusSubtitle,
               value: _makeNewStatusEnabled,
               onChanged: (val) => setState(() => _makeNewStatusEnabled = val),
               height: getHeight(54),

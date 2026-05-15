@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "it",
   "appName": "APP SALVA STATO",
   "statusSaverApp": "Salva Stato",
   "downloadKeepFavorite": "Scarica e salva i tuoi stati preferiti",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "Crea stato con punto rosso",
 
   "setting": "Impostazione",
-  "delete": "Elimina"
+  "delete": "Elimina",
+  "directChat": "Chat Diretto"
 }

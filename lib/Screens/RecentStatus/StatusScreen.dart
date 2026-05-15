@@ -7,6 +7,7 @@ import 'package:status_saver/Screens/BottomNavPages/VideoView/VideoScreens.dart'
 import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/components/app_drawer.dart';
 import 'package:status_saver/config/images/app_images.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../Utils/Constants/AllColors.dart';
 import '../../Utils/Constants/AllText.dart';
@@ -41,7 +42,7 @@ class _StatusScreenState extends State<StatusScreen> {
 
   @override
   Widget build(BuildContext context) {
-  
+  final t = AppLocalizations.of(context)!;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -60,7 +61,7 @@ class _StatusScreenState extends State<StatusScreen> {
   //   },
   // ),
   title: Text(
-    AllText.StatusSaverApp,
+    t.statusSaver,
     style: AppColor1().customTextStyle20(),
   ),
 actions: [

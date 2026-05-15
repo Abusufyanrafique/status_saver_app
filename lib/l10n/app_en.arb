@@ -48,5 +48,6 @@
   "makeNewStatusSubtitle": "Create a status with red dot.",
 
   "setting": "Settings",
-  "delete": "Delete"
+  "delete": "Delete",
+  "directChat": "Direct Chat"
 }

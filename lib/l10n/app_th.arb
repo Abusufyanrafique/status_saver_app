@@ -1,4 +1,6 @@
 ﻿{
+  "@@locale": "th",
+
   "appName": "แอปบันทึกสถานะ",
   "statusSaverApp": "แอปบันทึกสถานะ",
   "downloadKeepFavorite": "ดาวน์โหลดและเก็บสถานะที่คุณชื่นชอบไว้ตลอดไป",
@@ -46,5 +48,6 @@
   "makeNewStatusSubtitle": "สร้างสถานะใหม่ด้วยจุดสีแดง",
 
   "setting": "การตั้งค่า",
-  "delete": "ลบ"
+  "delete": "ลบ",
+  "directChat": "แชทโดยตรง"
 }

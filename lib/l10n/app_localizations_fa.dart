@@ -109,4 +109,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get delete => 'حذف';
+
+  @override
+  String get directChat => 'چت مستقیم';
 }

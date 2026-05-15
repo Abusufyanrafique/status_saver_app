@@ -109,4 +109,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get delete => '삭제';
+
+  @override
+  String get directChat => '다이렉트 채팅';
 }

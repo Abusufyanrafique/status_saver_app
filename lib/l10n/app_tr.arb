@@ -1,11 +1,13 @@
 ﻿{
+  "@@locale": "tr",
+
   "appName": "Durum Kaydetme Uygulaması",
   "statusSaverApp": "Durum Kaydedici",
   "downloadKeepFavorite": "Favori durumlarınızı indirip saklayın",
 
   "statusSaver": "Durum Kaydedici",
-  "recentStatus": "Son durumlar",
-  "downloadedStatus": "İndirilen durumlar",
+  "recentStatus": "Son Durumlar",
+  "downloadedStatus": "İndirilen Durumlar",
 
   "whatsappStatus": "WhatsApp Durumu",
   "waBusinessStatus": "WA Business Durumu",
@@ -14,10 +16,38 @@
   "waBusinessCleaner": "WA Business Temizleyici",
 
   "language": "Dil",
-  "removeAds": "Reklamları kaldır",
+  "removeAds": "Reklamları Kaldır",
   "settings": "Ayarlar",
 
-  "shareWithOther": "Başkalarıyla paylaş",
-  "rateUs": "Bizi değerlendir",
-  "about": "Hakkında"
+  "shareWithOther": "Başkalarıyla Paylaş",
+  "rateUs": "Bizi Değerlendir",
+  "about": "Hakkında",
+
+  "images": "Resimler",
+  "videos": "Videolar",
+  "audio": "Ses",
+
+  "whatsappWeb": "WhatsApp Web",
+
+  "directlyMessage": "Numarayı kaydetmeden doğrudan mesaj gönderin.",
+
+  "inputMessageHere": "Mesajınızı buraya girin",
+  "sendMessage": "Mesaj gönder",
+
+  "repost": "Yeniden paylaş",
+  "share": "Paylaş",
+  "save": "Kaydet",
+
+  "notification": "Bildirim",
+  "notificationSubtitle": "Her yeni durum geldiğinde bildirim alın.",
+
+  "autoSave": "Otomatik Kaydet",
+  "autoSaveSubtitle": "Yeni durumlar otomatik olarak kaydedilir",
+
+  "makeANewStatus": "Yeni Durum Oluştur",
+  "makeNewStatusSubtitle": "Kırmızı noktalı bir durum oluşturun.",
+
+  "setting": "Ayarlar",
+  "delete": "Sil",
+  "directChat": "Doğrudan Sohbet"
 }

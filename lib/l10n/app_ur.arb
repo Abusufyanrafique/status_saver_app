@@ -1,4 +1,6 @@
 ﻿{
+  "@@locale": "ur",
+
   "appName": "اسٹیٹس سیور ایپ",
   "statusSaverApp": "اسٹیٹس محفوظ کرنے والی ایپ",
   "downloadKeepFavorite": "اپنے پسندیدہ اسٹیٹس ہمیشہ محفوظ کریں",
@@ -46,5 +48,6 @@
   "makeNewStatusSubtitle": "ریڈ ڈاٹ کے ساتھ اسٹیٹس بنائیں",
 
   "setting": "سیٹنگ",
-  "delete": "ڈیلیٹ"
+  "delete": "ڈیلیٹ",
+  "directChat": "ڈائریکٹ چیٹ"
 }

@@ -109,4 +109,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get delete => 'डिलीट';
+
+  @override
+  String get directChat => 'डायरेक्ट चैट';
 }

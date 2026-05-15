@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "fr",
   "appName": "APPLICATION SAUVEGARDE STATUT",
   "statusSaverApp": "Sauvegarde de Statut",
   "downloadKeepFavorite": "Téléchargez et gardez vos statuts favoris pour toujours",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "Créer un statut avec point rouge",
 
   "setting": "Paramètre",
-  "delete": "Supprimer"
+  "delete": "Supprimer",
+  "directChat": "Chat Direct"
 }

@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "es",
   "appName": "APP GUARDADOR DE ESTADO",
   "statusSaverApp": "Guardador de Estado",
   "downloadKeepFavorite": "Descarga y guarda tus estados favoritos para siempre",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "Crear estado con punto rojo",
 
   "setting": "Configuración",
-  "delete": "Eliminar"
+  "delete": "Eliminar",
+  "directChat": "Chat Directo"
 }

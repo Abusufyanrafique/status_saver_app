@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "nl",
   "appName": "Status Opslaan App",
   "statusSaverApp": "Status Opslaan",
   "downloadKeepFavorite": "Download en bewaar je favoriete status",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "Status met rode stip maken",
 
   "setting": "Instelling",
-  "delete": "Verwijderen"
+  "delete": "Verwijderen",
+  "directChat": "Directe Chat"
 }

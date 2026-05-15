@@ -1,4 +1,6 @@
 ﻿{
+
+  "@@locale": "bn",
   "appName": "স্ট্যাটাস সেভার অ্যাপ",
   "statusSaverApp": "স্ট্যাটাস সেভার",
   "downloadKeepFavorite": "আপনার পছন্দের স্ট্যাটাস ডাউনলোড ও সংরক্ষণ করুন",
@@ -46,5 +48,6 @@
   "makeNewStatusSubtitle": "লাল ডট সহ স্ট্যাটাস তৈরি করুন",
 
   "setting": "সেটিংস",
-  "delete": "মুছুন"
+  "delete": "মুছুন",
+  "directChat": "ডাইরেক্ট চ্যাট"
 }

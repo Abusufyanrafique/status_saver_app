@@ -75,6 +75,7 @@ class _ImageScreenState extends State<ImageScreen> {
     builder: (_) => ImageView(
       images: state.images.map((e) => e.path).toList(),
       initialIndex: index,
+       isFromSavedScreen: false,
     ),
   ),
 );

@@ -1,4 +1,6 @@
 ﻿{
+  "@@locale": "vi",
+
   "appName": "Ứng dụng Lưu Trạng Thái",
   "statusSaverApp": "Ứng dụng Lưu Trạng Thái",
   "downloadKeepFavorite": "Tải xuống và lưu trạng thái yêu thích",
@@ -46,5 +48,6 @@
   "makeNewStatusSubtitle": "Tạo trạng thái với chấm đỏ",
 
   "setting": "Cài đặt",
-  "delete": "Xóa"
+  "delete": "Xóa",
+  "directChat": "Trò chuyện trực tiếp"
 }

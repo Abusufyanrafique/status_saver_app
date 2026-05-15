@@ -109,4 +109,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get delete => 'Xóa';
+
+  @override
+  String get directChat => 'Trò chuyện trực tiếp';
 }

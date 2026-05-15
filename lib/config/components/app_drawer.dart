@@ -2,42 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:status_saver/Screens/language/language.dart';
 import 'package:status_saver/Screens/setting/setting_screen.dart';
 import 'package:status_saver/Utils/Constants/AllColors.dart';
-import 'package:status_saver/config/apptext/app_text.dart';
 import 'package:status_saver/config/images/app_images.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
-  static final  List<_MenuItem> _menuItems = [
-
-    _MenuItem(
-      label: 'Language', 
-      isHighlighted: true,
-      onTap:(context){
-         Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => const LanguageScreen()),
-      );
-      }
-      ),
-    _MenuItem(label: 'Remove Ads'),
-    _MenuItem(label: 'Settings',
-    onTap: (context){
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => const SettingsScreen()),
-      );
-    }
-    ),
-    _MenuItem(label: 'Share with other'),
-    _MenuItem(label: 'Rate Us'),
-    _MenuItem(label: 'About'),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    // 75% of screen width — same as screenshot
+    final t = AppLocalizations.of(context)!;
     final double drawerWidth = MediaQuery.of(context).size.width * 0.75;
+
+    final List<_MenuItem> menuItems = [
+      _MenuItem(
+        label: t.language,
+        isHighlighted: true,
+        onTap: (context) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const LanguageScreen()),
+          );
+        },
+      ),
+      _MenuItem(label: t.removeAds),
+      _MenuItem(
+        label: t.settings,
+        onTap: (context) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const SettingsScreen()),
+          );
+        },
+      ),
+      _MenuItem(label: t.shareWithOther),
+      _MenuItem(label: t.rateUs),
+      _MenuItem(label: t.about),
+    ];
 
     return Drawer(
       width: drawerWidth,
@@ -49,30 +49,26 @@ class AppDrawer extends StatelessWidget {
           children: [
             // ── App Icon + Name ──
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16
-                ),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 16, 
-                    vertical: 18,
-                    ),
-                decoration: BoxDecoration(
+                  horizontal: 16,
+                  vertical: 18,
+                ),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // App icon
                     Image.asset(AppImages.logo),
                     const SizedBox(height: 12),
-                     Text(
-                      AppText.statusSaverApp,
-                        style: AppColor1().customTextStyle12().copyWith(
-                          fontSize: 16,
-                          
-                        ),
+                    Text(
+                      t.statusSaverApp,
+                      style: AppColor1().customTextStyle12().copyWith(
+                            fontSize: 16,
+                          ),
                     ),
                   ],
                 ),
@@ -86,7 +82,7 @@ class AppDrawer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
-                  children: _menuItems
+                  children: menuItems
                       .map((item) => _DrawerTile(item: item))
                       .toList(),
                 ),
@@ -107,7 +103,7 @@ class _MenuItem {
 
   const _MenuItem({
     required this.label,
-    this.isHighlighted = false, 
+    this.isHighlighted = false,
     this.onTap,
   });
 }
@@ -123,22 +119,18 @@ class _DrawerTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Material(
-        color: item.isHighlighted
-            ? Colors.white
-            : const Color(0xFFECEFF3),
+        color: item.isHighlighted ? Colors.white : const Color(0xFFECEFF3),
         borderRadius: BorderRadius.circular(30),
         child: InkWell(
           borderRadius: BorderRadius.circular(30),
           onTap: () {
             Navigator.pop(context);
-            // TODO: handle navigation
             if (item.onTap != null) {
               item.onTap!(context);
             }
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 20, vertical: 14),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
             child: Row(
               children: [
                 Text(

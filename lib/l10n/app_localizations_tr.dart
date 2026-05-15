@@ -21,10 +21,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get statusSaver => 'Durum Kaydedici';
 
   @override
-  String get recentStatus => 'Son durumlar';
+  String get recentStatus => 'Son Durumlar';
 
   @override
-  String get downloadedStatus => 'İndirilen durumlar';
+  String get downloadedStatus => 'İndirilen Durumlar';
 
   @override
   String get whatsappStatus => 'WhatsApp Durumu';
@@ -42,71 +42,74 @@ class AppLocalizationsTr extends AppLocalizations {
   String get language => 'Dil';
 
   @override
-  String get removeAds => 'Reklamları kaldır';
+  String get removeAds => 'Reklamları Kaldır';
 
   @override
   String get settings => 'Ayarlar';
 
   @override
-  String get shareWithOther => 'Başkalarıyla paylaş';
+  String get shareWithOther => 'Başkalarıyla Paylaş';
 
   @override
-  String get rateUs => 'Bizi değerlendir';
+  String get rateUs => 'Bizi Değerlendir';
 
   @override
   String get about => 'Hakkında';
 
   @override
-  String get images => 'Images';
+  String get images => 'Resimler';
 
   @override
-  String get videos => 'Videos';
+  String get videos => 'Videolar';
 
   @override
-  String get audio => 'Audio';
+  String get audio => 'Ses';
 
   @override
   String get whatsappWeb => 'WhatsApp Web';
 
   @override
-  String get directlyMessage => 'Send messages directly without saving phone number as contact.';
+  String get directlyMessage => 'Numarayı kaydetmeden doğrudan mesaj gönderin.';
 
   @override
-  String get inputMessageHere => 'Enter message here';
+  String get inputMessageHere => 'Mesajınızı buraya girin';
 
   @override
-  String get sendMessage => 'Send message';
+  String get sendMessage => 'Mesaj gönder';
 
   @override
-  String get repost => 'Repost';
+  String get repost => 'Yeniden paylaş';
 
   @override
-  String get share => 'Share';
+  String get share => 'Paylaş';
 
   @override
-  String get save => 'Save';
+  String get save => 'Kaydet';
 
   @override
-  String get notification => 'Notification';
+  String get notification => 'Bildirim';
 
   @override
-  String get notificationSubtitle => 'Receive notifications every time there is a status.';
+  String get notificationSubtitle => 'Her yeni durum geldiğinde bildirim alın.';
 
   @override
-  String get autoSave => 'Auto Save';
+  String get autoSave => 'Otomatik Kaydet';
 
   @override
-  String get autoSaveSubtitle => 'New status will be saved automatically';
+  String get autoSaveSubtitle => 'Yeni durumlar otomatik olarak kaydedilir';
 
   @override
-  String get makeANewStatus => 'Create New Status';
+  String get makeANewStatus => 'Yeni Durum Oluştur';
 
   @override
-  String get makeNewStatusSubtitle => 'Create a status with red dot.';
+  String get makeNewStatusSubtitle => 'Kırmızı noktalı bir durum oluşturun.';
 
   @override
-  String get setting => 'Settings';
+  String get setting => 'Ayarlar';
 
   @override
-  String get delete => 'Delete';
+  String get delete => 'Sil';
+
+  @override
+  String get directChat => 'Doğrudan Sohbet';
 }

@@ -48,5 +48,6 @@
   "makeNewStatusSubtitle": "إنشاء حالة بنقطة حمراء",
 
   "setting": "الإعدادات",
-  "delete": "حذف"
+  "delete": "حذف",
+  "directChat": "الدردشة المباشرة"
 }

@@ -1,4 +1,5 @@
 ﻿{
+  "@@locale": "fa",
   "appName": "اپ ذخیره وضعیت",
   "statusSaverApp": "ذخیره وضعیت",
   "downloadKeepFavorite": "دانلود و ذخیره وضعیت‌های مورد علاقه",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "ایجاد وضعیت با نقطه قرمز",
 
   "setting": "تنظیمات",
-  "delete": "حذف"
+  "delete": "حذف",
+  "directChat": "چت مستقیم"
 }

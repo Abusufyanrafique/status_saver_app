@@ -1,4 +1,5 @@
 {
+  "@@locale": "ms",
   "appName": "Aplikasi Status Saver",
   "statusSaverApp": "Aplikasi Status Saver",
   "downloadKeepFavorite": "Muat turun & simpan status kegemaran anda selamanya",
@@ -46,5 +47,6 @@
   "makeNewStatusSubtitle": "Buat status dengan titik merah",
 
   "setting": "Tetapan",
-  "delete": "Padam"
+  "delete": "Padam",
+  "directChat": "Sembang Langsung"
 }

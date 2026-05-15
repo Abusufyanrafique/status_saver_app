@@ -1,4 +1,6 @@
 ﻿{
+  "@@locale": "zh",
+
   "appName": "状态保存应用",
   "statusSaverApp": "状态保存",
   "downloadKeepFavorite": "下载并永久保存喜欢的状态",
@@ -46,5 +48,6 @@
   "makeNewStatusSubtitle": "创建带红点的状态",
 
   "setting": "设置",
-  "delete": "删除"
+  "delete": "删除",
+  "directChat": "直接聊天"
 }

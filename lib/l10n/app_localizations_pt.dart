@@ -109,4 +109,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get delete => 'Excluir';
+
+  @override
+  String get directChat => 'Chat Direto';
 }

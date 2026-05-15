@@ -1,4 +1,6 @@
 ﻿{
+  "@@locale": "pt",
+
   "appName": "APP SALVADOR DE STATUS",
   "statusSaverApp": "Salvador de Status",
   "downloadKeepFavorite": "Baixe e salve seus status favoritos para sempre",
@@ -46,5 +48,6 @@
   "makeNewStatusSubtitle": "Criar status com ponto vermelho",
 
   "setting": "Configuração",
-  "delete": "Excluir"
+  "delete": "Excluir",
+  "directChat": "Chat Direto"
 }

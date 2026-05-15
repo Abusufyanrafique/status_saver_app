@@ -7,6 +7,7 @@ import 'package:status_saver/Utils/Constants/AllColors.dart';
 import 'package:status_saver/Utils/Constants/AllText.dart';
 import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/images/app_images.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 
 class ImageView extends StatefulWidget {
   final List<String> images;
@@ -65,6 +66,7 @@ class _ImageViewState extends State<ImageView> {
 
   @override
   Widget build(BuildContext context) {
+      final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFE3EAF2),
 
@@ -81,7 +83,7 @@ class _ImageViewState extends State<ImageView> {
           ),
         ),
         title: Text(
-          "Status Saver",
+          t.statusSaver,
           style: AppColor1().customTextStyleBold16(),
         ),
         centerTitle: true,

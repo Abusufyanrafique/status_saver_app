@@ -109,4 +109,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get delete => 'মুছুন';
+
+  @override
+  String get directChat => 'ডাইরেক্ট চ্যাট';
 }

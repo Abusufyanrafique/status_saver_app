@@ -13,6 +13,7 @@ import 'package:status_saver/Utils/Constants/AllText.dart';
 import 'package:status_saver/bloc/status/status_bloc.dart';
 import 'package:status_saver/bloc/status/status_event.dart';
 import 'package:status_saver/config/images/app_images.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Screens/BottomNavPages/ImageView/ImageView.dart';
 import '../Screens/BottomNavPages/VideoView/VideoView.dart';
@@ -752,6 +753,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   @override
   Widget build(BuildContext context) {
+      final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFE3EAF2),
       appBar: AppBar(
@@ -765,7 +767,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           ),
         ),
         title: Text(
-          "Status Saver",
+          t.statusSaver,
           style: AppColor1().customTextStyleBold16(),
         ),
         centerTitle: true,
@@ -1135,13 +1137,14 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: AppColor1.screenbackgroundColor,
       appBar: AppBar(
         backgroundColor: AppColor1.screenbackgroundColor,
         title: Text(
-          "Direct Chat",
+          t.directChat,
           style: AppColor1().customTextStyleBold16(
             fontWeight: FontWeight(500),
           ),
@@ -1162,14 +1165,14 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "Whatsapp Web",
+                  t.whatsappWeb,
                   style: AppColor1().customTextStyleBold16(
                     fontWeight: FontWeight(500),
                   ),
                 ),
                 SizedBox(height: getHeight(29)),
                 Text(
-                  AllText.direclyMessage,
+                  t.directlyMessage,
                   style: AppColor1()
                       .customTextStyleBold16(fontWeight: FontWeight.w400)
                       .copyWith(
@@ -1240,7 +1243,7 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
                     textAlign: TextAlign.center,
                     textAlignVertical: TextAlignVertical.center,
                     decoration: InputDecoration(
-                      hintText: "Input Message Here",
+                      hintText: t.inputMessageHere,
                       hintStyle: AppColor1().customTextStyle14(
                         color: const Color(0xFF7C7777),
                       ),
@@ -1263,7 +1266,7 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
                       ),
                     ),
                     child: Text(
-                      "Send Message",
+                      t.sendMessage,
                       style: AppColor1().customTextStyleBold16(
                         fontWeight: FontWeight(400),
                       ),

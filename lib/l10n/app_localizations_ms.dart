@@ -109,4 +109,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get delete => 'Padam';
+
+  @override
+  String get directChat => 'Sembang Langsung';
 }
