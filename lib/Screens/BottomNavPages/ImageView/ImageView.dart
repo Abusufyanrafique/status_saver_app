@@ -190,13 +190,13 @@ class _ImageViewState extends State<ImageView> {
                     shareStatus(widget.images[currentIndex]);
                   },
                   AllIcons.repost,
-                  AllText.Repost,
+                  t.repost,
                 ),
 
                 bottomButton(
                   () => shareStatus(widget.images[currentIndex]),
                   AllIcons.share,
-                  AllText.Share,
+                  t.share,
                 ),
 
                 bottomButton(
@@ -212,7 +212,7 @@ class _ImageViewState extends State<ImageView> {
                     }
                   },
                   widget.isFromSavedScreen ? AllIcons.delete : AllIcons.save,
-                  widget.isFromSavedScreen ? AllText.delete : AllText.Save,
+                  widget.isFromSavedScreen ? t.delete : t.save,
                 ),
               ],
             ),

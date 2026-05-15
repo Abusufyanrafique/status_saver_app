@@ -38,7 +38,7 @@ class LanguageScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          // ✅ FIX: Fallback to 'Language' if l10n is null
+          //  FIX: Fallback to 'Language' if l10n is null
           l10n?.language ?? 'Language',
           style: AppColor1().customTextStyle12().copyWith(fontSize: 16),
         ),
@@ -106,9 +106,9 @@ class _LanguageTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: isSelected
-            ? Border.all(color: Colors.blue, width: 1.5)
-            : null,
+        // border: isSelected
+        //     ? Border.all(color: Colors.blue, width: 1.5)
+        //     : null,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
@@ -171,7 +171,7 @@ class _LanguageTile extends StatelessWidget {
                   isSelected
                       ? Icons.radio_button_checked
                       : Icons.radio_button_unchecked,
-                  color: isSelected ? Colors.blue : Colors.black26,
+                  color: isSelected ? Colors.black : Colors.black26,
                   size: 20,
                 ),
               ],

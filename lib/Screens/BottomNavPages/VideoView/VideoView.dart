@@ -10,7 +10,6 @@ import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../../Local Database/LocalDatabase.dart' hide shareStatus;
-import '../../../Utils/Constants/AllText.dart';
 import '../../../Utils/Constants/file_service.dart' hide saveMedia;
 import '../../../Utils/Constants/userFeedback.dart' hide bottomButton;
 

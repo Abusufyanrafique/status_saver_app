@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hive/hive.dart';
 import 'package:status_saver/Utils/Constants/AllColors.dart';
 import 'package:status_saver/Utils/Constants/SizeConfig.dart';
-import 'package:status_saver/config/apptext/app_text.dart';
 import 'package:status_saver/config/colors/app_colors.dart';
 import 'package:status_saver/config/images/app_images.dart';
 import 'package:status_saver/l10n/app_localizations.dart';

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,16 +9,16 @@ import 'package:status_saver/Utils/Constants/SizeConfig.dart';
 import 'package:status_saver/config/components/app_drawer.dart';
 import 'package:status_saver/config/images/app_images.dart';
 import 'package:status_saver/l10n/app_localizations.dart';
+import 'package:status_saver/services/notification/status_scanner_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../Utils/Constants/AllColors.dart';
-import '../../Utils/Constants/AllText.dart';
 import '../../bloc/status/status_bloc.dart';
 import '../../bloc/status/status_event.dart';
 import '../BottomNavPages/ImageView/ImagesScreen.dart';
 
 class StatusScreen extends StatefulWidget {
   final bool isBusiness;
-  
+
   const StatusScreen({
     super.key,
     this.isBusiness = false,
@@ -28,147 +29,186 @@ class StatusScreen extends StatefulWidget {
 }
 
 class _StatusScreenState extends State<StatusScreen> {
+  bool _hasNewStatus = false; // Red dot state
+  Timer? _statusCheckTimer;
 
   @override
   void initState() {
     super.initState();
-    //  sirf yahan se ek baar fire karo
+
+    // Status bloc load karo
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         context.read<StatusBloc>().add(LoadStatusEvent());
       }
     });
+
+    // Pehli baar check karo
+    _checkNewStatus();
+
+    // Har 5 seconds mein check karo — background se naya status aane par red dot update ho
+    _statusCheckTimer = Timer.periodic(const Duration(seconds: 5), (_) {
+      _checkNewStatus();
+    });
+  }
+
+  Future<void> _checkNewStatus() async {
+    final hasNew = await StatusScannerService.hasNewStatus();
+    if (mounted && hasNew != _hasNewStatus) {
+      setState(() {
+        _hasNewStatus = hasNew;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _statusCheckTimer?.cancel(); // Timer band karo
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-  final t = AppLocalizations.of(context)!;
+    final t = AppLocalizations.of(context)!;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-          drawer: const AppDrawer(),
+        drawer: const AppDrawer(),
         backgroundColor: AppColor1.screenbackgroundColor,
         appBar: AppBar(
-  titleSpacing: 0,
-  backgroundColor: AppColor1.screenbackgroundColor,
-  // leading: IconButton(
-  //   icon: const Icon(Icons.menu),
-  //   onPressed: () {
-
-  //     //  Navigator.of(context).push(
-  //     //   MaterialPageRoute(builder: (context)=> const AppDrawer())
-  //     //  );
-  //   },
-  // ),
-  title: Text(
-    t.statusSaver,
-    style: AppColor1().customTextStyle20(),
-  ),
-actions: [
-
-  /// CHAT BUTTON
-  Padding(
-    padding: const EdgeInsets.only(right: 8),
-    child: GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const DirectChatScreen(),
+          titleSpacing: 0,
+          backgroundColor: AppColor1.screenbackgroundColor,
+          title: Text(
+            t.statusSaver,
+            style: AppColor1().customTextStyle20(),
           ),
-        );
-      },
-      child: Container(
-        width: getWidth(24),
-        height: getHeight(24),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/images/whitecontainer.png",
+          actions: [
+
+            /// CHAT BUTTON
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DirectChatScreen(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: getWidth(24),
+                  height: getHeight(24),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/whitecontainer.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      AllIcons.chat,
+                      width: getWidth(16),
+                      height: getHeight(15),
+                    ),
+                  ),
+                ),
+              ),
             ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: SvgPicture.asset(
-            AllIcons.chat,
-            width: getWidth(16),
-            height: getHeight(15),
-          ),
-        ),
-      ),
-    ),
-  ),
 
-  /// SHARE BUTTON
-  Padding(
-    padding: const EdgeInsets.only(right: 8),
-    child: GestureDetector(
-      onTap: () {
-        shareToWhatsAppDirect();
-      },
-      child: Container(
-        width: getWidth(24),
-        height: getHeight(24),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/images/whitecontainer.png",
+            /// SHARE BUTTON
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: GestureDetector(
+                onTap: () {
+                  shareToWhatsAppDirect();
+                },
+                child: Container(
+                  width: getWidth(24),
+                  height: getHeight(24),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/whitecontainer.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      AllIcons.share,
+                      width: getWidth(14),
+                      height: getHeight(14),
+                    ),
+                  ),
+                ),
+              ),
             ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: SvgPicture.asset(
-            AllIcons.share,
-            width: getWidth(14),
-            height: getHeight(14),
-          ),
-        ),
-      ),
-    ),
-  ),
 
-  /// MORE ICON
- Padding(
-    padding: const EdgeInsets.only(right: 8),
-    child: GestureDetector(
-      onTap: () {
-        shareToWhatsAppDirect();
-      },
-      child: Container(
-        width: getWidth(24),
-        height: getHeight(24),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/images/whitecontainer.png",
+            /// NOTIFICATION ICON — Red dot jab naya status aaye
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: GestureDetector(
+                onTap: () async {
+                  // Red dot clear karo jab user tap kare
+                  await StatusScannerService.clearNewStatusFlag();
+                  setState(() {
+                    _hasNewStatus = false;
+                  });
+                },
+                child: Container(
+                  width: getWidth(24),
+                  height: getHeight(24),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/whitecontainer.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+
+                      // Notification icon
+                      Center(
+                        child: SvgPicture.asset(
+                          AllIcons.notification,
+                          width: getWidth(13),
+                          height: getHeight(16),
+                        ),
+                      ),
+
+                      // 🔴 Red dot — _hasNewStatus true hone par dikhega
+                      if (_hasNewStatus)
+                        Positioned(
+                          top: -2,
+                          right: -2,
+                          child: Container(
+                            width: 8,
+                            height: 8,
+                            decoration: const BoxDecoration(
+                              color: Colors.red,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+
+                    ],
+                  ),
+                ),
+              ),
             ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: SvgPicture.asset(
-            AllIcons.notification,
-            width: getWidth(13),
-            height: getHeight(16),
-          ),
-        ),
-      ),
-    ),
-  ),
-],
-  bottom: const TabBar(
-    indicatorColor: Colors.white,
-    tabs: [
-      Tab(text: "Images"),
-      Tab(text: "Videos"),
-      Tab(text: "Audio"),
-    ],
-  ),
-),
 
-        //  BlocBuilder hata do — TabBarView hamesha show karo
+          ],
+          bottom:  TabBar(
+            indicatorColor: Colors.white,
+            tabs: [
+              Tab(text: t.images),
+              Tab(text: t.videos),
+              Tab(text: t.audio),
+            ],
+          ),
+        ),
+
+        // TabBarView hamesha show karo
         body: const TabBarView(
           children: [
             ImageScreen(),
@@ -193,11 +233,9 @@ void shareToWhatsAppDirect() async {
   if (await canLaunchUrl(url)) {
     await launchUrl(url, mode: LaunchMode.externalApplication);
   } else {
-    // fallback if WhatsApp not installed
     final fallbackUrl = Uri.parse(
       "https://wa.me/?text=${Uri.encodeComponent(message)}",
     );
-
     await launchUrl(fallbackUrl, mode: LaunchMode.externalApplication);
   }
 }
