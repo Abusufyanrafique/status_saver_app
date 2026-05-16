@@ -49,5 +49,6 @@
 
   "setting": "การตั้งค่า",
   "delete": "ลบ",
-  "directChat": "แชทโดยตรง"
+  "directChat": "แชทโดยตรง",
+  "mediaSavedSuccessfully": "บันทึกสื่อเรียบร้อยแล้ว"
 }

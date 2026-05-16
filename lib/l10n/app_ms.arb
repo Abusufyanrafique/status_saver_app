@@ -48,5 +48,6 @@
 
   "setting": "Tetapan",
   "delete": "Padam",
-  "directChat": "Sembang Langsung"
+  "directChat": "Sembang Langsung",
+  "mediaSavedSuccessfully": "Media berjaya disimpan"
 }

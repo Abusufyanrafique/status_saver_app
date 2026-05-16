@@ -49,5 +49,6 @@
 
   "setting": "Cài đặt",
   "delete": "Xóa",
-  "directChat": "Trò chuyện trực tiếp"
+  "directChat": "Trò chuyện trực tiếp",
+  "mediaSavedSuccessfully": "Đã lưu phương tiện thành công"
 }

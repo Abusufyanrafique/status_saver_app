@@ -49,5 +49,6 @@
 
   "setting": "الإعدادات",
   "delete": "حذف",
-  "directChat": "الدردشة المباشرة"
+  "directChat": "الدردشة المباشرة",
+  "mediaSavedSuccessfully": "تم حفظ الوسائط بنجاح"
 }

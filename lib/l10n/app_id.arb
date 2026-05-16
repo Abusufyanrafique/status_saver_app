@@ -48,5 +48,6 @@
 
   "setting": "Pengaturan",
   "delete": "Hapus",
-  "directChat": "Chat Langsung"
+  "directChat": "Chat Langsung",
+  "mediaSavedSuccessfully": "Media berhasil disimpan"
 }

@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:status_saver/Local%20Database/LocalDatabase.dart';
 import 'package:status_saver/Screens/BottomNavPages/AudioScreen.dart';
 import 'package:status_saver/Screens/BottomNavPages/VideoView/VideoScreens.dart';
@@ -29,41 +31,116 @@ class StatusScreen extends StatefulWidget {
 }
 
 class _StatusScreenState extends State<StatusScreen> {
-  bool _hasNewStatus = false; // Red dot state
+  int _newStatusCount = 0;
   Timer? _statusCheckTimer;
 
   @override
   void initState() {
     super.initState();
-
-    // Status bloc load karo
+    // SharedPreferences.getInstance().then((prefs) {
+    //   prefs.remove('seen_statuses');
+    // });
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         context.read<StatusBloc>().add(LoadStatusEvent());
       }
     });
 
-    // Pehli baar check karo
     _checkNewStatus();
 
-    // Har 5 seconds mein check karo — background se naya status aane par red dot update ho
     _statusCheckTimer = Timer.periodic(const Duration(seconds: 5), (_) {
       _checkNewStatus();
     });
   }
+Future<void> _checkNewStatus() async {
+  int newCount = 0;
 
-  Future<void> _checkNewStatus() async {
-    final hasNew = await StatusScannerService.hasNewStatus();
-    if (mounted && hasNew != _hasNewStatus) {
-      setState(() {
-        _hasNewStatus = hasNew;
-      });
+  for (final path in kStatusPaths) {
+    final dir = Directory(path);
+    if (await dir.exists()) {
+      final allFiles = await dir.list().toList();
+      final fileNames = allFiles
+          .map((f) => f.path)
+          .where((p) {
+            final ext = p.substring(p.lastIndexOf('.')).toLowerCase();
+            return {'.jpg', '.jpeg', '.png', '.mp4', '.opus'}.contains(ext);
+          })
+          .map((p) => p.split('/').last)
+          .toSet();
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.reload();
+
+      final baseline = (prefs.getStringList('baseline_statuses') ?? []).toSet();
+      final seen = (prefs.getStringList('seen_statuses') ?? []).toSet();
+
+      debugPrint("📁 TOTAL FILES: ${fileNames.length}");
+      debugPrint("📌 BASELINE: ${baseline.length}");
+      debugPrint("👀 SEEN: ${seen.length}");
+
+      //  FIRST RUN
+      if (baseline.isEmpty && seen.isEmpty) {
+        debugPrint('⚠️ FIRST RUN - baseline set ho raha hai');
+        await prefs.setStringList('baseline_statuses', fileNames.toList());
+        await prefs.setStringList('seen_statuses', fileNames.toList());
+        newCount = 0;
+        break;
+      }
+
+      //  Naye files = jo baseline mein nahi aur seen mein bhi nahi
+      final newFiles = fileNames
+          .where((f) => !baseline.contains(f) && !seen.contains(f))
+          .toSet();
+
+      newCount = newFiles.length;
+
+      debugPrint("🆕 NEW STATUS COUNT: $newCount");
+      debugPrint("🆕 NEW FILES: $newFiles");
+
+      break;
     }
   }
 
+  if (!mounted) return;
+  setState(() {
+    _newStatusCount = newCount;
+  });
+}
+
+//  Bell tap karo = sab seen mark ho jaaye
+Future<void> _markAllSeen() async {
+  final prefs = await SharedPreferences.getInstance();
+
+  for (final path in kStatusPaths) {
+    final dir = Directory(path);
+    if (await dir.exists()) {
+      final allFiles = await dir.list().toList();
+      final fileNames = allFiles
+          .map((f) => f.path)
+          .where((p) {
+            final ext = p.substring(p.lastIndexOf('.')).toLowerCase();
+            return {'.jpg', '.jpeg', '.png', '.mp4', '.opus'}.contains(ext);
+          })
+          .map((p) => p.split('/').last)
+          .toList();
+
+      //  Saare current files ko seen mark karo
+      await prefs.setStringList('seen_statuses', fileNames);
+      await prefs.setBool('has_new_status', false);
+      await prefs.setInt('new_status_count', 0);
+      break;
+    }
+  }
+
+  if (!mounted) return;
+  setState(() {
+    _newStatusCount = 0;
+  });
+}
+
   @override
   void dispose() {
-    _statusCheckTimer?.cancel(); // Timer band karo
+    _statusCheckTimer?.cancel();
     super.dispose();
   }
 
@@ -143,16 +220,12 @@ class _StatusScreenState extends State<StatusScreen> {
               ),
             ),
 
-            /// NOTIFICATION ICON — Red dot jab naya status aaye
+            /// NOTIFICATION BELL — naye status ka count
             Padding(
               padding: const EdgeInsets.only(right: 8),
               child: GestureDetector(
                 onTap: () async {
-                  // Red dot clear karo jab user tap kare
-                  await StatusScannerService.clearNewStatusFlag();
-                  setState(() {
-                    _hasNewStatus = false;
-                  });
+                  await _markAllSeen(); // ✅ FIXED
                 },
                 child: Container(
                   width: getWidth(24),
@@ -167,7 +240,6 @@ class _StatusScreenState extends State<StatusScreen> {
                     clipBehavior: Clip.none,
                     children: [
 
-                      // Notification icon
                       Center(
                         child: SvgPicture.asset(
                           AllIcons.notification,
@@ -176,17 +248,32 @@ class _StatusScreenState extends State<StatusScreen> {
                         ),
                       ),
 
-                      // 🔴 Red dot — _hasNewStatus true hone par dikhega
-                      if (_hasNewStatus)
+                      // 🔴 Count Badge
+                      if (_newStatusCount > 0)
                         Positioned(
-                          top: -2,
-                          right: -2,
+                          top: -6,
+                          right: -6,
                           child: Container(
-                            width: 8,
-                            height: 8,
-                            decoration: const BoxDecoration(
+                            padding: const EdgeInsets.all(4),
+                            constraints: const BoxConstraints(
+                              minWidth: 10,
+                              minHeight: 10,
+                            ),
+                            decoration: BoxDecoration(
                               color: Colors.red,
-                              shape: BoxShape.circle,
+                              shape:BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Text(
+                                _newStatusCount > 99
+                                    ? "99+"
+                                    : _newStatusCount.toString(),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -198,7 +285,7 @@ class _StatusScreenState extends State<StatusScreen> {
             ),
 
           ],
-          bottom:  TabBar(
+          bottom: TabBar(
             indicatorColor: Colors.white,
             tabs: [
               Tab(text: t.images),
@@ -208,7 +295,6 @@ class _StatusScreenState extends State<StatusScreen> {
           ),
         ),
 
-        // TabBarView hamesha show karo
         body: const TabBarView(
           children: [
             ImageScreen(),

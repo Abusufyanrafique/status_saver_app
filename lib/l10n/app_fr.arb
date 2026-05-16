@@ -48,5 +48,6 @@
 
   "setting": "Paramètre",
   "delete": "Supprimer",
-  "directChat": "Chat Direct"
+  "directChat": "Chat Direct",
+  "mediaSavedSuccessfully": "Média enregistré avec succès"
 }

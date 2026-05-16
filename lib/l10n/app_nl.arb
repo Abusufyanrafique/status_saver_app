@@ -48,5 +48,6 @@
 
   "setting": "Instelling",
   "delete": "Verwijderen",
-  "directChat": "Directe Chat"
+  "directChat": "Directe Chat",
+  "mediaSavedSuccessfully": "Media succesvol opgeslagen"
 }

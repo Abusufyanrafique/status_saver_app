@@ -49,5 +49,6 @@
 
   "setting": "সেটিংস",
   "delete": "মুছুন",
-  "directChat": "ডাইরেক্ট চ্যাট"
+  "directChat": "ডাইরেক্ট চ্যাট",
+  "mediaSavedSuccessfully": "মিডিয়া সফলভাবে সংরক্ষিত হয়েছে"
 }

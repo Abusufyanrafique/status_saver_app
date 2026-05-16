@@ -48,5 +48,6 @@
 
   "setting": "تنظیمات",
   "delete": "حذف",
-  "directChat": "چت مستقیم"
+  "directChat": "چت مستقیم",
+  "mediaSavedSuccessfully": "رسانه با موفقیت ذخیره شد"
 }

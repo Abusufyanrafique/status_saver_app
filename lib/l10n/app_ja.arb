@@ -48,5 +48,6 @@
 
   "setting": "設定",
   "delete": "削除",
-  "directChat": "ダイレクトチャット"
+  "directChat": "ダイレクトチャット",
+  "mediaSavedSuccessfully": "メディアが正常に保存されました"
 }

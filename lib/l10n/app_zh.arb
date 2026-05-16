@@ -49,5 +49,6 @@
 
   "setting": "设置",
   "delete": "删除",
-  "directChat": "直接聊天"
+  "directChat": "直接聊天",
+  "mediaSavedSuccessfully": "媒体已成功保存"
 }

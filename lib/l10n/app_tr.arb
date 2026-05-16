@@ -49,5 +49,6 @@
 
   "setting": "Ayarlar",
   "delete": "Sil",
-  "directChat": "Doğrudan Sohbet"
+  "directChat": "Doğrudan Sohbet",
+  "mediaSavedSuccessfully": "Medya başarıyla kaydedildi"
 }

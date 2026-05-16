@@ -48,5 +48,6 @@
 
   "setting": "Einstellung",
   "delete": "Löschen",
-  "directChat": "Direkt-Chat"
+  "directChat": "Direkt-Chat",
+  "mediaSavedSuccessfully": "Medien erfolgreich gespeichert"
 }

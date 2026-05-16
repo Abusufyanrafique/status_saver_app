@@ -1,14 +1,18 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // Imports
 import 'package:status_saver/l10n/app_localizations.dart';
 import 'package:status_saver/services/notification/status_scanner_service.dart';
 import 'package:status_saver/services/notification/notification_service.dart'; // Name split check kar lein
+import 'package:workmanager/workmanager.dart';
 import 'Screens/SplashScreen.dart';
 import 'Local Database/LocalDatabase.dart';
 import 'Providers/BottomNavProvider.dart';
@@ -24,10 +28,16 @@ import 'models/language_model.dart';
 void main() async {
   // 1. Flutter Engine Bindings Initialize
   WidgetsFlutterBinding.ensureInitialized();
+// await Workmanager().cancelAll(); //  Sab purane tasks cancel
+// await StatusScannerService.clearSeenHistory(); //  Seen clear
+// print(' ALL CLEARED');
+//  final prefs = await SharedPreferences.getInstance();
+//   await prefs.clear();
+//   print('🗑️ ALL PREFS CLEARED');
 
   // 2. Local Notifications Setup & Channels Creation
   await NotificationService.init();
-
+  DartPluginRegistrant.ensureInitialized();
   // 3. Android 13+ Runtime Notification Permission Request
   final localNotificationsPlugin = FlutterLocalNotificationsPlugin();
   await localNotificationsPlugin

@@ -1037,10 +1037,21 @@ Future<void> saveMedia(
               ),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: const Text(
-              "Media Saved Successfully",
-              style: TextStyle(color: Colors.black),
-            ),
+           child: const Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Icon(
+      Icons.download,
+      color: Colors.black,
+      size: 18,
+    ),
+    SizedBox(width: 6),
+    Text(
+      "Media Saved Successfully",
+      style: TextStyle(color: Colors.black),
+    ),
+  ],
+),
           ),
         ),
       );

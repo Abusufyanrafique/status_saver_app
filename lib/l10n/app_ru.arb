@@ -49,5 +49,6 @@
 
   "setting": "Настройка",
   "delete": "Удалить",
-  "directChat": "Прямой чат"
+  "directChat": "Прямой чат",
+  "mediaSavedSuccessfully": "Медиа успешно сохранено"
 }
