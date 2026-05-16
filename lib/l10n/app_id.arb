@@ -46,8 +46,23 @@
   "makeANewStatus": "Buat status baru",
   "makeNewStatusSubtitle": "Buat status dengan titik merah",
 
-  "setting": "Pengaturan",
   "delete": "Hapus",
   "directChat": "Chat Langsung",
-  "mediaSavedSuccessfully": "Media berhasil disimpan"
+  "mediaSavedSuccessfully": "Media berhasil disimpan",
+  "savedStatuses": "Status Tersimpan",
+  "deleteAudioTitle": "Hapus Audio",
+  "deleteAudioMessage": "Apakah Anda yakin ingin menghapus audio ini?",
+
+  "deleteImageTitle": "Hapus Gambar",
+  "deleteImageMessage": "Apakah Anda yakin ingin menghapus gambar ini?",
+
+  "deleteVideoTitle": "Hapus Video",
+  "deleteVideoMessage": "Apakah Anda yakin ingin menghapus video ini?",
+
+  "cancel": "Batal",
+  "ok": "OK",
+
+  "audioDeletedSuccess": "Audio berhasil dihapus",
+  "imageDeletedSuccess": "Gambar berhasil dihapus",
+  "videoDeletedSuccess": "Video berhasil dihapus"
 }

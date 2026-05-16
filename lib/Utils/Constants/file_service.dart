@@ -8,6 +8,7 @@ import 'package:saver_gallery/saver_gallery.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:status_saver/Utils/Constants/userFeedback.dart';
 import 'package:status_saver/config/components/status_saver_app_snack_bar.dart';
+import 'package:status_saver/l10n/app_localizations.dart';
 
 import '../../Local Database/LocalDatabase.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
@@ -176,12 +177,12 @@ Future<void> deleteItem(BuildContext context, String path,
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx, false),
-          child: const Text("Cancel"),
+          child:  Text(AppLocalizations.of(context)!.cancel),
         ),
         ElevatedButton(
           onPressed: () => Navigator.pop(ctx, true),
           style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-          child: const Text("Delete"),
+          child:  Text(AppLocalizations.of(context)!.delete),
         ),
       ],
     ),

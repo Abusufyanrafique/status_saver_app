@@ -105,11 +105,47 @@ class AppLocalizationsBn extends AppLocalizations {
   String get makeNewStatusSubtitle => 'লাল ডট সহ স্ট্যাটাস তৈরি করুন';
 
   @override
-  String get setting => 'সেটিংস';
-
-  @override
   String get delete => 'মুছুন';
 
   @override
   String get directChat => 'ডাইরেক্ট চ্যাট';
+
+  @override
+  String get mediaSavedSuccessfully => 'মিডিয়া সফলভাবে সংরক্ষিত হয়েছে';
+
+  @override
+  String get savedStatuses => 'সংরক্ষিত স্ট্যাটাস';
+
+  @override
+  String get deleteAudioTitle => '删除音频';
+
+  @override
+  String get deleteAudioMessage => '您确定要删除此音频吗？';
+
+  @override
+  String get deleteImageTitle => '删除图片';
+
+  @override
+  String get deleteImageMessage => '您确定要删除此图片吗？';
+
+  @override
+  String get deleteVideoTitle => '删除视频';
+
+  @override
+  String get deleteVideoMessage => '您确定要删除此视频吗？';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get ok => '确定';
+
+  @override
+  String get audioDeletedSuccess => '音频已删除';
+
+  @override
+  String get imageDeletedSuccess => '图片已删除';
+
+  @override
+  String get videoDeletedSuccess => '视频已删除';
 }

@@ -1,5 +1,6 @@
 ﻿{
   "@@locale": "ja",
+
   "appName": "ステータス保存アプリ",
   "statusSaverApp": "ステータスセーバー",
   "downloadKeepFavorite": "お気に入りのステータスを永久に保存",
@@ -29,7 +30,6 @@
   "whatsappWeb": "WhatsApp Web",
 
   "directlyMessage": "連絡先を保存せずにメッセージ送信",
-
   "inputMessageHere": "ここにメッセージを入力",
   "sendMessage": "送信",
 
@@ -49,5 +49,23 @@
   "setting": "設定",
   "delete": "削除",
   "directChat": "ダイレクトチャット",
-  "mediaSavedSuccessfully": "メディアが正常に保存されました"
+  "mediaSavedSuccessfully": "メディアが正常に保存されました",
+  "savedStatuses": "保存済みステータス",
+
+  "deleteAudioTitle": "音声を削除",
+  "deleteAudioMessage": "この音声を削除してもよろしいですか？",
+
+  "deleteImageTitle": "画像を削除",
+  "deleteImageMessage": "この画像を削除してもよろしいですか？",
+
+  "deleteVideoTitle": "動画を削除",
+  "deleteVideoMessage": "この動画を削除してもよろしいですか？",
+
+  "cancel": "キャンセル",
+  "ok": "OK",
+  "delete": "削除",
+
+  "audioDeletedSuccess": "音声が正常に削除されました",
+  "imageDeletedSuccess": "画像が正常に削除されました",
+  "videoDeletedSuccess": "動画が正常に削除されました"
 }

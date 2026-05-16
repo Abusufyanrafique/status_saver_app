@@ -1,5 +1,6 @@
 ﻿{
   "@@locale": "ko",
+
   "appName": "상태 저장 앱",
   "statusSaverApp": "상태 저장기",
   "downloadKeepFavorite": "좋아하는 상태를 영구 저장",
@@ -29,7 +30,6 @@
   "whatsappWeb": "WhatsApp 웹",
 
   "directlyMessage": "연락처 저장 없이 메시지 보내기",
-
   "inputMessageHere": "메시지 입력",
   "sendMessage": "전송",
 
@@ -49,5 +49,23 @@
   "setting": "설정",
   "delete": "삭제",
   "directChat": "다이렉트 채팅",
-  "mediaSavedSuccessfully": "미디어가 성공적으로 저장되었습니다"
+  "mediaSavedSuccessfully": "미디어가 성공적으로 저장되었습니다",
+  "savedStatuses": "저장된 상태",
+
+  "deleteAudioTitle": "오디오 삭제",
+  "deleteAudioMessage": "이 오디오를 삭제하시겠습니까?",
+
+  "deleteImageTitle": "이미지 삭제",
+  "deleteImageMessage": "이 이미지를 삭제하시겠습니까?",
+
+  "deleteVideoTitle": "비디오 삭제",
+  "deleteVideoMessage": "이 비디오를 삭제하시겠습니까?",
+
+  "cancel": "취소",
+  "ok": "확인",
+  "delete": "삭제",
+
+  "audioDeletedSuccess": "오디오가 성공적으로 삭제되었습니다",
+  "imageDeletedSuccess": "이미지가 성공적으로 삭제되었습니다",
+  "videoDeletedSuccess": "비디오가 성공적으로 삭제되었습니다"
 }

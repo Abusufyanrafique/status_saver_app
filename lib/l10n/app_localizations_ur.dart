@@ -105,11 +105,47 @@ class AppLocalizationsUr extends AppLocalizations {
   String get makeNewStatusSubtitle => 'ریڈ ڈاٹ کے ساتھ اسٹیٹس بنائیں';
 
   @override
-  String get setting => 'سیٹنگ';
-
-  @override
   String get delete => 'ڈیلیٹ';
 
   @override
   String get directChat => 'ڈائریکٹ چیٹ';
+
+  @override
+  String get mediaSavedSuccessfully => 'میڈیا کامیابی سے محفوظ ہو گیا';
+
+  @override
+  String get savedStatuses => 'محفوظ شدہ اسٹیٹس';
+
+  @override
+  String get deleteAudioTitle => 'آڈیو حذف کریں';
+
+  @override
+  String get deleteAudioMessage => 'کیا آپ واقعی اس آڈیو کو حذف کرنا چاہتے ہیں؟';
+
+  @override
+  String get deleteImageTitle => 'تصویر حذف کریں';
+
+  @override
+  String get deleteImageMessage => 'کیا آپ واقعی اس تصویر کو حذف کرنا چاہتے ہیں؟';
+
+  @override
+  String get deleteVideoTitle => 'ویڈیو حذف کریں';
+
+  @override
+  String get deleteVideoMessage => 'کیا آپ واقعی اس ویڈیو کو حذف کرنا چاہتے ہیں؟';
+
+  @override
+  String get cancel => 'منسوخ';
+
+  @override
+  String get ok => 'ٹھیک ہے';
+
+  @override
+  String get audioDeletedSuccess => 'آڈیو کامیابی سے حذف ہوگئی';
+
+  @override
+  String get imageDeletedSuccess => 'تصویر کامیابی سے حذف ہوگئی';
+
+  @override
+  String get videoDeletedSuccess => 'ویڈیو کامیابی سے حذف ہوگئی';
 }

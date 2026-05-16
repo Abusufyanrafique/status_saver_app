@@ -1,5 +1,6 @@
 ﻿{
   "@@locale": "it",
+
   "appName": "APP SALVA STATO",
   "statusSaverApp": "Salva Stato",
   "downloadKeepFavorite": "Scarica e salva i tuoi stati preferiti",
@@ -29,7 +30,6 @@
   "whatsappWeb": "WhatsApp Web",
 
   "directlyMessage": "Invia messaggi senza salvare contatto",
-
   "inputMessageHere": "Scrivi messaggio qui",
   "sendMessage": "Invia",
 
@@ -49,6 +49,23 @@
   "setting": "Impostazione",
   "delete": "Elimina",
   "directChat": "Chat Diretto",
-  "mediaSavedSuccessfully": "Media salvato con successo"
+  "mediaSavedSuccessfully": "Media salvato con successo",
+  "savedStatuses": "Stati salvati",
 
+  "deleteAudioTitle": "Elimina audio",
+  "deleteAudioMessage": "Sei sicuro di voler eliminare questo audio?",
+
+  "deleteImageTitle": "Elimina immagine",
+  "deleteImageMessage": "Sei sicuro di voler eliminare questa immagine?",
+
+  "deleteVideoTitle": "Elimina video",
+  "deleteVideoMessage": "Sei sicuro di voler eliminare questo video?",
+
+  "cancel": "Annulla",
+  "ok": "OK",
+  "delete": "Elimina",
+
+  "audioDeletedSuccess": "Audio eliminato con successo",
+  "imageDeletedSuccess": "Immagine eliminata con successo",
+  "videoDeletedSuccess": "Video eliminato con successo"
 }

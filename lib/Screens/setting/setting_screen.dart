@@ -135,7 +135,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
         title: Text(
-          t.setting,
+          t.settings,
           style: AppColor1().customTextStyle12().copyWith(fontSize: 16),
         ),
         centerTitle: true,

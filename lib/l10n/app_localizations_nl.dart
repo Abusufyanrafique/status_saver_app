@@ -105,11 +105,47 @@ class AppLocalizationsNl extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Status met rode stip maken';
 
   @override
-  String get setting => 'Instelling';
-
-  @override
   String get delete => 'Verwijderen';
 
   @override
   String get directChat => 'Directe Chat';
+
+  @override
+  String get mediaSavedSuccessfully => 'Media succesvol opgeslagen';
+
+  @override
+  String get savedStatuses => 'Opgeslagen statussen';
+
+  @override
+  String get deleteAudioTitle => 'Audio verwijderen';
+
+  @override
+  String get deleteAudioMessage => 'Weet je zeker dat je deze audio wilt verwijderen?';
+
+  @override
+  String get deleteImageTitle => 'Afbeelding verwijderen';
+
+  @override
+  String get deleteImageMessage => 'Weet je zeker dat je deze afbeelding wilt verwijderen?';
+
+  @override
+  String get deleteVideoTitle => 'Video verwijderen';
+
+  @override
+  String get deleteVideoMessage => 'Weet je zeker dat je deze video wilt verwijderen?';
+
+  @override
+  String get cancel => 'Annuleren';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get audioDeletedSuccess => 'Audio succesvol verwijderd';
+
+  @override
+  String get imageDeletedSuccess => 'Afbeelding succesvol verwijderd';
+
+  @override
+  String get videoDeletedSuccess => 'Video succesvol verwijderd';
 }

@@ -105,11 +105,47 @@ class AppLocalizationsPt extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Criar status com ponto vermelho';
 
   @override
-  String get setting => 'Configuração';
-
-  @override
   String get delete => 'Excluir';
 
   @override
   String get directChat => 'Chat Direto';
+
+  @override
+  String get mediaSavedSuccessfully => 'Mídia salva com sucesso';
+
+  @override
+  String get savedStatuses => 'Status salvos';
+
+  @override
+  String get deleteAudioTitle => 'Excluir áudio';
+
+  @override
+  String get deleteAudioMessage => 'Tem certeza que deseja excluir este áudio?';
+
+  @override
+  String get deleteImageTitle => 'Excluir imagem';
+
+  @override
+  String get deleteImageMessage => 'Tem certeza que deseja excluir esta imagem?';
+
+  @override
+  String get deleteVideoTitle => 'Excluir vídeo';
+
+  @override
+  String get deleteVideoMessage => 'Tem certeza que deseja excluir este vídeo?';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get audioDeletedSuccess => 'Áudio excluído com sucesso';
+
+  @override
+  String get imageDeletedSuccess => 'Imagem excluída com sucesso';
+
+  @override
+  String get videoDeletedSuccess => 'Vídeo excluído com sucesso';
 }

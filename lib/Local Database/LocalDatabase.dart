@@ -9,7 +9,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:status_saver/Utils/Constants/AllText.dart';
 import 'package:status_saver/bloc/status/status_bloc.dart';
 import 'package:status_saver/bloc/status/status_event.dart';
 import 'package:status_saver/config/images/app_images.dart';
@@ -86,13 +85,24 @@ class SavedItemsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         backgroundColor: AppColor1.screenbackgroundColor,
         appBar: AppBar(
+           leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: SvgPicture.asset(
+            AllIcons.backArrow,
+            width: 24,
+            height: 24,
+          ),
+        ),
           title: Text(
-            "Saved Statuses",
+            AppLocalizations.of(context)!.savedStatuses,
             style: AppColor1().customTextStyleBold16(),
           ),
           backgroundColor: AppColor1.screenbackgroundColor,
@@ -102,9 +112,9 @@ class SavedItemsScreen extends StatelessWidget {
             unselectedLabelColor: Colors.white70,
             labelStyle: const TextStyle(fontWeight: FontWeight.bold),
             tabs: [
-              Tab(child: tabbutton("Images")),
-              Tab(child: tabbutton("Videos")),
-              Tab(child: tabbutton("Audio")),
+              Tab(child: tabbutton(t.images)),
+              Tab(child: tabbutton(t.videos)),
+              Tab(child: tabbutton(t.audio)),
             ],
           ),
         ),
@@ -900,12 +910,12 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                 bottomButton(
                   () => shareStatus(widget.audioPath),
                   AllIcons.repost,
-                  AllText.Repost,
+                  t.repost,
                 ),
                 bottomButton(
                   () => shareStatus(widget.audioPath),
                   AllIcons.share,
-                  AllText.Share,
+                  t.share,
                 ),
                 bottomButton(
                   () {
@@ -920,7 +930,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                     }
                   },
                   widget.isFromSavedScreen ? AllIcons.delete : AllIcons.save,
-                  widget.isFromSavedScreen ? AllText.delete : AllText.Save,
+                  widget.isFromSavedScreen ? t.delete : t.save,
                 ),
               ],
             ),
@@ -945,14 +955,92 @@ Future<void> deleteAudio(BuildContext context, String path) async {
     if (context.mounted) {
       context.read<StatusBloc>().add(LoadStatusEvent());
     }
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Audio deleted successfully"),
-          backgroundColor: Colors.green,
+   if (context.mounted) {
+  showDialog(
+    context: context,
+    barrierDismissible: true,
+    builder: (context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        backgroundColor: const Color(0xFFF0EFF4),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // TITLE
+             Text(
+  AppLocalizations.of(context)!.deleteAudioTitle,
+  style: AppColor1().customTextStyleRegular10().copyWith(
+    color: Colors.black,
+    fontSize:getFont(22),
+    fontWeight: FontWeight.bold,
+  ),
+),
+              const SizedBox(height: 12),
+              // SUBTITLE
+               Text(
+                AppLocalizations.of(context)!.deleteAudioTitle,
+                style: AppColor1().customTextStyleRegular10().copyWith(
+                  color: Colors.black54,
+                  fontSize: getFont(14),
+                ),
+              ),
+              const SizedBox(height: 24),
+              // BUTTONS ROW
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  // CANCEL BUTTON
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child:  Text(
+                      AppLocalizations.of(context)!.cancel,
+                     style: AppColor1().customTextStyleRegular10().copyWith(
+    color: Colors.black,
+    fontSize:getFont(14),
+    fontWeight: FontWeight.bold,
+  ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  // DELETE BUTTON
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 22, vertical: 10),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      // TODO: apna delete logic yahan likhein
+                    },
+                    child:  Text(
+                      AppLocalizations.of(context)!.delete,
+                     style: AppColor1().customTextStyleRegular10().copyWith(
+    color: Colors.black,
+    fontSize:getFont(14),
+    fontWeight: FontWeight.bold,
+  ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       );
-    }
+    },
+  );
+}
   } catch (e) {
     debugPrint("Delete Audio Error: $e");
     if (context.mounted) {
@@ -1037,18 +1125,18 @@ Future<void> saveMedia(
               ),
               borderRadius: BorderRadius.circular(12),
             ),
-           child: const Row(
+           child: Row(
   mainAxisSize: MainAxisSize.min,
   children: [
-    Icon(
+    const Icon(
       Icons.download,
       color: Colors.black,
       size: 18,
     ),
-    SizedBox(width: 6),
+    const SizedBox(width: 6),
     Text(
-      "Media Saved Successfully",
-      style: TextStyle(color: Colors.black),
+    AppLocalizations.of(context)!.mediaSavedSuccessfully,
+      style: const TextStyle(color: Colors.black),
     ),
   ],
 ),
@@ -1154,6 +1242,18 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
       backgroundColor: AppColor1.screenbackgroundColor,
       appBar: AppBar(
         backgroundColor: AppColor1.screenbackgroundColor,
+         leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: SvgPicture.asset(
+            AllIcons.backArrow,
+            width: getWidth(22),
+            height: getHeight(22),
+            colorFilter: const ColorFilter.mode(
+              Colors.black87,
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
         title: Text(
           t.directChat,
           style: AppColor1().customTextStyleBold16(

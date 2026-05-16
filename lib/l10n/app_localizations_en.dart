@@ -105,11 +105,47 @@ class AppLocalizationsEn extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Create a status with red dot.';
 
   @override
-  String get setting => 'Settings';
-
-  @override
   String get delete => 'Delete';
 
   @override
   String get directChat => 'Direct Chat';
+
+  @override
+  String get mediaSavedSuccessfully => 'Media Saved Successfully';
+
+  @override
+  String get savedStatuses => 'Saved Statuses';
+
+  @override
+  String get deleteAudioTitle => 'Delete Audio';
+
+  @override
+  String get deleteAudioMessage => 'Are you sure you want to delete this audio?';
+
+  @override
+  String get deleteImageTitle => 'Delete Image';
+
+  @override
+  String get deleteImageMessage => 'Are you sure you want to delete this image?';
+
+  @override
+  String get deleteVideoTitle => 'Delete Video';
+
+  @override
+  String get deleteVideoMessage => 'Are you sure you want to delete this video?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get audioDeletedSuccess => 'Audio deleted successfully';
+
+  @override
+  String get imageDeletedSuccess => 'Image deleted successfully';
+
+  @override
+  String get videoDeletedSuccess => 'Video deleted successfully';
 }

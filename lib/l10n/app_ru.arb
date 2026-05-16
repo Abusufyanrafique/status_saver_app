@@ -47,8 +47,21 @@
   "makeANewStatus": "Создать статус",
   "makeNewStatusSubtitle": "Создать статус с красной точкой",
 
-  "setting": "Настройка",
   "delete": "Удалить",
   "directChat": "Прямой чат",
-  "mediaSavedSuccessfully": "Медиа успешно сохранено"
+  "mediaSavedSuccessfully": "Медиа успешно сохранено",
+  "savedStatuses": "Сохранённые статусы",
+   "deleteAudioTitle": "Удалить аудио",
+  "deleteAudioMessage": "Вы уверены, что хотите удалить это аудио?",
+  "deleteImageTitle": "Удалить изображение",
+  "deleteImageMessage": "Вы уверены, что хотите удалить это изображение?",
+  "deleteVideoTitle": "Удалить видео",
+  "deleteVideoMessage": "Вы уверены, что хотите удалить это видео?",
+
+  "cancel": "Отмена",
+  "ok": "ОК",
+
+  "audioDeletedSuccess": "Аудио успешно удалено",
+  "imageDeletedSuccess": "Изображение успешно удалено",
+  "videoDeletedSuccess": "Видео успешно удалено"
 }

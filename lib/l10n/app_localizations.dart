@@ -325,12 +325,6 @@ abstract class AppLocalizations {
   /// **'Create a status with red dot.'**
   String get makeNewStatusSubtitle;
 
-  /// No description provided for @setting.
-  ///
-  /// In en, this message translates to:
-  /// **'Settings'**
-  String get setting;
-
   /// No description provided for @delete.
   ///
   /// In en, this message translates to:
@@ -342,6 +336,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Direct Chat'**
   String get directChat;
+
+  /// No description provided for @mediaSavedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Media Saved Successfully'**
+  String get mediaSavedSuccessfully;
+
+  /// No description provided for @savedStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved Statuses'**
+  String get savedStatuses;
+
+  /// No description provided for @deleteAudioTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Audio'**
+  String get deleteAudioTitle;
+
+  /// No description provided for @deleteAudioMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this audio?'**
+  String get deleteAudioMessage;
+
+  /// No description provided for @deleteImageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Image'**
+  String get deleteImageTitle;
+
+  /// No description provided for @deleteImageMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this image?'**
+  String get deleteImageMessage;
+
+  /// No description provided for @deleteVideoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Video'**
+  String get deleteVideoTitle;
+
+  /// No description provided for @deleteVideoMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this video?'**
+  String get deleteVideoMessage;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @audioDeletedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio deleted successfully'**
+  String get audioDeletedSuccess;
+
+  /// No description provided for @imageDeletedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Image deleted successfully'**
+  String get imageDeletedSuccess;
+
+  /// No description provided for @videoDeletedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Video deleted successfully'**
+  String get videoDeletedSuccess;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -105,11 +105,47 @@ class AppLocalizationsTh extends AppLocalizations {
   String get makeNewStatusSubtitle => 'สร้างสถานะใหม่ด้วยจุดสีแดง';
 
   @override
-  String get setting => 'การตั้งค่า';
-
-  @override
   String get delete => 'ลบ';
 
   @override
   String get directChat => 'แชทโดยตรง';
+
+  @override
+  String get mediaSavedSuccessfully => 'บันทึกสื่อเรียบร้อยแล้ว';
+
+  @override
+  String get savedStatuses => 'สถานะที่บันทึกไว้';
+
+  @override
+  String get deleteAudioTitle => 'ลบเสียง';
+
+  @override
+  String get deleteAudioMessage => 'คุณแน่ใจหรือไม่ว่าต้องการลบเสียงนี้?';
+
+  @override
+  String get deleteImageTitle => 'ลบรูปภาพ';
+
+  @override
+  String get deleteImageMessage => 'คุณแน่ใจหรือไม่ว่าต้องการลบรูปภาพนี้?';
+
+  @override
+  String get deleteVideoTitle => 'ลบวิดีโอ';
+
+  @override
+  String get deleteVideoMessage => 'คุณแน่ใจหรือไม่ว่าต้องการลบวิดีโอนี้?';
+
+  @override
+  String get cancel => 'ยกเลิก';
+
+  @override
+  String get ok => 'ตกลง';
+
+  @override
+  String get audioDeletedSuccess => 'ลบเสียงเรียบร้อยแล้ว';
+
+  @override
+  String get imageDeletedSuccess => 'ลบรูปภาพเรียบร้อยแล้ว';
+
+  @override
+  String get videoDeletedSuccess => 'ลบวิดีโอเรียบร้อยแล้ว';
 }

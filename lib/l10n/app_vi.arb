@@ -47,8 +47,21 @@
   "makeANewStatus": "Tạo trạng thái mới",
   "makeNewStatusSubtitle": "Tạo trạng thái với chấm đỏ",
 
-  "setting": "Cài đặt",
   "delete": "Xóa",
   "directChat": "Trò chuyện trực tiếp",
-  "mediaSavedSuccessfully": "Đã lưu phương tiện thành công"
+  "mediaSavedSuccessfully": "Đã lưu phương tiện thành công",
+  "savedStatuses": "Trạng thái đã lưu",
+    "deleteAudioTitle": "Xóa âm thanh",
+  "deleteAudioMessage": "Bạn có chắc muốn xóa âm thanh này không?",
+  "deleteImageTitle": "Xóa hình ảnh",
+  "deleteImageMessage": "Bạn có chắc muốn xóa hình ảnh này không?",
+  "deleteVideoTitle": "Xóa video",
+  "deleteVideoMessage": "Bạn có chắc muốn xóa video này không?",
+
+  "cancel": "Hủy",
+  "ok": "OK",
+
+  "audioDeletedSuccess": "Đã xóa âm thanh thành công",
+  "imageDeletedSuccess": "Đã xóa hình ảnh thành công",
+  "videoDeletedSuccess": "Đã xóa video thành công"
 }

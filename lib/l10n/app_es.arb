@@ -46,8 +46,23 @@
   "makeANewStatus": "Crear estado",
   "makeNewStatusSubtitle": "Crear estado con punto rojo",
 
-  "setting": "Configuración",
   "delete": "Eliminar",
   "directChat": "Chat Directo",
-  "mediaSavedSuccessfully": "Medios guardados con éxito"
+  "mediaSavedSuccessfully": "Medios guardados con éxito",
+  "savedStatuses": "Estados guardados",
+   "deleteAudioTitle": "Eliminar audio",
+  "deleteAudioMessage": "¿Estás seguro de que quieres eliminar este audio?",
+
+  "deleteImageTitle": "Eliminar imagen",
+  "deleteImageMessage": "¿Estás seguro de que quieres eliminar esta imagen?",
+
+  "deleteVideoTitle": "Eliminar video",
+  "deleteVideoMessage": "¿Estás seguro de que quieres eliminar este video?",
+
+  "cancel": "Cancelar",
+  "ok": "OK",
+
+  "audioDeletedSuccess": "Audio eliminado correctamente",
+  "imageDeletedSuccess": "Imagen eliminada correctamente",
+  "videoDeletedSuccess": "Video eliminado correctamente"
 }

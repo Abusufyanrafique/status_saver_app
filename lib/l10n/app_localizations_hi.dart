@@ -105,11 +105,47 @@ class AppLocalizationsHi extends AppLocalizations {
   String get makeNewStatusSubtitle => 'रेड डॉट के साथ स्टेटस बनाएँ';
 
   @override
-  String get setting => 'सेटिंग';
-
-  @override
   String get delete => 'डिलीट';
 
   @override
   String get directChat => 'डायरेक्ट चैट';
+
+  @override
+  String get mediaSavedSuccessfully => 'मीडिया सफलतापूर्वक सेव हो गया';
+
+  @override
+  String get savedStatuses => 'सहेजे गए स्टेटस';
+
+  @override
+  String get deleteAudioTitle => 'ऑडियो हटाएं';
+
+  @override
+  String get deleteAudioMessage => 'क्या आप वाकई इस ऑडियो को हटाना चाहते हैं?';
+
+  @override
+  String get deleteImageTitle => 'इमेज हटाएं';
+
+  @override
+  String get deleteImageMessage => 'क्या आप वाकई इस इमेज को हटाना चाहते हैं?';
+
+  @override
+  String get deleteVideoTitle => 'वीडियो हटाएं';
+
+  @override
+  String get deleteVideoMessage => 'क्या आप वाकई इस वीडियो को हटाना चाहते हैं?';
+
+  @override
+  String get cancel => 'रद्द करें';
+
+  @override
+  String get ok => 'ठीक है';
+
+  @override
+  String get audioDeletedSuccess => 'ऑडियो सफलतापूर्वक हटाया गया';
+
+  @override
+  String get imageDeletedSuccess => 'इमेज सफलतापूर्वक हटाई गई';
+
+  @override
+  String get videoDeletedSuccess => 'वीडियो सफलतापूर्वक हटाया गया';
 }

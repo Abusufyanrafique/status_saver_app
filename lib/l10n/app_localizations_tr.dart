@@ -105,11 +105,47 @@ class AppLocalizationsTr extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Kırmızı noktalı bir durum oluşturun.';
 
   @override
-  String get setting => 'Ayarlar';
-
-  @override
   String get delete => 'Sil';
 
   @override
   String get directChat => 'Doğrudan Sohbet';
+
+  @override
+  String get mediaSavedSuccessfully => 'Medya başarıyla kaydedildi';
+
+  @override
+  String get savedStatuses => 'Kaydedilen Durumlar';
+
+  @override
+  String get deleteAudioTitle => 'Ses Sil';
+
+  @override
+  String get deleteAudioMessage => 'Bu sesi silmek istediğinizden emin misiniz?';
+
+  @override
+  String get deleteImageTitle => 'Resmi Sil';
+
+  @override
+  String get deleteImageMessage => 'Bu resmi silmek istediğinizden emin misiniz?';
+
+  @override
+  String get deleteVideoTitle => 'Videoyu Sil';
+
+  @override
+  String get deleteVideoMessage => 'Bu videoyu silmek istediğinizden emin misiniz?';
+
+  @override
+  String get cancel => 'İptal';
+
+  @override
+  String get ok => 'Tamam';
+
+  @override
+  String get audioDeletedSuccess => 'Ses başarıyla silindi';
+
+  @override
+  String get imageDeletedSuccess => 'Resim başarıyla silindi';
+
+  @override
+  String get videoDeletedSuccess => 'Video başarıyla silindi';
 }

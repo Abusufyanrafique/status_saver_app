@@ -47,8 +47,23 @@
   "makeANewStatus": "نیا اسٹیٹس بنائیں",
   "makeNewStatusSubtitle": "ریڈ ڈاٹ کے ساتھ اسٹیٹس بنائیں",
 
-  "setting": "سیٹنگ",
   "delete": "ڈیلیٹ",
   "directChat": "ڈائریکٹ چیٹ",
-  "mediaSavedSuccessfully": "میڈیا کامیابی سے محفوظ ہو گیا"
+  "mediaSavedSuccessfully": "میڈیا کامیابی سے محفوظ ہو گیا",
+  "savedStatuses": "محفوظ شدہ اسٹیٹس",
+  "deleteAudioTitle": "آڈیو حذف کریں",
+  "deleteAudioMessage": "کیا آپ واقعی اس آڈیو کو حذف کرنا چاہتے ہیں؟",
+
+  "deleteImageTitle": "تصویر حذف کریں",
+  "deleteImageMessage": "کیا آپ واقعی اس تصویر کو حذف کرنا چاہتے ہیں؟",
+
+  "deleteVideoTitle": "ویڈیو حذف کریں",
+  "deleteVideoMessage": "کیا آپ واقعی اس ویڈیو کو حذف کرنا چاہتے ہیں؟",
+
+  "cancel": "منسوخ",
+  "ok": "ٹھیک ہے",
+
+  "audioDeletedSuccess": "آڈیو کامیابی سے حذف ہوگئی",
+  "imageDeletedSuccess": "تصویر کامیابی سے حذف ہوگئی",
+  "videoDeletedSuccess": "ویڈیو کامیابی سے حذف ہوگئی"
 }

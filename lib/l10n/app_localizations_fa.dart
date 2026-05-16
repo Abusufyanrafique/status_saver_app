@@ -105,11 +105,47 @@ class AppLocalizationsFa extends AppLocalizations {
   String get makeNewStatusSubtitle => 'ایجاد وضعیت با نقطه قرمز';
 
   @override
-  String get setting => 'تنظیمات';
-
-  @override
   String get delete => 'حذف';
 
   @override
   String get directChat => 'چت مستقیم';
+
+  @override
+  String get mediaSavedSuccessfully => 'رسانه با موفقیت ذخیره شد';
+
+  @override
+  String get savedStatuses => 'وضعیت‌های ذخیره‌شده';
+
+  @override
+  String get deleteAudioTitle => 'حذف صدا';
+
+  @override
+  String get deleteAudioMessage => 'آیا مطمئن هستید که می‌خواهید این صدا را حذف کنید؟';
+
+  @override
+  String get deleteImageTitle => 'حذف تصویر';
+
+  @override
+  String get deleteImageMessage => 'آیا مطمئن هستید که می‌خواهید این تصویر را حذف کنید؟';
+
+  @override
+  String get deleteVideoTitle => 'حذف ویدیو';
+
+  @override
+  String get deleteVideoMessage => 'آیا مطمئن هستید که می‌خواهید این ویدیو را حذف کنید؟';
+
+  @override
+  String get cancel => 'لغو';
+
+  @override
+  String get ok => 'باشه';
+
+  @override
+  String get audioDeletedSuccess => 'صدا با موفقیت حذف شد';
+
+  @override
+  String get imageDeletedSuccess => 'تصویر با موفقیت حذف شد';
+
+  @override
+  String get videoDeletedSuccess => 'ویدیو با موفقیت حذف شد';
 }

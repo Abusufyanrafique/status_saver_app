@@ -47,8 +47,21 @@
   "makeANewStatus": "สร้างสถานะใหม่",
   "makeNewStatusSubtitle": "สร้างสถานะใหม่ด้วยจุดสีแดง",
 
-  "setting": "การตั้งค่า",
   "delete": "ลบ",
   "directChat": "แชทโดยตรง",
-  "mediaSavedSuccessfully": "บันทึกสื่อเรียบร้อยแล้ว"
+  "mediaSavedSuccessfully": "บันทึกสื่อเรียบร้อยแล้ว",
+  "savedStatuses": "สถานะที่บันทึกไว้",
+  "deleteAudioTitle": "ลบเสียง",
+  "deleteAudioMessage": "คุณแน่ใจหรือไม่ว่าต้องการลบเสียงนี้?",
+  "deleteImageTitle": "ลบรูปภาพ",
+  "deleteImageMessage": "คุณแน่ใจหรือไม่ว่าต้องการลบรูปภาพนี้?",
+  "deleteVideoTitle": "ลบวิดีโอ",
+  "deleteVideoMessage": "คุณแน่ใจหรือไม่ว่าต้องการลบวิดีโอนี้?",
+
+  "cancel": "ยกเลิก",
+  "ok": "ตกลง",
+
+  "audioDeletedSuccess": "ลบเสียงเรียบร้อยแล้ว",
+  "imageDeletedSuccess": "ลบรูปภาพเรียบร้อยแล้ว",
+  "videoDeletedSuccess": "ลบวิดีโอเรียบร้อยแล้ว"
 }

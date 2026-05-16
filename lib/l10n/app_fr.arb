@@ -1,5 +1,6 @@
 ﻿{
   "@@locale": "fr",
+
   "appName": "APPLICATION SAUVEGARDE STATUT",
   "statusSaverApp": "Sauvegarde de Statut",
   "downloadKeepFavorite": "Téléchargez et gardez vos statuts favoris pour toujours",
@@ -29,7 +30,6 @@
   "whatsappWeb": "WhatsApp Web",
 
   "directlyMessage": "Envoyer un message sans enregistrer le contact",
-
   "inputMessageHere": "Entrez le message ici",
   "sendMessage": "Envoyer",
 
@@ -49,5 +49,24 @@
   "setting": "Paramètre",
   "delete": "Supprimer",
   "directChat": "Chat Direct",
-  "mediaSavedSuccessfully": "Média enregistré avec succès"
+  "mediaSavedSuccessfully": "Média enregistré avec succès",
+  "savedStatuses": "Statuts enregistrés",
+
+  "deleteAudioTitle": "Supprimer l'audio",
+  "deleteAudioMessage": "Êtes-vous sûr de vouloir supprimer cet audio ?",
+
+  "deleteImageTitle": "Supprimer l'image",
+  "deleteImageMessage": "Êtes-vous sûr de vouloir supprimer cette image ?",
+
+  "deleteVideoTitle": "Supprimer la vidéo",
+  "deleteVideoMessage": "Êtes-vous sûr de vouloir supprimer cette vidéo ?",
+
+
+  "cancel": "Annuler",
+  "ok": "OK",
+  "delete": "Supprimer",
+
+  "audioDeletedSuccess": "Audio supprimé avec succès",
+  "imageDeletedSuccess": "Image supprimée avec succès",
+  "videoDeletedSuccess": "Vidéo supprimée avec succès"
 }

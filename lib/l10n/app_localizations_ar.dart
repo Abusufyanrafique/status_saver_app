@@ -105,11 +105,47 @@ class AppLocalizationsAr extends AppLocalizations {
   String get makeNewStatusSubtitle => 'إنشاء حالة بنقطة حمراء';
 
   @override
-  String get setting => 'الإعدادات';
-
-  @override
   String get delete => 'حذف';
 
   @override
   String get directChat => 'الدردشة المباشرة';
+
+  @override
+  String get mediaSavedSuccessfully => 'تم حفظ الوسائط بنجاح';
+
+  @override
+  String get savedStatuses => 'الحالات المحفوظة';
+
+  @override
+  String get deleteAudioTitle => 'حذف الصوت';
+
+  @override
+  String get deleteAudioMessage => 'هل أنت متأكد أنك تريد حذف هذا الصوت؟';
+
+  @override
+  String get deleteImageTitle => 'حذف الصورة';
+
+  @override
+  String get deleteImageMessage => 'هل أنت متأكد أنك تريد حذف هذه الصورة؟';
+
+  @override
+  String get deleteVideoTitle => 'حذف الفيديو';
+
+  @override
+  String get deleteVideoMessage => 'هل أنت متأكد أنك تريد حذف هذا الفيديو؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get ok => 'موافق';
+
+  @override
+  String get audioDeletedSuccess => 'تم حذف الصوت بنجاح';
+
+  @override
+  String get imageDeletedSuccess => 'تم حذف الصورة بنجاح';
+
+  @override
+  String get videoDeletedSuccess => 'تم حذف الفيديو بنجاح';
 }

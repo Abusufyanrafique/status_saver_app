@@ -47,9 +47,23 @@
   "makeANewStatus": "Criar novo status",
   "makeNewStatusSubtitle": "Criar status com ponto vermelho",
 
-  "setting": "Configuração",
   "delete": "Excluir",
   "directChat": "Chat Direto",
-  "mediaSavedSuccessfully": "Mídia salva com sucesso"
+  "mediaSavedSuccessfully": "Mídia salva com sucesso",
+  "savedStatuses": "Status salvos",
+  "deleteAudioTitle": "Excluir áudio",
+
+"deleteAudioMessage": "Tem certeza que deseja excluir este áudio?",
+"deleteImageTitle": "Excluir imagem",
+"deleteImageMessage": "Tem certeza que deseja excluir esta imagem?",
+"deleteVideoTitle": "Excluir vídeo",
+"deleteVideoMessage": "Tem certeza que deseja excluir este vídeo?",
+
+"cancel": "Cancelar",
+"ok": "OK",
+
+"audioDeletedSuccess": "Áudio excluído com sucesso",
+"imageDeletedSuccess": "Imagem excluída com sucesso",
+"videoDeletedSuccess": "Vídeo excluído com sucesso"
 
 }

@@ -47,8 +47,21 @@
   "makeANewStatus": "Yeni Durum Oluştur",
   "makeNewStatusSubtitle": "Kırmızı noktalı bir durum oluşturun.",
 
-  "setting": "Ayarlar",
   "delete": "Sil",
   "directChat": "Doğrudan Sohbet",
-  "mediaSavedSuccessfully": "Medya başarıyla kaydedildi"
+  "mediaSavedSuccessfully": "Medya başarıyla kaydedildi",
+  "savedStatuses": "Kaydedilen Durumlar",
+  "deleteAudioTitle": "Ses Sil",
+  "deleteAudioMessage": "Bu sesi silmek istediğinizden emin misiniz?",
+  "deleteImageTitle": "Resmi Sil",
+  "deleteImageMessage": "Bu resmi silmek istediğinizden emin misiniz?",
+  "deleteVideoTitle": "Videoyu Sil",
+  "deleteVideoMessage": "Bu videoyu silmek istediğinizden emin misiniz?",
+
+  "cancel": "İptal",
+  "ok": "Tamam",
+
+  "audioDeletedSuccess": "Ses başarıyla silindi",
+  "imageDeletedSuccess": "Resim başarıyla silindi",
+  "videoDeletedSuccess": "Video başarıyla silindi"
 }

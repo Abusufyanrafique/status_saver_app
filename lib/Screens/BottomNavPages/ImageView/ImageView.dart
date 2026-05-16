@@ -6,6 +6,7 @@ import 'package:status_saver/Local%20Database/LocalDatabase.dart';
 import 'package:status_saver/Utils/Constants/AllColors.dart';
 import 'package:status_saver/Utils/Constants/AllText.dart';
 import 'package:status_saver/Utils/Constants/SizeConfig.dart';
+import 'package:status_saver/config/components/status_saver_app_snack_bar.dart';
 import 'package:status_saver/config/images/app_images.dart';
 import 'package:status_saver/l10n/app_localizations.dart';
 
@@ -227,15 +228,15 @@ class _ImageViewState extends State<ImageView> {
       context: context,
       builder: (ctx) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text(
-          "Delete Image",
+        title:  Text(
+          AppLocalizations.of(context)!.deleteImageTitle,
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        content: const Text("Are you sure you want to delete this image?"),
+        content:  Text(AppLocalizations.of(context)!.deleteImageMessage,),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text("Cancel", style: TextStyle(color: Colors.grey)),
+            child:  Text(AppLocalizations.of(context)!.cancel),
           ),
           ElevatedButton(
             onPressed: () => Navigator.pop(ctx, true),
@@ -246,7 +247,7 @@ class _ImageViewState extends State<ImageView> {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            child: const Text("Delete"),
+            child:  Text(AppLocalizations.of(context)!.delete),
           ),
         ],
       ),
@@ -267,13 +268,14 @@ class _ImageViewState extends State<ImageView> {
       await item.delete();
 
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Image deleted successfully"),
-            backgroundColor: Colors.green,
-          ),
-        );
-        Navigator.pop(context);
+        StatusSaverAppSnackBar.show(
+  context,
+  title: "Image Deleted Successfully",
+  subtitle: "Removed from saved status",
+  icon: Icons.delete,
+);
+
+Navigator.pop(context);
       }
     } catch (e) {
       debugPrint("Delete error: $e");

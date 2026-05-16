@@ -105,11 +105,47 @@ class AppLocalizationsVi extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Tạo trạng thái với chấm đỏ';
 
   @override
-  String get setting => 'Cài đặt';
-
-  @override
   String get delete => 'Xóa';
 
   @override
   String get directChat => 'Trò chuyện trực tiếp';
+
+  @override
+  String get mediaSavedSuccessfully => 'Đã lưu phương tiện thành công';
+
+  @override
+  String get savedStatuses => 'Trạng thái đã lưu';
+
+  @override
+  String get deleteAudioTitle => 'Xóa âm thanh';
+
+  @override
+  String get deleteAudioMessage => 'Bạn có chắc muốn xóa âm thanh này không?';
+
+  @override
+  String get deleteImageTitle => 'Xóa hình ảnh';
+
+  @override
+  String get deleteImageMessage => 'Bạn có chắc muốn xóa hình ảnh này không?';
+
+  @override
+  String get deleteVideoTitle => 'Xóa video';
+
+  @override
+  String get deleteVideoMessage => 'Bạn có chắc muốn xóa video này không?';
+
+  @override
+  String get cancel => 'Hủy';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get audioDeletedSuccess => 'Đã xóa âm thanh thành công';
+
+  @override
+  String get imageDeletedSuccess => 'Đã xóa hình ảnh thành công';
+
+  @override
+  String get videoDeletedSuccess => 'Đã xóa video thành công';
 }

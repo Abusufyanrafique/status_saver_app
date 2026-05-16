@@ -105,11 +105,47 @@ class AppLocalizationsMs extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Buat status dengan titik merah';
 
   @override
-  String get setting => 'Tetapan';
-
-  @override
   String get delete => 'Padam';
 
   @override
   String get directChat => 'Sembang Langsung';
+
+  @override
+  String get mediaSavedSuccessfully => 'Media berjaya disimpan';
+
+  @override
+  String get savedStatuses => 'Status Disimpan';
+
+  @override
+  String get deleteAudioTitle => 'Padam audio';
+
+  @override
+  String get deleteAudioMessage => 'Adakah anda pasti mahu memadam audio ini?';
+
+  @override
+  String get deleteImageTitle => 'Padam imej';
+
+  @override
+  String get deleteImageMessage => 'Adakah anda pasti mahu memadam imej ini?';
+
+  @override
+  String get deleteVideoTitle => 'Padam video';
+
+  @override
+  String get deleteVideoMessage => 'Adakah anda pasti mahu memadam video ini?';
+
+  @override
+  String get cancel => 'Batal';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get audioDeletedSuccess => 'Audio berjaya dipadam';
+
+  @override
+  String get imageDeletedSuccess => 'Imej berjaya dipadam';
+
+  @override
+  String get videoDeletedSuccess => 'Video berjaya dipadam';
 }

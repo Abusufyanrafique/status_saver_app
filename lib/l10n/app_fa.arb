@@ -1,5 +1,6 @@
 ﻿{
   "@@locale": "fa",
+
   "appName": "اپ ذخیره وضعیت",
   "statusSaverApp": "ذخیره وضعیت",
   "downloadKeepFavorite": "دانلود و ذخیره وضعیت‌های مورد علاقه",
@@ -29,7 +30,6 @@
   "whatsappWeb": "واتساپ وب",
 
   "directlyMessage": "ارسال پیام بدون ذخیره مخاطب",
-
   "inputMessageHere": "پیام را وارد کنید",
   "sendMessage": "ارسال",
 
@@ -46,8 +46,24 @@
   "makeANewStatus": "ایجاد وضعیت جدید",
   "makeNewStatusSubtitle": "ایجاد وضعیت با نقطه قرمز",
 
-  "setting": "تنظیمات",
   "delete": "حذف",
   "directChat": "چت مستقیم",
-  "mediaSavedSuccessfully": "رسانه با موفقیت ذخیره شد"
+  "mediaSavedSuccessfully": "رسانه با موفقیت ذخیره شد",
+  "savedStatuses": "وضعیت‌های ذخیره‌شده",
+
+  "deleteAudioTitle": "حذف صدا",
+  "deleteAudioMessage": "آیا مطمئن هستید که می‌خواهید این صدا را حذف کنید؟",
+
+  "deleteImageTitle": "حذف تصویر",
+  "deleteImageMessage": "آیا مطمئن هستید که می‌خواهید این تصویر را حذف کنید؟",
+
+  "deleteVideoTitle": "حذف ویدیو",
+  "deleteVideoMessage": "آیا مطمئن هستید که می‌خواهید این ویدیو را حذف کنید؟",
+
+  "cancel": "لغو",
+  "ok": "باشه",
+
+  "audioDeletedSuccess": "صدا با موفقیت حذف شد",
+  "imageDeletedSuccess": "تصویر با موفقیت حذف شد",
+  "videoDeletedSuccess": "ویدیو با موفقیت حذف شد"
 }

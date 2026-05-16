@@ -105,11 +105,47 @@ class AppLocalizationsKo extends AppLocalizations {
   String get makeNewStatusSubtitle => '빨간 점 상태 만들기';
 
   @override
-  String get setting => '설정';
-
-  @override
   String get delete => '삭제';
 
   @override
   String get directChat => '다이렉트 채팅';
+
+  @override
+  String get mediaSavedSuccessfully => '미디어가 성공적으로 저장되었습니다';
+
+  @override
+  String get savedStatuses => '저장된 상태';
+
+  @override
+  String get deleteAudioTitle => '오디오 삭제';
+
+  @override
+  String get deleteAudioMessage => '이 오디오를 삭제하시겠습니까?';
+
+  @override
+  String get deleteImageTitle => '이미지 삭제';
+
+  @override
+  String get deleteImageMessage => '이 이미지를 삭제하시겠습니까?';
+
+  @override
+  String get deleteVideoTitle => '비디오 삭제';
+
+  @override
+  String get deleteVideoMessage => '이 비디오를 삭제하시겠습니까?';
+
+  @override
+  String get cancel => '취소';
+
+  @override
+  String get ok => '확인';
+
+  @override
+  String get audioDeletedSuccess => '오디오가 성공적으로 삭제되었습니다';
+
+  @override
+  String get imageDeletedSuccess => '이미지가 성공적으로 삭제되었습니다';
+
+  @override
+  String get videoDeletedSuccess => '비디오가 성공적으로 삭제되었습니다';
 }

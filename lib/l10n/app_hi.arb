@@ -46,9 +46,24 @@
   "makeANewStatus": "नया स्टेटस बनाएँ",
   "makeNewStatusSubtitle": "रेड डॉट के साथ स्टेटस बनाएँ",
 
-  "setting": "सेटिंग",
   "delete": "डिलीट",
   "directChat": "डायरेक्ट चैट",
-  "mediaSavedSuccessfully": "मीडिया सफलतापूर्वक सेव हो गया"
+  "mediaSavedSuccessfully": "मीडिया सफलतापूर्वक सेव हो गया",
+  "savedStatuses": "सहेजे गए स्टेटस",
+   "deleteAudioTitle": "ऑडियो हटाएं",
+  "deleteAudioMessage": "क्या आप वाकई इस ऑडियो को हटाना चाहते हैं?",
+
+  "deleteImageTitle": "इमेज हटाएं",
+  "deleteImageMessage": "क्या आप वाकई इस इमेज को हटाना चाहते हैं?",
+
+  "deleteVideoTitle": "वीडियो हटाएं",
+  "deleteVideoMessage": "क्या आप वाकई इस वीडियो को हटाना चाहते हैं?",
+
+  "cancel": "रद्द करें",
+  "ok": "ठीक है",
+
+  "audioDeletedSuccess": "ऑडियो सफलतापूर्वक हटाया गया",
+  "imageDeletedSuccess": "इमेज सफलतापूर्वक हटाई गई",
+  "videoDeletedSuccess": "वीडियो सफलतापूर्वक हटाया गया"
 
 }

@@ -105,11 +105,47 @@ class AppLocalizationsId extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Buat status dengan titik merah';
 
   @override
-  String get setting => 'Pengaturan';
-
-  @override
   String get delete => 'Hapus';
 
   @override
   String get directChat => 'Chat Langsung';
+
+  @override
+  String get mediaSavedSuccessfully => 'Media berhasil disimpan';
+
+  @override
+  String get savedStatuses => 'Status Tersimpan';
+
+  @override
+  String get deleteAudioTitle => 'Hapus Audio';
+
+  @override
+  String get deleteAudioMessage => 'Apakah Anda yakin ingin menghapus audio ini?';
+
+  @override
+  String get deleteImageTitle => 'Hapus Gambar';
+
+  @override
+  String get deleteImageMessage => 'Apakah Anda yakin ingin menghapus gambar ini?';
+
+  @override
+  String get deleteVideoTitle => 'Hapus Video';
+
+  @override
+  String get deleteVideoMessage => 'Apakah Anda yakin ingin menghapus video ini?';
+
+  @override
+  String get cancel => 'Batal';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get audioDeletedSuccess => 'Audio berhasil dihapus';
+
+  @override
+  String get imageDeletedSuccess => 'Gambar berhasil dihapus';
+
+  @override
+  String get videoDeletedSuccess => 'Video berhasil dihapus';
 }

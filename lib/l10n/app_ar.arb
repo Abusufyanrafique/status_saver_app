@@ -50,5 +50,25 @@
   "setting": "الإعدادات",
   "delete": "حذف",
   "directChat": "الدردشة المباشرة",
-  "mediaSavedSuccessfully": "تم حفظ الوسائط بنجاح"
+  "mediaSavedSuccessfully": "تم حفظ الوسائط بنجاح",
+
+  "savedStatuses": "الحالات المحفوظة",
+  "deleteAudioTitle": "حذف الصوت",
+  "deleteAudioMessage": "هل أنت متأكد أنك تريد حذف هذا الصوت؟",
+
+  "deleteImageTitle": "حذف الصورة",
+  "deleteImageMessage": "هل أنت متأكد أنك تريد حذف هذه الصورة؟",
+
+  
+  "deleteVideoTitle": "حذف الفيديو",
+  "deleteVideoMessage": "هل أنت متأكد أنك تريد حذف هذا الفيديو؟",
+
+ 
+  "audioDeletedSuccess": "تم حذف الصوت بنجاح",
+  "imageDeletedSuccess": "تم حذف الصورة بنجاح",
+  "videoDeletedSuccess": "تم حذف الفيديو بنجاح",
+
+  
+  "cancel": "إلغاء",
+  "ok": "موافق"
 }

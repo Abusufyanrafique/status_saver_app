@@ -105,11 +105,47 @@ class AppLocalizationsZh extends AppLocalizations {
   String get makeNewStatusSubtitle => '创建带红点的状态';
 
   @override
-  String get setting => '设置';
-
-  @override
   String get delete => '删除';
 
   @override
   String get directChat => '直接聊天';
+
+  @override
+  String get mediaSavedSuccessfully => '媒体已成功保存';
+
+  @override
+  String get savedStatuses => '已保存的状态';
+
+  @override
+  String get deleteAudioTitle => '删除音频';
+
+  @override
+  String get deleteAudioMessage => '您确定要删除此音频吗？';
+
+  @override
+  String get deleteImageTitle => '删除图片';
+
+  @override
+  String get deleteImageMessage => '您确定要删除此图片吗？';
+
+  @override
+  String get deleteVideoTitle => '删除视频';
+
+  @override
+  String get deleteVideoMessage => '您确定要删除此视频吗？';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get ok => '确定';
+
+  @override
+  String get audioDeletedSuccess => '音频已删除';
+
+  @override
+  String get imageDeletedSuccess => '图片已删除';
+
+  @override
+  String get videoDeletedSuccess => '视频已删除';
 }

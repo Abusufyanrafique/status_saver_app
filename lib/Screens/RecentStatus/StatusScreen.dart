@@ -156,7 +156,7 @@ Future<void> _markAllSeen() async {
           titleSpacing: 0,
           backgroundColor: AppColor1.screenbackgroundColor,
           title: Text(
-            t.statusSaver,
+              AppLocalizations.of(context)!.statusSaverApp,
             style: AppColor1().customTextStyle20(),
           ),
           actions: [
@@ -225,7 +225,7 @@ Future<void> _markAllSeen() async {
               padding: const EdgeInsets.only(right: 8),
               child: GestureDetector(
                 onTap: () async {
-                  await _markAllSeen(); // ✅ FIXED
+                  await _markAllSeen(); //  FIXED
                 },
                 child: Container(
                   width: getWidth(24),

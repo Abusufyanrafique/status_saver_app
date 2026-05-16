@@ -46,8 +46,23 @@
   "makeANewStatus": "Nieuwe status maken",
   "makeNewStatusSubtitle": "Status met rode stip maken",
 
-  "setting": "Instelling",
   "delete": "Verwijderen",
   "directChat": "Directe Chat",
-  "mediaSavedSuccessfully": "Media succesvol opgeslagen"
+  "mediaSavedSuccessfully": "Media succesvol opgeslagen",
+  "savedStatuses": "Opgeslagen statussen",
+  "deleteAudioTitle": "Audio verwijderen",
+  "deleteAudioMessage": "Weet je zeker dat je deze audio wilt verwijderen?",
+
+  "deleteImageTitle": "Afbeelding verwijderen",
+  "deleteImageMessage": "Weet je zeker dat je deze afbeelding wilt verwijderen?",
+
+  "deleteVideoTitle": "Video verwijderen",
+  "deleteVideoMessage": "Weet je zeker dat je deze video wilt verwijderen?",
+
+  "cancel": "Annuleren",
+  "ok": "OK",
+
+  "audioDeletedSuccess": "Audio succesvol verwijderd",
+  "imageDeletedSuccess": "Afbeelding succesvol verwijderd",
+  "videoDeletedSuccess": "Video succesvol verwijderd"
 }

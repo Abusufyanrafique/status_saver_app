@@ -105,11 +105,47 @@ class AppLocalizationsRu extends AppLocalizations {
   String get makeNewStatusSubtitle => 'Создать статус с красной точкой';
 
   @override
-  String get setting => 'Настройка';
-
-  @override
   String get delete => 'Удалить';
 
   @override
   String get directChat => 'Прямой чат';
+
+  @override
+  String get mediaSavedSuccessfully => 'Медиа успешно сохранено';
+
+  @override
+  String get savedStatuses => 'Сохранённые статусы';
+
+  @override
+  String get deleteAudioTitle => 'Удалить аудио';
+
+  @override
+  String get deleteAudioMessage => 'Вы уверены, что хотите удалить это аудио?';
+
+  @override
+  String get deleteImageTitle => 'Удалить изображение';
+
+  @override
+  String get deleteImageMessage => 'Вы уверены, что хотите удалить это изображение?';
+
+  @override
+  String get deleteVideoTitle => 'Удалить видео';
+
+  @override
+  String get deleteVideoMessage => 'Вы уверены, что хотите удалить это видео?';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get ok => 'ОК';
+
+  @override
+  String get audioDeletedSuccess => 'Аудио успешно удалено';
+
+  @override
+  String get imageDeletedSuccess => 'Изображение успешно удалено';
+
+  @override
+  String get videoDeletedSuccess => 'Видео успешно удалено';
 }

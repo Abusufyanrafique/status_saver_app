@@ -105,11 +105,47 @@ class AppLocalizationsJa extends AppLocalizations {
   String get makeNewStatusSubtitle => '赤いドット付きステータス作成';
 
   @override
-  String get setting => '設定';
-
-  @override
   String get delete => '削除';
 
   @override
   String get directChat => 'ダイレクトチャット';
+
+  @override
+  String get mediaSavedSuccessfully => 'メディアが正常に保存されました';
+
+  @override
+  String get savedStatuses => '保存済みステータス';
+
+  @override
+  String get deleteAudioTitle => '音声を削除';
+
+  @override
+  String get deleteAudioMessage => 'この音声を削除してもよろしいですか？';
+
+  @override
+  String get deleteImageTitle => '画像を削除';
+
+  @override
+  String get deleteImageMessage => 'この画像を削除してもよろしいですか？';
+
+  @override
+  String get deleteVideoTitle => '動画を削除';
+
+  @override
+  String get deleteVideoMessage => 'この動画を削除してもよろしいですか？';
+
+  @override
+  String get cancel => 'キャンセル';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get audioDeletedSuccess => '音声が正常に削除されました';
+
+  @override
+  String get imageDeletedSuccess => '画像が正常に削除されました';
+
+  @override
+  String get videoDeletedSuccess => '動画が正常に削除されました';
 }

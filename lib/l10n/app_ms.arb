@@ -1,5 +1,6 @@
 {
   "@@locale": "ms",
+
   "appName": "Aplikasi Status Saver",
   "statusSaverApp": "Aplikasi Status Saver",
   "downloadKeepFavorite": "Muat turun & simpan status kegemaran anda selamanya",
@@ -29,7 +30,6 @@
   "whatsappWeb": "WhatsApp Web",
 
   "directlyMessage": "Hantar mesej terus tanpa menyimpan nombor telefon",
-
   "inputMessageHere": "Masukkan mesej di sini",
   "sendMessage": "Hantar",
 
@@ -49,5 +49,23 @@
   "setting": "Tetapan",
   "delete": "Padam",
   "directChat": "Sembang Langsung",
-  "mediaSavedSuccessfully": "Media berjaya disimpan"
+  "mediaSavedSuccessfully": "Media berjaya disimpan",
+  "savedStatuses": "Status Disimpan",
+
+  "deleteAudioTitle": "Padam audio",
+  "deleteAudioMessage": "Adakah anda pasti mahu memadam audio ini?",
+
+  "deleteImageTitle": "Padam imej",
+  "deleteImageMessage": "Adakah anda pasti mahu memadam imej ini?",
+
+  "deleteVideoTitle": "Padam video",
+  "deleteVideoMessage": "Adakah anda pasti mahu memadam video ini?",
+
+  "cancel": "Batal",
+  "ok": "OK",
+  "delete": "Padam",
+
+  "audioDeletedSuccess": "Audio berjaya dipadam",
+  "imageDeletedSuccess": "Imej berjaya dipadam",
+  "videoDeletedSuccess": "Video berjaya dipadam"
 }

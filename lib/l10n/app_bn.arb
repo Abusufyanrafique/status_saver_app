@@ -47,8 +47,23 @@
   "makeANewStatus": "নতুন স্ট্যাটাস তৈরি করুন",
   "makeNewStatusSubtitle": "লাল ডট সহ স্ট্যাটাস তৈরি করুন",
 
-  "setting": "সেটিংস",
   "delete": "মুছুন",
   "directChat": "ডাইরেক্ট চ্যাট",
-  "mediaSavedSuccessfully": "মিডিয়া সফলভাবে সংরক্ষিত হয়েছে"
+  "mediaSavedSuccessfully": "মিডিয়া সফলভাবে সংরক্ষিত হয়েছে",
+  "savedStatuses": "সংরক্ষিত স্ট্যাটাস",
+   "deleteAudioTitle": "删除音频",
+  "deleteAudioMessage": "您确定要删除此音频吗？",
+
+  "deleteImageTitle": "删除图片",
+  "deleteImageMessage": "您确定要删除此图片吗？",
+
+  "deleteVideoTitle": "删除视频",
+  "deleteVideoMessage": "您确定要删除此视频吗？",
+
+  "cancel": "取消",
+  "ok": "确定",
+
+  "audioDeletedSuccess": "音频已删除",
+  "imageDeletedSuccess": "图片已删除",
+  "videoDeletedSuccess": "视频已删除"
 }

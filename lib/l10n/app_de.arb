@@ -46,8 +46,24 @@
   "makeANewStatus": "Neuen Status erstellen",
   "makeNewStatusSubtitle": "Status mit rotem Punkt erstellen",
 
-  "setting": "Einstellung",
   "delete": "Löschen",
   "directChat": "Direkt-Chat",
-  "mediaSavedSuccessfully": "Medien erfolgreich gespeichert"
+  "mediaSavedSuccessfully": "Medien erfolgreich gespeichert",
+  "savedStatuses": "Gespeicherte Status",
+   "deleteAudioTitle": "Audio löschen",
+  "deleteAudioMessage": "Möchten Sie dieses Audio wirklich löschen?",
+
+  "deleteImageTitle": "Bild löschen",
+  "deleteImageMessage": "Möchten Sie dieses Bild wirklich löschen?",
+
+  "deleteVideoTitle": "Video löschen",
+  "deleteVideoMessage": "Möchten Sie dieses Video wirklich löschen?",
+
+  "cancel": "Abbrechen",
+  "ok": "OK",
+
+  "audioDeletedSuccess": "Audio erfolgreich gelöscht",
+  "imageDeletedSuccess": "Bild erfolgreich gelöscht",
+  "videoDeletedSuccess": "Video erfolgreich gelöscht"
+
 }

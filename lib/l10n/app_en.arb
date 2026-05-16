@@ -47,8 +47,22 @@
   "makeANewStatus": "Create New Status",
   "makeNewStatusSubtitle": "Create a status with red dot.",
 
-  "setting": "Settings",
   "delete": "Delete",
   "directChat": "Direct Chat",
-  "mediaSavedSuccessfully": "Media Saved Successfully"
+  "mediaSavedSuccessfully": "Media Saved Successfully",
+  "savedStatuses": "Saved Statuses",
+  "deleteAudioTitle": "Delete Audio",
+  "deleteAudioMessage": "Are you sure you want to delete this audio?",
+
+  "deleteImageTitle": "Delete Image",
+  "deleteImageMessage": "Are you sure you want to delete this image?",
+
+  "deleteVideoTitle": "Delete Video",
+  "deleteVideoMessage": "Are you sure you want to delete this video?",
+  "cancel": "Cancel",
+  "ok": "OK",
+
+  "audioDeletedSuccess": "Audio deleted successfully",
+  "imageDeletedSuccess": "Image deleted successfully",
+  "videoDeletedSuccess": "Video deleted successfully"
 }
