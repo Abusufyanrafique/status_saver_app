@@ -514,35 +514,34 @@ if (item.type == 'image') {
 
             /// AUDIO WAVE
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: List.generate(
-                  40,
-                  (index) {
-                   final heights = [
-  6.0, 8.0, 12.0, 18.0, 24.0,
-  20.0, 14.0, 10.0, 16.0, 22.0,
-  28.0, 24.0, 18.0, 12.0, 8.0,
-  14.0, 20.0, 26.0, 30.0, 26.0,
-  20.0, 16.0, 10.0, 14.0, 18.0,
-  24.0, 28.0, 22.0, 16.0, 12.0,
-  8.0, 10.0, 16.0, 22.0, 26.0,
-  20.0, 14.0, 10.0, 6.0, 8.0,
-  12.0, 18.0, 24.0, 28.0, 22.0,
-  16.0, 10.0, 8.0, 12.0, 18.0,
-];
-                    return Container(
-                      width: 1.8,
-                      height: heights[index % heights.length],
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: List.generate(40, (index) {
+      final heights = [
+        6.0, 8.0, 12.0, 18.0, 24.0,
+        20.0, 14.0, 10.0, 16.0, 22.0,
+        28.0, 24.0, 18.0, 12.0, 8.0,
+        14.0, 20.0, 26.0, 30.0, 26.0,
+        20.0, 16.0, 10.0, 14.0, 18.0,
+        24.0, 28.0, 22.0, 16.0, 12.0,
+        8.0, 10.0, 16.0, 22.0, 26.0,
+        20.0, 14.0, 10.0, 6.0, 8.0,
+        12.0, 18.0, 24.0, 28.0, 22.0,
+        16.0, 10.0, 8.0, 12.0, 18.0,
+      ];
+
+      return AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        width: 1.8,
+        height: heights[index % heights.length],
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(6),
+        ),
+      );
+    }),
+  ),
+)
           ],
         ),
       );
@@ -1069,7 +1068,9 @@ Future<void> saveMedia(
   String sourcePath, {
   required bool isVideo,
 }) async {
+
   bool hasPermission = await requestPermission();
+
   if (!hasPermission) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text("Storage permission denied")),
@@ -1078,19 +1079,27 @@ Future<void> saveMedia(
   }
 
   final file = File(sourcePath);
+
   if (!file.existsSync()) {
     print("File not found");
     return;
   }
 
   try {
-    final dir = Directory("/storage/emulated/0/Download/StatusSaver");
+
+    //  FIX: Android 10–14 safe storage path
+    final externalDir = await getExternalStorageDirectory();
+
+    final dir = Directory("${externalDir!.path}/StatusSaver");
+
     if (!await dir.exists()) {
       await dir.create(recursive: true);
     }
 
     final fileName = sourcePath.split('/').last;
+
     final newFile = await file.copy("${dir.path}/$fileName");
+
     print("SAVED AT: ${newFile.path}");
 
     try {
@@ -1100,6 +1109,7 @@ Future<void> saveMedia(
     }
 
     final box = Hive.box<SavedItem>('saved_items');
+
     await box.add(
       SavedItem(
         path: newFile.path,
@@ -1121,8 +1131,8 @@ Future<void> saveMedia(
           ),
           content: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
                 colors: [
                   Color(0xFFE3EAF2),
                   Color(0xFFC9D6FF),
@@ -1131,29 +1141,30 @@ Future<void> saveMedia(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-              borderRadius: BorderRadius.circular(12),
             ),
-           child: Row(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    const Icon(
-      Icons.download,
-      color: Colors.black,
-      size: 18,
-    ),
-    const SizedBox(width: 6),
-    Text(
-    AppLocalizations.of(context)!.mediaSavedSuccessfully,
-      style: const TextStyle(color: Colors.black),
-    ),
-  ],
-),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.download,
+                  color: Colors.black,
+                  size: 18,
+                ),
+                const SizedBox(width: 6),
+                Text(
+                  AppLocalizations.of(context)!.mediaSavedSuccessfully,
+                  style: const TextStyle(color: Colors.black),
+                ),
+              ],
+            ),
           ),
         ),
       );
     }
+
   } catch (e) {
     print("SAVE ERROR: $e");
+
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Save failed: $e")),
@@ -1161,19 +1172,33 @@ Future<void> saveMedia(
     }
   }
 }
-
 Future<bool> requestPermission() async {
   if (Platform.isAndroid) {
+
+    // Android 13+
     if (await Permission.photos.isGranted ||
         await Permission.videos.isGranted ||
         await Permission.audio.isGranted) {
       return true;
     }
-    final photos = await Permission.photos.request();
-    final videos = await Permission.videos.request();
-    final audio = await Permission.audio.request();
-    return photos.isGranted || videos.isGranted || audio.isGranted;
+
+    // Android 11 / 10 / below
+    if (await Permission.manageExternalStorage.isGranted ||
+        await Permission.storage.isGranted) {
+      return true;
+    }
+
+    final result = await [
+      Permission.photos,
+      Permission.videos,
+      Permission.audio,
+      Permission.storage,
+      Permission.manageExternalStorage,
+    ].request();
+
+    return result.values.any((status) => status.isGranted);
   }
+
   return true;
 }
 
