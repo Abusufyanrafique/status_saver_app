@@ -248,7 +248,7 @@ Future<void> _markAllSeen() async {
                         ),
                       ),
 
-                      // 🔴 Count Badge
+                      //  Count Badge
                       if (_newStatusCount > 0)
                         Positioned(
                           top: -6,

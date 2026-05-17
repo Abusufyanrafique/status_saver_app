@@ -293,10 +293,7 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
                             margin: const EdgeInsets.only(bottom: 8),
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(12),
-                              border: isSelected
-                                  ? Border.all(color: Colors.blue, width: 2)
-                                  : null,
+                              borderRadius: BorderRadius.circular(6),
                             ),
                             child: Stack(
                               children: [
@@ -309,7 +306,7 @@ class _MediaGridScreenState extends State<MediaGridScreen> {
                                       decoration: BoxDecoration(
                                         color: Colors.black26,
                                         borderRadius:
-                                            BorderRadius.circular(12),
+                                            BorderRadius.circular(6),
                                       ),
                                     ),
                                   ),
@@ -522,12 +519,20 @@ if (item.type == 'image') {
                 children: List.generate(
                   40,
                   (index) {
-                    final heights = [
-                      6.0, 10.0, 14.0, 8.0, 18.0,
-                      12.0, 7.0, 15.0, 9.0, 13.0,
-                    ];
+                   final heights = [
+  6.0, 8.0, 12.0, 18.0, 24.0,
+  20.0, 14.0, 10.0, 16.0, 22.0,
+  28.0, 24.0, 18.0, 12.0, 8.0,
+  14.0, 20.0, 26.0, 30.0, 26.0,
+  20.0, 16.0, 10.0, 14.0, 18.0,
+  24.0, 28.0, 22.0, 16.0, 12.0,
+  8.0, 10.0, 16.0, 22.0, 26.0,
+  20.0, 14.0, 10.0, 6.0, 8.0,
+  12.0, 18.0, 24.0, 28.0, 22.0,
+  16.0, 10.0, 8.0, 12.0, 18.0,
+];
                     return Container(
-                      width: 1.6,
+                      width: 1.8,
                       height: heights[index % heights.length],
                       decoration: BoxDecoration(
                         color: Colors.black,
@@ -966,18 +971,21 @@ Future<void> deleteAudio(BuildContext context, String path) async {
         ),
         backgroundColor: const Color(0xFFF0EFF4),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 24, 
+            vertical: 28
+            ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // TITLE
              Text(
-  AppLocalizations.of(context)!.deleteAudioTitle,
-  style: AppColor1().customTextStyleRegular10().copyWith(
-    color: Colors.black,
-    fontSize:getFont(22),
-    fontWeight: FontWeight.bold,
+        AppLocalizations.of(context)!.deleteAudioTitle,
+        style: AppColor1().customTextStyleRegular10().copyWith(
+        color: Colors.black,
+        fontSize:getFont(22),
+        fontWeight: FontWeight.bold,
   ),
 ),
               const SizedBox(height: 12),
@@ -1264,7 +1272,10 @@ class _DirectChatScreenState extends State<DirectChatScreen> {
       ),
       body: SingleChildScrollView(
         padding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 150),
+            const EdgeInsets.symmetric(
+              horizontal: 20, 
+              vertical: 150
+              ),
         child: Center(
           child: Container(
             padding: const EdgeInsets.all(25),

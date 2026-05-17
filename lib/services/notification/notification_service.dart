@@ -25,7 +25,7 @@ class NotificationService {
     );
 
     await _createChannel();
-    _initialized = true; // ✅ Mark as done
+    _initialized = true; 
   }
 
   static Future<void> _createChannel() async {
